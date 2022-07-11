@@ -32,7 +32,7 @@ const NotFoundPage = () => {
       <h1 style={headingStyles}>Page not found</h1>
       <img class="fit-picture"
         src="images/404.jepg"
-        alt="404 kitty not found">
+        alt="404 kitty not found"></img>
       <p style={paragraphStyles}>
         Sorry{" "}
         <span role="img" aria-label="Pensive emoji">
