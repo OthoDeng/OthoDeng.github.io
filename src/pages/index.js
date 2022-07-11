@@ -10,9 +10,11 @@ const headingStyles = {
   marginTop: 0,
   marginBottom: 64,
   maxWidth: 320,
+  fontSize: "2rem",
 };
 const headingAccentStyles = {
   color: "#d868a9",
+  fontSize: "1rem",
 };
 const paragraphStyles = {
   marginBottom: 48,
@@ -56,12 +58,6 @@ const descriptionStyle = {
   lineHeight: 1.25,
 };
 
-const docLink = {
-  text: "Documentation",
-  url: "https://www.gatsbyjs.com/docs/",
-  color: "#dfffdb",
-};
-
 const badgeStyle = {
   color: "#d868a9",
   backgroundColor: "#e4dcef",
@@ -89,16 +85,21 @@ const links = [
   },
   {
     text: "Posts",
-    url: "https://github.com/ottoqwq/posts",
-    description:
-      "Non-daliy updates and articles written or digested by Otto.",
-  }
+    url: "ottoqwq.me/posts",
+    description: "Non-daliy updates and articles written or digested by Otto.",
+  },
+  {
+    text: "Channel",
+    url: "t.me/otttos_daily",
+    description: "Otto's Telegram channel",
+  },
 ];
 
 // markup
 const IndexPage = () => {
   return (
     <main style={pageStyles}>
+      <title>Otto's Blog | OttoDeng</title>
       <h1 style={headingStyles}>
         Otto's Blog
         <br />
@@ -107,7 +108,10 @@ const IndexPage = () => {
         </span>
       </h1>
       <h3 style={headingStyles}>About Me</h3>
-      <p>我是个高中生，使用<code style={codeStyles}>Gentoo Linux && Arch Linux</code></p>
+      <p>
+        我是个高中生，使用
+        <code style={codeStyles}>Gentoo Linux && Arch Linux</code>
+      </p>
       <p>可能少但不抗拒运动，音乐喜欢摇滚乐与巴赫。</p>
       <p>对于一般事物都会去涉猎，但最终会专注于自己热爱的话题</p>
       <p>时常会感慨修短随化，因而希望莫使金樽空对月。</p>
@@ -121,7 +125,7 @@ const IndexPage = () => {
                 style={linkStyle}
                 href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
               >
-                {link.text} 
+                {link.text}
               </a>
               <p style={descriptionStyle}>{link.description}</p>
             </span>
@@ -129,12 +133,15 @@ const IndexPage = () => {
         ))}
       </ul>
       <footer>
-            <p>Projects by <a href="https://github.com/ottoqwq">ottoqwq</a> can be found on <a href="https://github.com/ottoqwq/ottoqwq.github.io">GitHub</a></p>
-              <p>
-        本站的（非加密）内容，如无特别说明，均使用 CC BY 4.0
-        协议发布，只要注明来源和修改部分，并且不施加额外的限制，可以将内容分享到任何地方，详情请见
-        Creative Commons 网站的说明。
-      </p>
+        <p>
+          Projects by <a href="https://github.com/ottoqwq"> Otto Deng</a>.
+          Powered by <a href="https://www.gatsbyjs.com/">Gatsby</a>
+        </p>
+        <p>
+          Content on this site is licensed under{" "}
+          <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>{" "}
+          unless specified.
+        </p>
       </footer>
     </main>
   );
