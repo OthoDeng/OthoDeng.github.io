@@ -90,7 +90,7 @@ const links = [
   },
   {
     text: "Channel",
-    url: "t.me/otttos_daily",
+    url: "https://t.me/otttos_daily",
     description: "Otto's Telegram channel",
   },
 ];
