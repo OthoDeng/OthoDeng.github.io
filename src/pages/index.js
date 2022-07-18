@@ -85,13 +85,18 @@ const links = [
   },
   {
     text: "Posts",
-    url: "ottoqwq.me/posts",
+    url: "posts",
     description: "Non-daliy updates and articles written or digested by Otto.",
   },
   {
     text: "Channel",
     url: "https://t.me/otttos_daily",
     description: "Otto's Telegram channel",
+  },
+  {
+    text: "About Me",
+    url: "about",
+    description: "Otto's profile page",
   },
 ];
 
@@ -107,16 +112,6 @@ const IndexPage = () => {
           ——人生得意须尽欢，莫使金樽空对月{" "}
         </span>
       </h1>
-      <h3 style={headingStyles}>About Me</h3>
-      <p>
-        我是个高中生，使用
-        <code style={codeStyles}>Gentoo Linux && Arch Linux</code>
-      </p>
-      <p>可能少但不抗拒运动，音乐喜欢摇滚乐与巴赫。</p>
-      <p>对于一般事物都会去涉猎，但最终会专注于自己热爱的话题</p>
-      <p>时常会感慨修短随化，因而希望莫使金樽空对月。</p>
-      <p>也就是我的频道名称来源</p>
-      <p>认同柏拉图的学说，现在信奉尼采与萨特的学说。</p>
       <ul style={listStyles}>
         {links.map((link) => (
           <li key={link.url} style={{ ...listItemStyles, color: link.color }}>

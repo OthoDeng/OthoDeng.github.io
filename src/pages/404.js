@@ -30,11 +30,6 @@ const NotFoundPage = () => {
     <main style={pageStyles}>
       <title>Not found</title>
       <h1 style={headingStyles}>Page not found</h1>
-      <img
-        class="fit-picture"
-        src="~/src/images/404.jepg"
-        alt="404 kitty not found"
-      ></img>
       <p style={paragraphStyles}>
         Sorry{" "}
         <span role="img" aria-label="Pensive emoji">
@@ -45,7 +40,8 @@ const NotFoundPage = () => {
         {process.env.NODE_ENV === "development" ? (
           <>
             <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
+            Try contact <code style={codeStyles}>ottodeng9@gmail.com</code> for
+            help.
             <br />
           </>
         ) : null}
