@@ -77,6 +77,17 @@ const badgeStyle = {
 // data
 const links = [
   {
+    text: "About Me",
+    url: "about",
+    description: "Otto's profile page",
+  },
+
+  {
+    text: "Posts",
+    url: "posts",
+    description: "Non-daliy updates and articles written or digested by Otto.",
+  },
+  {
     text: "Repository",
     url: "https://github.com/ottoqwq",
     description:
@@ -84,20 +95,11 @@ const links = [
     color: "#d868a9",
   },
   {
-    text: "Posts",
-    url: "posts",
-    description: "Non-daliy updates and articles written or digested by Otto.",
-  },
-  {
     text: "Channel",
     url: "https://t.me/otttos_daily",
     description: "Otto's Telegram channel",
   },
-  {
-    text: "About Me",
-    url: "about",
-    description: "Otto's profile page",
-  },
+
 ];
 
 // markup

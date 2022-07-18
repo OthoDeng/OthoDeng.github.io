@@ -89,6 +89,20 @@ const AboutPage = () => {
       <p>时常会感慨修短随化，因而希望莫使金樽空对月。</p>
       <p>也就是我的频道名称来源</p>
       <p>认同柏拉图的学说，现在信奉尼采与萨特的学说。</p>
+      <div>
+      <h2>
+        <span style={headingAccentStyles}>联系方式</span>
+      </h2>
+          <p>
+      个人邮箱是<mail style={codeStyles}><Link to="mailto:ottodeng9@gmail.com">ottodeng9[at]gmail[dot]com</Link></mail>
+      </p>
+      <p>
+        一般情况下，Otto 会在 <Link to="https://t.me/OttoDeng">Telegram</Link> 上活跃，为防止垃圾消息过多，因而并未设置用户名。
+      </p>
+  
+      <p>
+        你也会在其他地方找到 Otto ，一般以 <bold style={codeStyles}>Otto the-{"<Related Suffix>"}</bold> 的方式呈现(如 Otto the-e 最为常见)。 
+      </p></div>
       <footer>
         <Link to="/">Go home</Link>
       </footer>

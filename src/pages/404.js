@@ -31,7 +31,12 @@ const NotFoundPage = () => {
       <title>Not found</title>
       <h1 style={headingStyles}>Page not found</h1>
       <p style={paragraphStyles}>
-        Sorry{" "}
+        <h2>Sorry{" "}</h2>
+        <img
+        class="fit-picture"
+        src="/src/images/404"
+        alt="404 kitty not found"
+      ></img>
         <span role="img" aria-label="Pensive emoji">
           😔
         </span>{" "}
@@ -40,7 +45,7 @@ const NotFoundPage = () => {
         {process.env.NODE_ENV === "development" ? (
           <>
             <br />
-            Try contact <code style={codeStyles}>ottodeng9@gmail.com</code> for
+            Try contact <code style={codeStyles}><Link to="mailto:ottodeng9@gmail.com"> ottodeng9@gmail.com</Link></code> for
             help.
             <br />
           </>

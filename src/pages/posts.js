@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import * as React from "react";
 
 // styles
@@ -74,11 +75,50 @@ const badgeStyle = {
   lineHeight: 1,
 };
 
+// data
+const links = [
+  {
+    text: "Hello New World",
+    url: "/blog/2022-7-18-hello-new-world",
+    date: "2022/7/18",
+    brief: "Of rebuilding my site"
+  },
+];
+
 // components
 const Posts = () => {
     return (
         <main style={pageStyles}>
             <title>Otto's Posts</title> 
+            <ul style={listStyles}>
+        {links.map((link) => (
+          <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
+            <span>
+              <a
+                style={linkStyle}
+                href={`${link.url}`}
+              >
+                {link.text}
+                <div style={descriptionStyle}>{link.brief}</div>
+                <div>{link.date}</div>
+              </a>
+              <p style={descriptionStyle}>{link.description}</p>
+            </span>
+          </li>
+        ))}
+      </ul>
+      <footer>
+        <Link to="/">Go Home</Link>
+        <p>
+          Projects by <a href="https://github.com/ottoqwq"> Otto Deng</a>.
+          Powered by <a href="https://www.gatsbyjs.com/">Gatsby</a>
+        </p>
+        <p>
+          Content on this site is licensed under{" "}
+          <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>{" "}
+          unless specified.
+        </p>
+      </footer>
         </main>
     );
 };
