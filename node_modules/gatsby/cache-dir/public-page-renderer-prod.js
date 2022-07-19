@@ -1,11 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import loader from "./loader"
 import InternalPageRenderer from "./page-renderer"
 
-const ProdPageRenderer = ({ location }) => {
-  const pageResources = loader.loadPageSync(location.pathname)
+const ProdPageRenderer = ({ location, pageResources }) => {
   if (!pageResources) {
     return null
   }

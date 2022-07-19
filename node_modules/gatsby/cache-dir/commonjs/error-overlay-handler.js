@@ -1,26 +1,51 @@
 "use strict";
 
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
+
 exports.__esModule = true;
-exports.reportError = exports.clearError = void 0;
+exports.errorMap = exports.reportError = exports.clearError = void 0;
+
+var ErrorOverlay = _interopRequireWildcard(require("react-error-overlay"));
+
+// Report runtime errors
+ErrorOverlay.startReportingRuntimeErrors({
+  onError: () => {},
+  filename: `/commons.js`
+});
+ErrorOverlay.setEditorHandler(errorLocation => window.fetch(`/__open-stack-frame-in-editor?fileName=` + window.encodeURIComponent(errorLocation.fileName) + `&lineNumber=` + window.encodeURIComponent(errorLocation.lineNumber || 1)));
 const errorMap = {};
+exports.errorMap = errorMap;
+
+function flat(arr) {
+  return Array.prototype.flat ? arr.flat() : [].concat(...arr);
+}
 
 const handleErrorOverlay = () => {
   const errors = Object.values(errorMap);
-  let errorsToDisplay = [];
+  let errorStringsToDisplay = [];
 
   if (errors.length > 0) {
-    errorsToDisplay = errors.flatMap(e => e).filter(Boolean);
+    errorStringsToDisplay = flat(errors).map(error => {
+      if (typeof error === `string`) {
+        return error;
+      } else if (typeof error === `object`) {
+        const errorStrBuilder = [error.text];
+
+        if (error.filePath) {
+          errorStrBuilder.push(`File: ${error.filePath}`);
+        }
+
+        return errorStrBuilder.join(`\n\n`);
+      }
+
+      return null;
+    }).filter(Boolean);
   }
 
-  if (errorsToDisplay.length > 0) {
-    window._gatsbyEvents.push([`FAST_REFRESH`, {
-      action: `SHOW_GRAPHQL_ERRORS`,
-      payload: errorsToDisplay
-    }]);
+  if (errorStringsToDisplay.length > 0) {
+    ErrorOverlay.reportBuildError(errorStringsToDisplay.join(`\n\n`));
   } else {
-    window._gatsbyEvents.push([`FAST_REFRESH`, {
-      action: `CLEAR_GRAPHQL_ERRORS`
-    }]);
+    ErrorOverlay.dismissBuildError();
   }
 };
 
