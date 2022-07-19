@@ -81,23 +81,26 @@ const links = [
     text: "Hello New World",
     url: "/blog/2022-7-18-hello-new-world",
     date: "2022/7/18",
-    brief: "Of rebuilding my site"
+    brief: "Of rebuilding my site",
+  },
+  {
+    text: "关于诗歌鉴赏一些笔记",
+    url: "/blog/2022-7-17-of-poetry",
+    date: "2022/7/17",
+    brief: "柳暗花明又一村",
   },
 ];
 
 // components
 const Posts = () => {
-    return (
-        <main style={pageStyles}>
-            <title>Otto's Posts</title> 
-            <ul style={listStyles}>
+  return (
+    <main style={pageStyles}>
+      <title>Otto's Posts</title>
+      <ul style={listStyles}>
         {links.map((link) => (
           <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
             <span>
-              <a
-                style={linkStyle}
-                href={`${link.url}`}
-              >
+              <a style={linkStyle} href={`${link.url}`}>
                 {link.text}
                 <div style={descriptionStyle}>{link.brief}</div>
                 <div>{link.date}</div>
@@ -119,8 +122,9 @@ const Posts = () => {
           unless specified.
         </p>
       </footer>
-        </main>
-    );
+    </main>
+  );
 };
-  
+
 export default Posts;
+

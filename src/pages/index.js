@@ -2,19 +2,18 @@ import * as React from "react";
 
 // styles
 const pageStyles = {
-  color: "#d895bc",
+  color: "#c868a9",
   padding: 96,
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 };
 const headingStyles = {
   marginTop: 0,
   marginBottom: 64,
-  maxWidth: 320,
   fontSize: "2rem",
 };
 const headingAccentStyles = {
-  color: "#d868a9",
-  fontSize: "1rem",
+  color: "#a991b0",
+  fontSize: "0.75rem",
 };
 const paragraphStyles = {
   marginBottom: 48,
@@ -33,7 +32,6 @@ const listStyles = {
 const listItemStyles = {
   fontWeight: 300,
   fontSize: 24,
-  maxWidth: 560,
   marginBottom: 30,
 };
 
@@ -92,20 +90,18 @@ const links = [
     url: "https://github.com/ottoqwq",
     description:
       "Otto's personal GitHub repository. Contains all of Otto's work.",
-    color: "#d868a9",
   },
   {
     text: "Channel",
     url: "https://t.me/otttos_daily",
     description: "Otto's Telegram channel",
   },
-
 ];
 
 // markup
 const IndexPage = () => {
   return (
-    <main style={pageStyles}>
+    <main align="center" style={pageStyles}>
       <title>Otto's Blog | OttoDeng</title>
       <h1 style={headingStyles}>
         Otto's Blog
