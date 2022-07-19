@@ -16,7 +16,8 @@
   },
   "dependencies": {
     "cross-env": "^7.0.3",
-    "gatsby": "^4.16.0",
+    "gatsby": "^4.19.0",
+    "gatsby-source-filesystem": "^1.4.8",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
   }

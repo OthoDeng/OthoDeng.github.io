@@ -1,0 +1,5 @@
+
+    const cmd = require("/home/ottoqwq/ottoqwq.github.io/node_modules/gatsby/dist/commands/develop-process.js");
+    const args = {"_":["develop"],"verbose":false,"no-color":false,"no-colors":false,"noColors":false,"noColor":false,"json":false,"H":"localhost","host":"localhost","p":"8000","port":8000,"c":"","cert-file":"","certFile":"","k":"","key-file":"","keyFile":"","ca-file":"","caFile":"","graphql-tracing":false,"graphqlTracing":false,"$0":"gatsby","directory":"/home/ottoqwq/ottoqwq.github.io","browserslist":[">0.25%","not dead"],"sitePackageJson":{"name":"my-gatsby-site","version":"1.0.0","private":true,"description":"my-gatsby-site","author":"ottoqwq","keywords":["gatsby"],"scripts":{"develop":"gatsby develop","start":"gatsby develop","build":"gatsby build","serve":"gatsby serve","clean":"gatsby clean"},"dependencies":{"cross-env":"^7.0.3","gatsby":"^4.19.0","gatsby-source-filesystem":"^1.4.8","react":"^18.1.0","react-dom":"^18.1.0"}},"report":{"errorMap":{}},"useYarn":false,"proxyPort":8000,"ssl":null,"debugInfo":null};
+    cmd(args);
+  

@@ -3,4 +3,4 @@ module.exports = {
     siteUrl: `https://ottoqwq.github.io/`,
   },
   plugins: [],
-}
+};
