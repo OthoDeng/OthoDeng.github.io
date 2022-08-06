@@ -38,7 +38,8 @@ var formatRelativeLocale = {
   },
   other: 'P'
 };
-export default function formatRelative(token, date, _baseDate, _options) {
+
+var formatRelative = function (token, date, _baseDate, _options) {
   var format = formatRelativeLocale[token];
 
   if (typeof format === 'function') {
@@ -46,4 +47,6 @@ export default function formatRelative(token, date, _baseDate, _options) {
   }
 
   return format;
-}
+};
+
+export default formatRelative;

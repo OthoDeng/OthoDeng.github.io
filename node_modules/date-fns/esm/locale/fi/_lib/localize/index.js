@@ -17,9 +17,7 @@ var monthValues = {
 var formattingMonthValues = {
   narrow: monthValues.narrow,
   abbreviated: monthValues.abbreviated,
-  wide: monthValues.wide.map(function (name) {
-    return name + 'ta';
-  })
+  wide: ['tammikuuta', 'helmikuuta', 'maaliskuuta', 'huhtikuuta', 'toukokuuta', 'kesäkuuta', 'heinäkuuta', 'elokuuta', 'syyskuuta', 'lokakuuta', 'marraskuuta', 'joulukuuta']
 };
 var dayValues = {
   narrow: ['S', 'M', 'T', 'K', 'T', 'P', 'L'],
@@ -31,9 +29,7 @@ var formattingDayValues = {
   narrow: dayValues.narrow,
   short: dayValues.short,
   abbreviated: dayValues.abbreviated,
-  wide: dayValues.wide.map(function (name) {
-    return name + 'na';
-  })
+  wide: ['sunnuntaina', 'maanantaina', 'tiistaina', 'keskiviikkona', 'torstaina', 'perjantaina', 'lauantaina']
 };
 var dayPeriodValues = {
   narrow: {
@@ -68,10 +64,10 @@ var dayPeriodValues = {
   }
 };
 
-function ordinalNumber(dirtyNumber) {
+var ordinalNumber = function (dirtyNumber, _options) {
   var number = Number(dirtyNumber);
   return number + '.';
-}
+};
 
 var localize = {
   ordinalNumber: ordinalNumber,
@@ -83,18 +79,20 @@ var localize = {
     values: quarterValues,
     defaultWidth: 'wide',
     argumentCallback: function (quarter) {
-      return Number(quarter) - 1;
+      return quarter - 1;
     }
   }),
   month: buildLocalizeFn({
     values: monthValues,
+    defaultWidth: 'wide',
     formattingValues: formattingMonthValues,
-    defaultWidth: 'wide'
+    defaultFormattingWidth: 'wide'
   }),
   day: buildLocalizeFn({
     values: dayValues,
+    defaultWidth: 'wide',
     formattingValues: formattingDayValues,
-    defaultWidth: 'wide'
+    defaultFormattingWidth: 'wide'
   }),
   dayPeriod: buildLocalizeFn({
     values: dayPeriodValues,

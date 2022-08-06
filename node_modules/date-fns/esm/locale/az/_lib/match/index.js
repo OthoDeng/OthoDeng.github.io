@@ -1,5 +1,5 @@
-import buildMatchPatternFn from "../../../_lib/buildMatchPatternFn/index.js";
 import buildMatchFn from "../../../_lib/buildMatchFn/index.js";
+import buildMatchPatternFn from "../../../_lib/buildMatchPatternFn/index.js";
 var matchOrdinalNumberPattern = /^(\d+)(-?(ci|inci|nci|uncu|üncü|ncı))?/i;
 var parseOrdinalNumberPattern = /\d+/i;
 var matchEraPatterns = {
@@ -76,7 +76,7 @@ var match = {
     parsePatterns: parseQuarterPatterns,
     defaultParseWidth: 'any',
     valueCallback: function (index) {
-      return Number(index) + 1;
+      return index + 1;
     }
   }),
   month: buildMatchFn({

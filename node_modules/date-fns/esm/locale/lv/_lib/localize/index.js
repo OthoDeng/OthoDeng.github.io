@@ -101,9 +101,10 @@ var formattingDayPeriodValues = {
   }
 };
 
-function ordinalNumber(number, _options) {
+var ordinalNumber = function (dirtyNumber, _options) {
+  var number = Number(dirtyNumber);
   return number + '.';
-}
+};
 
 var localize = {
   ordinalNumber: ordinalNumber,
@@ -117,7 +118,7 @@ var localize = {
     formattingValues: formattingQuarterValues,
     defaultFormattingWidth: 'wide',
     argumentCallback: function (quarter) {
-      return Number(quarter) - 1;
+      return quarter - 1;
     }
   }),
   month: buildLocalizeFn({

@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Link } from "gatsby";
+import NotFound from "../images/404.jpeg";
 
 // styles
 const pageStyles = {
@@ -30,7 +31,10 @@ const NotFoundPage = () => {
       <title>Not found</title>
       <h1 style={headingStyles}>Page not found</h1>
       <p style={paragraphStyles}>
-        <h2>Sorry </h2>
+        <h2>Sorry</h2>
+        <p>
+          <img src={NotFound} alt="404 not found" width={200} />
+        </p>
         <span role="img" aria-label="Pensive emoji">
           😔
         </span>{" "}

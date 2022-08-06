@@ -90,9 +90,8 @@ var formattingDayPeriodValues = {
   }
 };
 
-var ordinalNumber = function (dirtyNumber, dirtyOptions) {
-  var options = dirtyOptions || {};
-  var unit = String(options.unit);
+var ordinalNumber = function (dirtyNumber, options) {
+  var unit = String(options === null || options === void 0 ? void 0 : options.unit);
   var number = Number(dirtyNumber);
   var suffix;
   /** Though it's an incorrect ordinal form of a date we use it here for consistency with other similar locales (ru, uk)
@@ -129,7 +128,7 @@ var localize = {
     values: quarterValues,
     defaultWidth: 'wide',
     argumentCallback: function (quarter) {
-      return Number(quarter) - 1;
+      return quarter - 1;
     }
   }),
   month: buildLocalizeFn({

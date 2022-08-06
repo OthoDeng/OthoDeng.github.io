@@ -126,7 +126,7 @@ var getSuffix = function (number) {
   return '';
 };
 
-var ordinalNumber = function (dirtyNumber, _dirtyOptions) {
+var ordinalNumber = function (dirtyNumber, _options) {
   var number = Number(dirtyNumber);
   var suffix = getSuffix(number);
   return number + suffix;
@@ -142,7 +142,7 @@ var localize = {
     values: quarterValues,
     defaultWidth: 'wide',
     argumentCallback: function (quarter) {
-      return Number(quarter) - 1;
+      return quarter - 1;
     }
   }),
   month: buildLocalizeFn({

@@ -68,10 +68,10 @@ var dayPeriodValues = {
   }
 };
 
-function ordinalNumber(dirtyNumber, _dirtyOptions) {
+var ordinalNumber = function (dirtyNumber, _options) {
   var number = Number(dirtyNumber);
   return number + '.';
-}
+};
 
 var localize = {
   ordinalNumber: ordinalNumber,
@@ -82,10 +82,11 @@ var localize = {
   quarter: (0, _index.default)({
     values: quarterValues,
     defaultWidth: 'wide',
-    formattingValues: formattingQuarterValues,
     argumentCallback: function (quarter) {
-      return Number(quarter) - 1;
-    }
+      return quarter - 1;
+    },
+    formattingValues: formattingQuarterValues,
+    defaultFormattingWidth: 'wide'
   }),
   month: (0, _index.default)({
     values: monthValues,
@@ -97,8 +98,7 @@ var localize = {
   }),
   dayPeriod: (0, _index.default)({
     values: dayPeriodValues,
-    defaultWidth: 'wide',
-    defaultFormattingWidth: 'wide'
+    defaultWidth: 'wide'
   })
 };
 var _default = localize;

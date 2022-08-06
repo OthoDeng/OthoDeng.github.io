@@ -99,24 +99,13 @@ var formattingDayPeriodValues = {
   }
 };
 
-function ordinalNumber(dirtyNumber, _dirtyOptions) {
-  var number = Number(dirtyNumber); // If ordinal numbers depend on context, for example,
-  // if they are different for different grammatical genders,
-  // use `options.unit`:
-  //
-  //   var options = dirtyOptions || {}
-  //   var unit = String(options.unit)
-  //
-  // where `unit` can be 'year', 'quarter', 'month', 'week', 'date', 'dayOfYear',
-  // 'day', 'hour', 'minute', 'second'
-
-  var options = _dirtyOptions || {};
-  var unit = String(options.unit);
-  if (unit === 'hour') return number;
+var ordinalNumber = function (dirtyNumber, options) {
+  var number = Number(dirtyNumber);
+  if ((options === null || options === void 0 ? void 0 : options.unit) === 'hour') return String(number);
   if (number === 1) return number + '-rë';
   if (number === 4) return number + 't';
   return number + '-të';
-}
+};
 
 var localize = {
   ordinalNumber: ordinalNumber,
@@ -128,7 +117,7 @@ var localize = {
     values: quarterValues,
     defaultWidth: 'wide',
     argumentCallback: function (quarter) {
-      return Number(quarter) - 1;
+      return quarter - 1;
     }
   }),
   month: (0, _index.default)({

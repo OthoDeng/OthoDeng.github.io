@@ -70,7 +70,7 @@ var match = {
     matchPatterns: matchEraPatterns,
     defaultMatchWidth: 'wide',
     parsePatterns: parseEraPatterns,
-    defaultParseWidth: 'any'
+    defaultParseWidth: 'wide'
   }),
   quarter: buildMatchFn({
     matchPatterns: matchQuarterPatterns,
@@ -85,17 +85,17 @@ var match = {
     matchPatterns: matchMonthPatterns,
     defaultMatchWidth: 'wide',
     parsePatterns: parseMonthPatterns,
-    defaultParseWidth: 'any'
+    defaultParseWidth: 'wide'
   }),
   day: buildMatchFn({
     matchPatterns: matchDayPatterns,
     defaultMatchWidth: 'wide',
     parsePatterns: parseDayPatterns,
-    defaultParseWidth: 'any'
+    defaultParseWidth: 'wide'
   }),
   dayPeriod: buildMatchFn({
     matchPatterns: matchDayPeriodPatterns,
-    defaultMatchWidth: 'any',
+    defaultMatchWidth: 'wide',
     parsePatterns: parseDayPeriodPatterns,
     defaultParseWidth: 'any'
   })

@@ -42,7 +42,7 @@ var dayPeriodValues = {
   }
 };
 
-function ordinalNumber(dirtyNumber) {
+var ordinalNumber = function (dirtyNumber, _options) {
   var number = Number(dirtyNumber);
   var rem100 = number % 100;
 
@@ -61,7 +61,7 @@ function ordinalNumber(dirtyNumber) {
   }
 
   return number + '-ти';
-}
+};
 
 var localize = {
   ordinalNumber: ordinalNumber,
@@ -73,7 +73,7 @@ var localize = {
     values: quarterValues,
     defaultWidth: 'wide',
     argumentCallback: function (quarter) {
-      return Number(quarter) - 1;
+      return quarter - 1;
     }
   }),
   month: (0, _index.default)({

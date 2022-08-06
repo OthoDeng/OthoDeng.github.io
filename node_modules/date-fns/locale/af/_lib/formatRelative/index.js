@@ -13,7 +13,7 @@ var formatRelativeLocale = {
   other: 'P'
 };
 
-var formatRelative = function (token) {
+var formatRelative = function (token, _date, _baseDate, _options) {
   return formatRelativeLocale[token];
 };
 

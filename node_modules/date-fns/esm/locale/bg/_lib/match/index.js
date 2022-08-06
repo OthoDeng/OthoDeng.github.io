@@ -70,7 +70,7 @@ var match = {
     parsePatterns: parseQuarterPatterns,
     defaultParseWidth: 'any',
     valueCallback: function (index) {
-      return Number(index) + 1;
+      return index + 1;
     }
   }),
   month: buildMatchFn({

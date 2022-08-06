@@ -2,7 +2,7 @@ import * as React from "react";
 
 // styles
 const pageStyles = {
-  color: "#c868a9",
+  color: "#F2ABBD",
   padding: 96,
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 };
@@ -12,7 +12,7 @@ const headingStyles = {
   fontSize: "2rem",
 };
 const headingAccentStyles = {
-  color: "#a991b0",
+  color: "#DA697D",
   fontSize: "0.75rem",
 };
 const paragraphStyles = {
@@ -36,7 +36,7 @@ const listItemStyles = {
 };
 
 const linkStyle = {
-  color: "#d164cb",
+  color: "#ce94ae",
   fontWeight: "bold",
   fontSize: 16,
   verticalAlign: "5%",
@@ -127,8 +127,12 @@ const IndexPage = () => {
       </ul>
       <footer>
         <p>
-          Projects by <a href="https://github.com/ottoqwq"> Otto Deng</a>.
-          Powered by <a href="https://www.gatsbyjs.com/">Gatsby</a>
+          Projects by{" "}
+          <a href="https://github.com/ottoqwq">
+            {" "}
+            <hi style={codeStyles}>Otto Deng</hi>
+          </a>
+          . Powered by <a href="https://www.gatsbyjs.com/">Gatsby</a>
         </p>
         <p>
           Content on this site is licensed under{" "}

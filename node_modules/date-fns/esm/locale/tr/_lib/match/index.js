@@ -33,12 +33,12 @@ var matchDayPatterns = {
   narrow: /^[psçc]/i,
   short: /^(pz|pt|sa|ça|pe|cu|ct)/i,
   abbreviated: /^(paz|pzt|sal|çar|per|cum|cts)/i,
-  wide: /^(pazar|pazartesi|salı|çarşamba|perşembe|cuma|cumartesi)/i
+  wide: /^(pazar(?!tesi)|pazartesi|salı|çarşamba|perşembe|cuma(?!rtesi)|cumartesi)/i
 };
 var parseDayPatterns = {
   narrow: [/^p/i, /^p/i, /^s/i, /^ç/i, /^p/i, /^c/i, /^c/i],
   any: [/^pz/i, /^pt/i, /^sa/i, /^ça/i, /^pe/i, /^cu/i, /^ct/i],
-  wide: [/^pazar/i, /^pazartesi/i, /^salı/i, /^çarşamba/i, /^perşembe/i, /^cuma/i, /cumartesi/i]
+  wide: [/^pazar(?!tesi)/i, /^pazartesi/i, /^salı/i, /^çarşamba/i, /^perşembe/i, /^cuma(?!rtesi)/i, /^cumartesi/i]
 };
 var matchDayPeriodPatterns = {
   narrow: /^(öö|ös|gy|ö|sa|ös|ak|ge)/i,

@@ -127,6 +127,8 @@ var _exportNames = {
   hoursToSeconds: true,
   intervalToDuration: true,
   intlFormat: true,
+  intlFormatDistance: true,
+  intlFormatDistanceWithOptions: true,
   isAfter: true,
   isBefore: true,
   isDate: true,
@@ -995,778 +997,790 @@ Object.defineProperty(exports, "intlFormat", {
     return _index123.default;
   }
 });
-Object.defineProperty(exports, "isAfter", {
+Object.defineProperty(exports, "intlFormatDistance", {
   enumerable: true,
   get: function () {
     return _index124.default;
   }
 });
-Object.defineProperty(exports, "isBefore", {
+Object.defineProperty(exports, "intlFormatDistanceWithOptions", {
   enumerable: true,
   get: function () {
     return _index125.default;
   }
 });
-Object.defineProperty(exports, "isDate", {
+Object.defineProperty(exports, "isAfter", {
   enumerable: true,
   get: function () {
     return _index126.default;
   }
 });
-Object.defineProperty(exports, "isEqual", {
+Object.defineProperty(exports, "isBefore", {
   enumerable: true,
   get: function () {
     return _index127.default;
   }
 });
-Object.defineProperty(exports, "isExists", {
+Object.defineProperty(exports, "isDate", {
   enumerable: true,
   get: function () {
     return _index128.default;
   }
 });
-Object.defineProperty(exports, "isFirstDayOfMonth", {
+Object.defineProperty(exports, "isEqual", {
   enumerable: true,
   get: function () {
     return _index129.default;
   }
 });
-Object.defineProperty(exports, "isFriday", {
+Object.defineProperty(exports, "isExists", {
   enumerable: true,
   get: function () {
     return _index130.default;
   }
 });
-Object.defineProperty(exports, "isLastDayOfMonth", {
+Object.defineProperty(exports, "isFirstDayOfMonth", {
   enumerable: true,
   get: function () {
     return _index131.default;
   }
 });
-Object.defineProperty(exports, "isLeapYear", {
+Object.defineProperty(exports, "isFriday", {
   enumerable: true,
   get: function () {
     return _index132.default;
   }
 });
-Object.defineProperty(exports, "isMatch", {
+Object.defineProperty(exports, "isLastDayOfMonth", {
   enumerable: true,
   get: function () {
     return _index133.default;
   }
 });
-Object.defineProperty(exports, "isMatchWithOptions", {
+Object.defineProperty(exports, "isLeapYear", {
   enumerable: true,
   get: function () {
     return _index134.default;
   }
 });
-Object.defineProperty(exports, "isMonday", {
+Object.defineProperty(exports, "isMatch", {
   enumerable: true,
   get: function () {
     return _index135.default;
   }
 });
-Object.defineProperty(exports, "isSameDay", {
+Object.defineProperty(exports, "isMatchWithOptions", {
   enumerable: true,
   get: function () {
     return _index136.default;
   }
 });
-Object.defineProperty(exports, "isSameHour", {
+Object.defineProperty(exports, "isMonday", {
   enumerable: true,
   get: function () {
     return _index137.default;
   }
 });
-Object.defineProperty(exports, "isSameISOWeek", {
+Object.defineProperty(exports, "isSameDay", {
   enumerable: true,
   get: function () {
     return _index138.default;
   }
 });
-Object.defineProperty(exports, "isSameISOWeekYear", {
+Object.defineProperty(exports, "isSameHour", {
   enumerable: true,
   get: function () {
     return _index139.default;
   }
 });
-Object.defineProperty(exports, "isSameMinute", {
+Object.defineProperty(exports, "isSameISOWeek", {
   enumerable: true,
   get: function () {
     return _index140.default;
   }
 });
-Object.defineProperty(exports, "isSameMonth", {
+Object.defineProperty(exports, "isSameISOWeekYear", {
   enumerable: true,
   get: function () {
     return _index141.default;
   }
 });
-Object.defineProperty(exports, "isSameQuarter", {
+Object.defineProperty(exports, "isSameMinute", {
   enumerable: true,
   get: function () {
     return _index142.default;
   }
 });
-Object.defineProperty(exports, "isSameSecond", {
+Object.defineProperty(exports, "isSameMonth", {
   enumerable: true,
   get: function () {
     return _index143.default;
   }
 });
-Object.defineProperty(exports, "isSameWeek", {
+Object.defineProperty(exports, "isSameQuarter", {
   enumerable: true,
   get: function () {
     return _index144.default;
   }
 });
-Object.defineProperty(exports, "isSameWeekWithOptions", {
+Object.defineProperty(exports, "isSameSecond", {
   enumerable: true,
   get: function () {
     return _index145.default;
   }
 });
-Object.defineProperty(exports, "isSameYear", {
+Object.defineProperty(exports, "isSameWeek", {
   enumerable: true,
   get: function () {
     return _index146.default;
   }
 });
-Object.defineProperty(exports, "isSaturday", {
+Object.defineProperty(exports, "isSameWeekWithOptions", {
   enumerable: true,
   get: function () {
     return _index147.default;
   }
 });
-Object.defineProperty(exports, "isSunday", {
+Object.defineProperty(exports, "isSameYear", {
   enumerable: true,
   get: function () {
     return _index148.default;
   }
 });
-Object.defineProperty(exports, "isThursday", {
+Object.defineProperty(exports, "isSaturday", {
   enumerable: true,
   get: function () {
     return _index149.default;
   }
 });
-Object.defineProperty(exports, "isTuesday", {
+Object.defineProperty(exports, "isSunday", {
   enumerable: true,
   get: function () {
     return _index150.default;
   }
 });
-Object.defineProperty(exports, "isValid", {
+Object.defineProperty(exports, "isThursday", {
   enumerable: true,
   get: function () {
     return _index151.default;
   }
 });
-Object.defineProperty(exports, "isWednesday", {
+Object.defineProperty(exports, "isTuesday", {
   enumerable: true,
   get: function () {
     return _index152.default;
   }
 });
-Object.defineProperty(exports, "isWeekend", {
+Object.defineProperty(exports, "isValid", {
   enumerable: true,
   get: function () {
     return _index153.default;
   }
 });
-Object.defineProperty(exports, "isWithinInterval", {
+Object.defineProperty(exports, "isWednesday", {
   enumerable: true,
   get: function () {
     return _index154.default;
   }
 });
-Object.defineProperty(exports, "lastDayOfDecade", {
+Object.defineProperty(exports, "isWeekend", {
   enumerable: true,
   get: function () {
     return _index155.default;
   }
 });
-Object.defineProperty(exports, "lastDayOfISOWeek", {
+Object.defineProperty(exports, "isWithinInterval", {
   enumerable: true,
   get: function () {
     return _index156.default;
   }
 });
-Object.defineProperty(exports, "lastDayOfISOWeekYear", {
+Object.defineProperty(exports, "lastDayOfDecade", {
   enumerable: true,
   get: function () {
     return _index157.default;
   }
 });
-Object.defineProperty(exports, "lastDayOfMonth", {
+Object.defineProperty(exports, "lastDayOfISOWeek", {
   enumerable: true,
   get: function () {
     return _index158.default;
   }
 });
-Object.defineProperty(exports, "lastDayOfQuarter", {
+Object.defineProperty(exports, "lastDayOfISOWeekYear", {
   enumerable: true,
   get: function () {
     return _index159.default;
   }
 });
-Object.defineProperty(exports, "lastDayOfQuarterWithOptions", {
+Object.defineProperty(exports, "lastDayOfMonth", {
   enumerable: true,
   get: function () {
     return _index160.default;
   }
 });
-Object.defineProperty(exports, "lastDayOfWeek", {
+Object.defineProperty(exports, "lastDayOfQuarter", {
   enumerable: true,
   get: function () {
     return _index161.default;
   }
 });
-Object.defineProperty(exports, "lastDayOfWeekWithOptions", {
+Object.defineProperty(exports, "lastDayOfQuarterWithOptions", {
   enumerable: true,
   get: function () {
     return _index162.default;
   }
 });
-Object.defineProperty(exports, "lastDayOfYear", {
+Object.defineProperty(exports, "lastDayOfWeek", {
   enumerable: true,
   get: function () {
     return _index163.default;
   }
 });
-Object.defineProperty(exports, "lightFormat", {
+Object.defineProperty(exports, "lastDayOfWeekWithOptions", {
   enumerable: true,
   get: function () {
     return _index164.default;
   }
 });
-Object.defineProperty(exports, "max", {
+Object.defineProperty(exports, "lastDayOfYear", {
   enumerable: true,
   get: function () {
     return _index165.default;
   }
 });
-Object.defineProperty(exports, "milliseconds", {
+Object.defineProperty(exports, "lightFormat", {
   enumerable: true,
   get: function () {
     return _index166.default;
   }
 });
-Object.defineProperty(exports, "millisecondsToHours", {
+Object.defineProperty(exports, "max", {
   enumerable: true,
   get: function () {
     return _index167.default;
   }
 });
-Object.defineProperty(exports, "millisecondsToMinutes", {
+Object.defineProperty(exports, "milliseconds", {
   enumerable: true,
   get: function () {
     return _index168.default;
   }
 });
-Object.defineProperty(exports, "millisecondsToSeconds", {
+Object.defineProperty(exports, "millisecondsToHours", {
   enumerable: true,
   get: function () {
     return _index169.default;
   }
 });
-Object.defineProperty(exports, "min", {
+Object.defineProperty(exports, "millisecondsToMinutes", {
   enumerable: true,
   get: function () {
     return _index170.default;
   }
 });
-Object.defineProperty(exports, "minutesToHours", {
+Object.defineProperty(exports, "millisecondsToSeconds", {
   enumerable: true,
   get: function () {
     return _index171.default;
   }
 });
-Object.defineProperty(exports, "minutesToMilliseconds", {
+Object.defineProperty(exports, "min", {
   enumerable: true,
   get: function () {
     return _index172.default;
   }
 });
-Object.defineProperty(exports, "minutesToSeconds", {
+Object.defineProperty(exports, "minutesToHours", {
   enumerable: true,
   get: function () {
     return _index173.default;
   }
 });
-Object.defineProperty(exports, "monthsToQuarters", {
+Object.defineProperty(exports, "minutesToMilliseconds", {
   enumerable: true,
   get: function () {
     return _index174.default;
   }
 });
-Object.defineProperty(exports, "monthsToYears", {
+Object.defineProperty(exports, "minutesToSeconds", {
   enumerable: true,
   get: function () {
     return _index175.default;
   }
 });
-Object.defineProperty(exports, "nextDay", {
+Object.defineProperty(exports, "monthsToQuarters", {
   enumerable: true,
   get: function () {
     return _index176.default;
   }
 });
-Object.defineProperty(exports, "nextFriday", {
+Object.defineProperty(exports, "monthsToYears", {
   enumerable: true,
   get: function () {
     return _index177.default;
   }
 });
-Object.defineProperty(exports, "nextMonday", {
+Object.defineProperty(exports, "nextDay", {
   enumerable: true,
   get: function () {
     return _index178.default;
   }
 });
-Object.defineProperty(exports, "nextSaturday", {
+Object.defineProperty(exports, "nextFriday", {
   enumerable: true,
   get: function () {
     return _index179.default;
   }
 });
-Object.defineProperty(exports, "nextSunday", {
+Object.defineProperty(exports, "nextMonday", {
   enumerable: true,
   get: function () {
     return _index180.default;
   }
 });
-Object.defineProperty(exports, "nextThursday", {
+Object.defineProperty(exports, "nextSaturday", {
   enumerable: true,
   get: function () {
     return _index181.default;
   }
 });
-Object.defineProperty(exports, "nextTuesday", {
+Object.defineProperty(exports, "nextSunday", {
   enumerable: true,
   get: function () {
     return _index182.default;
   }
 });
-Object.defineProperty(exports, "nextWednesday", {
+Object.defineProperty(exports, "nextThursday", {
   enumerable: true,
   get: function () {
     return _index183.default;
   }
 });
-Object.defineProperty(exports, "parse", {
+Object.defineProperty(exports, "nextTuesday", {
   enumerable: true,
   get: function () {
     return _index184.default;
   }
 });
-Object.defineProperty(exports, "parseISO", {
+Object.defineProperty(exports, "nextWednesday", {
   enumerable: true,
   get: function () {
     return _index185.default;
   }
 });
-Object.defineProperty(exports, "parseISOWithOptions", {
+Object.defineProperty(exports, "parse", {
   enumerable: true,
   get: function () {
     return _index186.default;
   }
 });
-Object.defineProperty(exports, "parseJSON", {
+Object.defineProperty(exports, "parseISO", {
   enumerable: true,
   get: function () {
     return _index187.default;
   }
 });
-Object.defineProperty(exports, "parseWithOptions", {
+Object.defineProperty(exports, "parseISOWithOptions", {
   enumerable: true,
   get: function () {
     return _index188.default;
   }
 });
-Object.defineProperty(exports, "previousDay", {
+Object.defineProperty(exports, "parseJSON", {
   enumerable: true,
   get: function () {
     return _index189.default;
   }
 });
-Object.defineProperty(exports, "previousFriday", {
+Object.defineProperty(exports, "parseWithOptions", {
   enumerable: true,
   get: function () {
     return _index190.default;
   }
 });
-Object.defineProperty(exports, "previousMonday", {
+Object.defineProperty(exports, "previousDay", {
   enumerable: true,
   get: function () {
     return _index191.default;
   }
 });
-Object.defineProperty(exports, "previousSaturday", {
+Object.defineProperty(exports, "previousFriday", {
   enumerable: true,
   get: function () {
     return _index192.default;
   }
 });
-Object.defineProperty(exports, "previousSunday", {
+Object.defineProperty(exports, "previousMonday", {
   enumerable: true,
   get: function () {
     return _index193.default;
   }
 });
-Object.defineProperty(exports, "previousThursday", {
+Object.defineProperty(exports, "previousSaturday", {
   enumerable: true,
   get: function () {
     return _index194.default;
   }
 });
-Object.defineProperty(exports, "previousTuesday", {
+Object.defineProperty(exports, "previousSunday", {
   enumerable: true,
   get: function () {
     return _index195.default;
   }
 });
-Object.defineProperty(exports, "previousWednesday", {
+Object.defineProperty(exports, "previousThursday", {
   enumerable: true,
   get: function () {
     return _index196.default;
   }
 });
-Object.defineProperty(exports, "quartersToMonths", {
+Object.defineProperty(exports, "previousTuesday", {
   enumerable: true,
   get: function () {
     return _index197.default;
   }
 });
-Object.defineProperty(exports, "quartersToYears", {
+Object.defineProperty(exports, "previousWednesday", {
   enumerable: true,
   get: function () {
     return _index198.default;
   }
 });
-Object.defineProperty(exports, "roundToNearestMinutes", {
+Object.defineProperty(exports, "quartersToMonths", {
   enumerable: true,
   get: function () {
     return _index199.default;
   }
 });
-Object.defineProperty(exports, "roundToNearestMinutesWithOptions", {
+Object.defineProperty(exports, "quartersToYears", {
   enumerable: true,
   get: function () {
     return _index200.default;
   }
 });
-Object.defineProperty(exports, "secondsToHours", {
+Object.defineProperty(exports, "roundToNearestMinutes", {
   enumerable: true,
   get: function () {
     return _index201.default;
   }
 });
-Object.defineProperty(exports, "secondsToMilliseconds", {
+Object.defineProperty(exports, "roundToNearestMinutesWithOptions", {
   enumerable: true,
   get: function () {
     return _index202.default;
   }
 });
-Object.defineProperty(exports, "secondsToMinutes", {
+Object.defineProperty(exports, "secondsToHours", {
   enumerable: true,
   get: function () {
     return _index203.default;
   }
 });
-Object.defineProperty(exports, "set", {
+Object.defineProperty(exports, "secondsToMilliseconds", {
   enumerable: true,
   get: function () {
     return _index204.default;
   }
 });
-Object.defineProperty(exports, "setDate", {
+Object.defineProperty(exports, "secondsToMinutes", {
   enumerable: true,
   get: function () {
     return _index205.default;
   }
 });
-Object.defineProperty(exports, "setDay", {
+Object.defineProperty(exports, "set", {
   enumerable: true,
   get: function () {
     return _index206.default;
   }
 });
-Object.defineProperty(exports, "setDayOfYear", {
+Object.defineProperty(exports, "setDate", {
   enumerable: true,
   get: function () {
     return _index207.default;
   }
 });
-Object.defineProperty(exports, "setDayWithOptions", {
+Object.defineProperty(exports, "setDay", {
   enumerable: true,
   get: function () {
     return _index208.default;
   }
 });
-Object.defineProperty(exports, "setHours", {
+Object.defineProperty(exports, "setDayOfYear", {
   enumerable: true,
   get: function () {
     return _index209.default;
   }
 });
-Object.defineProperty(exports, "setISODay", {
+Object.defineProperty(exports, "setDayWithOptions", {
   enumerable: true,
   get: function () {
     return _index210.default;
   }
 });
-Object.defineProperty(exports, "setISOWeek", {
+Object.defineProperty(exports, "setHours", {
   enumerable: true,
   get: function () {
     return _index211.default;
   }
 });
-Object.defineProperty(exports, "setISOWeekYear", {
+Object.defineProperty(exports, "setISODay", {
   enumerable: true,
   get: function () {
     return _index212.default;
   }
 });
-Object.defineProperty(exports, "setMilliseconds", {
+Object.defineProperty(exports, "setISOWeek", {
   enumerable: true,
   get: function () {
     return _index213.default;
   }
 });
-Object.defineProperty(exports, "setMinutes", {
+Object.defineProperty(exports, "setISOWeekYear", {
   enumerable: true,
   get: function () {
     return _index214.default;
   }
 });
-Object.defineProperty(exports, "setMonth", {
+Object.defineProperty(exports, "setMilliseconds", {
   enumerable: true,
   get: function () {
     return _index215.default;
   }
 });
-Object.defineProperty(exports, "setQuarter", {
+Object.defineProperty(exports, "setMinutes", {
   enumerable: true,
   get: function () {
     return _index216.default;
   }
 });
-Object.defineProperty(exports, "setSeconds", {
+Object.defineProperty(exports, "setMonth", {
   enumerable: true,
   get: function () {
     return _index217.default;
   }
 });
-Object.defineProperty(exports, "setWeek", {
+Object.defineProperty(exports, "setQuarter", {
   enumerable: true,
   get: function () {
     return _index218.default;
   }
 });
-Object.defineProperty(exports, "setWeekWithOptions", {
+Object.defineProperty(exports, "setSeconds", {
   enumerable: true,
   get: function () {
     return _index219.default;
   }
 });
-Object.defineProperty(exports, "setWeekYear", {
+Object.defineProperty(exports, "setWeek", {
   enumerable: true,
   get: function () {
     return _index220.default;
   }
 });
-Object.defineProperty(exports, "setWeekYearWithOptions", {
+Object.defineProperty(exports, "setWeekWithOptions", {
   enumerable: true,
   get: function () {
     return _index221.default;
   }
 });
-Object.defineProperty(exports, "setYear", {
+Object.defineProperty(exports, "setWeekYear", {
   enumerable: true,
   get: function () {
     return _index222.default;
   }
 });
-Object.defineProperty(exports, "startOfDay", {
+Object.defineProperty(exports, "setWeekYearWithOptions", {
   enumerable: true,
   get: function () {
     return _index223.default;
   }
 });
-Object.defineProperty(exports, "startOfDecade", {
+Object.defineProperty(exports, "setYear", {
   enumerable: true,
   get: function () {
     return _index224.default;
   }
 });
-Object.defineProperty(exports, "startOfHour", {
+Object.defineProperty(exports, "startOfDay", {
   enumerable: true,
   get: function () {
     return _index225.default;
   }
 });
-Object.defineProperty(exports, "startOfISOWeek", {
+Object.defineProperty(exports, "startOfDecade", {
   enumerable: true,
   get: function () {
     return _index226.default;
   }
 });
-Object.defineProperty(exports, "startOfISOWeekYear", {
+Object.defineProperty(exports, "startOfHour", {
   enumerable: true,
   get: function () {
     return _index227.default;
   }
 });
-Object.defineProperty(exports, "startOfMinute", {
+Object.defineProperty(exports, "startOfISOWeek", {
   enumerable: true,
   get: function () {
     return _index228.default;
   }
 });
-Object.defineProperty(exports, "startOfMonth", {
+Object.defineProperty(exports, "startOfISOWeekYear", {
   enumerable: true,
   get: function () {
     return _index229.default;
   }
 });
-Object.defineProperty(exports, "startOfQuarter", {
+Object.defineProperty(exports, "startOfMinute", {
   enumerable: true,
   get: function () {
     return _index230.default;
   }
 });
-Object.defineProperty(exports, "startOfSecond", {
+Object.defineProperty(exports, "startOfMonth", {
   enumerable: true,
   get: function () {
     return _index231.default;
   }
 });
-Object.defineProperty(exports, "startOfWeek", {
+Object.defineProperty(exports, "startOfQuarter", {
   enumerable: true,
   get: function () {
     return _index232.default;
   }
 });
-Object.defineProperty(exports, "startOfWeekWithOptions", {
+Object.defineProperty(exports, "startOfSecond", {
   enumerable: true,
   get: function () {
     return _index233.default;
   }
 });
-Object.defineProperty(exports, "startOfWeekYear", {
+Object.defineProperty(exports, "startOfWeek", {
   enumerable: true,
   get: function () {
     return _index234.default;
   }
 });
-Object.defineProperty(exports, "startOfWeekYearWithOptions", {
+Object.defineProperty(exports, "startOfWeekWithOptions", {
   enumerable: true,
   get: function () {
     return _index235.default;
   }
 });
-Object.defineProperty(exports, "startOfYear", {
+Object.defineProperty(exports, "startOfWeekYear", {
   enumerable: true,
   get: function () {
     return _index236.default;
   }
 });
-Object.defineProperty(exports, "sub", {
+Object.defineProperty(exports, "startOfWeekYearWithOptions", {
   enumerable: true,
   get: function () {
     return _index237.default;
   }
 });
-Object.defineProperty(exports, "subBusinessDays", {
+Object.defineProperty(exports, "startOfYear", {
   enumerable: true,
   get: function () {
     return _index238.default;
   }
 });
-Object.defineProperty(exports, "subDays", {
+Object.defineProperty(exports, "sub", {
   enumerable: true,
   get: function () {
     return _index239.default;
   }
 });
-Object.defineProperty(exports, "subHours", {
+Object.defineProperty(exports, "subBusinessDays", {
   enumerable: true,
   get: function () {
     return _index240.default;
   }
 });
-Object.defineProperty(exports, "subISOWeekYears", {
+Object.defineProperty(exports, "subDays", {
   enumerable: true,
   get: function () {
     return _index241.default;
   }
 });
-Object.defineProperty(exports, "subMilliseconds", {
+Object.defineProperty(exports, "subHours", {
   enumerable: true,
   get: function () {
     return _index242.default;
   }
 });
-Object.defineProperty(exports, "subMinutes", {
+Object.defineProperty(exports, "subISOWeekYears", {
   enumerable: true,
   get: function () {
     return _index243.default;
   }
 });
-Object.defineProperty(exports, "subMonths", {
+Object.defineProperty(exports, "subMilliseconds", {
   enumerable: true,
   get: function () {
     return _index244.default;
   }
 });
-Object.defineProperty(exports, "subQuarters", {
+Object.defineProperty(exports, "subMinutes", {
   enumerable: true,
   get: function () {
     return _index245.default;
   }
 });
-Object.defineProperty(exports, "subSeconds", {
+Object.defineProperty(exports, "subMonths", {
   enumerable: true,
   get: function () {
     return _index246.default;
   }
 });
-Object.defineProperty(exports, "subWeeks", {
+Object.defineProperty(exports, "subQuarters", {
   enumerable: true,
   get: function () {
     return _index247.default;
   }
 });
-Object.defineProperty(exports, "subYears", {
+Object.defineProperty(exports, "subSeconds", {
   enumerable: true,
   get: function () {
     return _index248.default;
   }
 });
-Object.defineProperty(exports, "toDate", {
+Object.defineProperty(exports, "subWeeks", {
   enumerable: true,
   get: function () {
     return _index249.default;
   }
 });
-Object.defineProperty(exports, "weeksToDays", {
+Object.defineProperty(exports, "subYears", {
   enumerable: true,
   get: function () {
     return _index250.default;
   }
 });
-Object.defineProperty(exports, "yearsToMonths", {
+Object.defineProperty(exports, "toDate", {
   enumerable: true,
   get: function () {
     return _index251.default;
   }
 });
-Object.defineProperty(exports, "yearsToQuarters", {
+Object.defineProperty(exports, "weeksToDays", {
   enumerable: true,
   get: function () {
     return _index252.default;
+  }
+});
+Object.defineProperty(exports, "yearsToMonths", {
+  enumerable: true,
+  get: function () {
+    return _index253.default;
+  }
+});
+Object.defineProperty(exports, "yearsToQuarters", {
+  enumerable: true,
+  get: function () {
+    return _index254.default;
   }
 });
 
@@ -2016,273 +2030,277 @@ var _index122 = _interopRequireDefault(require("./intervalToDuration/index.js"))
 
 var _index123 = _interopRequireDefault(require("./intlFormat/index.js"));
 
-var _index124 = _interopRequireDefault(require("./isAfter/index.js"));
+var _index124 = _interopRequireDefault(require("./intlFormatDistance/index.js"));
 
-var _index125 = _interopRequireDefault(require("./isBefore/index.js"));
+var _index125 = _interopRequireDefault(require("./intlFormatDistanceWithOptions/index.js"));
 
-var _index126 = _interopRequireDefault(require("./isDate/index.js"));
+var _index126 = _interopRequireDefault(require("./isAfter/index.js"));
 
-var _index127 = _interopRequireDefault(require("./isEqual/index.js"));
+var _index127 = _interopRequireDefault(require("./isBefore/index.js"));
 
-var _index128 = _interopRequireDefault(require("./isExists/index.js"));
+var _index128 = _interopRequireDefault(require("./isDate/index.js"));
 
-var _index129 = _interopRequireDefault(require("./isFirstDayOfMonth/index.js"));
+var _index129 = _interopRequireDefault(require("./isEqual/index.js"));
 
-var _index130 = _interopRequireDefault(require("./isFriday/index.js"));
+var _index130 = _interopRequireDefault(require("./isExists/index.js"));
 
-var _index131 = _interopRequireDefault(require("./isLastDayOfMonth/index.js"));
+var _index131 = _interopRequireDefault(require("./isFirstDayOfMonth/index.js"));
 
-var _index132 = _interopRequireDefault(require("./isLeapYear/index.js"));
+var _index132 = _interopRequireDefault(require("./isFriday/index.js"));
 
-var _index133 = _interopRequireDefault(require("./isMatch/index.js"));
+var _index133 = _interopRequireDefault(require("./isLastDayOfMonth/index.js"));
 
-var _index134 = _interopRequireDefault(require("./isMatchWithOptions/index.js"));
+var _index134 = _interopRequireDefault(require("./isLeapYear/index.js"));
 
-var _index135 = _interopRequireDefault(require("./isMonday/index.js"));
+var _index135 = _interopRequireDefault(require("./isMatch/index.js"));
 
-var _index136 = _interopRequireDefault(require("./isSameDay/index.js"));
+var _index136 = _interopRequireDefault(require("./isMatchWithOptions/index.js"));
 
-var _index137 = _interopRequireDefault(require("./isSameHour/index.js"));
+var _index137 = _interopRequireDefault(require("./isMonday/index.js"));
 
-var _index138 = _interopRequireDefault(require("./isSameISOWeek/index.js"));
+var _index138 = _interopRequireDefault(require("./isSameDay/index.js"));
 
-var _index139 = _interopRequireDefault(require("./isSameISOWeekYear/index.js"));
+var _index139 = _interopRequireDefault(require("./isSameHour/index.js"));
 
-var _index140 = _interopRequireDefault(require("./isSameMinute/index.js"));
+var _index140 = _interopRequireDefault(require("./isSameISOWeek/index.js"));
 
-var _index141 = _interopRequireDefault(require("./isSameMonth/index.js"));
+var _index141 = _interopRequireDefault(require("./isSameISOWeekYear/index.js"));
 
-var _index142 = _interopRequireDefault(require("./isSameQuarter/index.js"));
+var _index142 = _interopRequireDefault(require("./isSameMinute/index.js"));
 
-var _index143 = _interopRequireDefault(require("./isSameSecond/index.js"));
+var _index143 = _interopRequireDefault(require("./isSameMonth/index.js"));
 
-var _index144 = _interopRequireDefault(require("./isSameWeek/index.js"));
+var _index144 = _interopRequireDefault(require("./isSameQuarter/index.js"));
 
-var _index145 = _interopRequireDefault(require("./isSameWeekWithOptions/index.js"));
+var _index145 = _interopRequireDefault(require("./isSameSecond/index.js"));
 
-var _index146 = _interopRequireDefault(require("./isSameYear/index.js"));
+var _index146 = _interopRequireDefault(require("./isSameWeek/index.js"));
 
-var _index147 = _interopRequireDefault(require("./isSaturday/index.js"));
+var _index147 = _interopRequireDefault(require("./isSameWeekWithOptions/index.js"));
 
-var _index148 = _interopRequireDefault(require("./isSunday/index.js"));
+var _index148 = _interopRequireDefault(require("./isSameYear/index.js"));
 
-var _index149 = _interopRequireDefault(require("./isThursday/index.js"));
+var _index149 = _interopRequireDefault(require("./isSaturday/index.js"));
 
-var _index150 = _interopRequireDefault(require("./isTuesday/index.js"));
+var _index150 = _interopRequireDefault(require("./isSunday/index.js"));
 
-var _index151 = _interopRequireDefault(require("./isValid/index.js"));
+var _index151 = _interopRequireDefault(require("./isThursday/index.js"));
 
-var _index152 = _interopRequireDefault(require("./isWednesday/index.js"));
+var _index152 = _interopRequireDefault(require("./isTuesday/index.js"));
 
-var _index153 = _interopRequireDefault(require("./isWeekend/index.js"));
+var _index153 = _interopRequireDefault(require("./isValid/index.js"));
 
-var _index154 = _interopRequireDefault(require("./isWithinInterval/index.js"));
+var _index154 = _interopRequireDefault(require("./isWednesday/index.js"));
 
-var _index155 = _interopRequireDefault(require("./lastDayOfDecade/index.js"));
+var _index155 = _interopRequireDefault(require("./isWeekend/index.js"));
 
-var _index156 = _interopRequireDefault(require("./lastDayOfISOWeek/index.js"));
+var _index156 = _interopRequireDefault(require("./isWithinInterval/index.js"));
 
-var _index157 = _interopRequireDefault(require("./lastDayOfISOWeekYear/index.js"));
+var _index157 = _interopRequireDefault(require("./lastDayOfDecade/index.js"));
 
-var _index158 = _interopRequireDefault(require("./lastDayOfMonth/index.js"));
+var _index158 = _interopRequireDefault(require("./lastDayOfISOWeek/index.js"));
 
-var _index159 = _interopRequireDefault(require("./lastDayOfQuarter/index.js"));
+var _index159 = _interopRequireDefault(require("./lastDayOfISOWeekYear/index.js"));
 
-var _index160 = _interopRequireDefault(require("./lastDayOfQuarterWithOptions/index.js"));
+var _index160 = _interopRequireDefault(require("./lastDayOfMonth/index.js"));
 
-var _index161 = _interopRequireDefault(require("./lastDayOfWeek/index.js"));
+var _index161 = _interopRequireDefault(require("./lastDayOfQuarter/index.js"));
 
-var _index162 = _interopRequireDefault(require("./lastDayOfWeekWithOptions/index.js"));
+var _index162 = _interopRequireDefault(require("./lastDayOfQuarterWithOptions/index.js"));
 
-var _index163 = _interopRequireDefault(require("./lastDayOfYear/index.js"));
+var _index163 = _interopRequireDefault(require("./lastDayOfWeek/index.js"));
 
-var _index164 = _interopRequireDefault(require("./lightFormat/index.js"));
+var _index164 = _interopRequireDefault(require("./lastDayOfWeekWithOptions/index.js"));
 
-var _index165 = _interopRequireDefault(require("./max/index.js"));
+var _index165 = _interopRequireDefault(require("./lastDayOfYear/index.js"));
 
-var _index166 = _interopRequireDefault(require("./milliseconds/index.js"));
+var _index166 = _interopRequireDefault(require("./lightFormat/index.js"));
 
-var _index167 = _interopRequireDefault(require("./millisecondsToHours/index.js"));
+var _index167 = _interopRequireDefault(require("./max/index.js"));
 
-var _index168 = _interopRequireDefault(require("./millisecondsToMinutes/index.js"));
+var _index168 = _interopRequireDefault(require("./milliseconds/index.js"));
 
-var _index169 = _interopRequireDefault(require("./millisecondsToSeconds/index.js"));
+var _index169 = _interopRequireDefault(require("./millisecondsToHours/index.js"));
 
-var _index170 = _interopRequireDefault(require("./min/index.js"));
+var _index170 = _interopRequireDefault(require("./millisecondsToMinutes/index.js"));
 
-var _index171 = _interopRequireDefault(require("./minutesToHours/index.js"));
+var _index171 = _interopRequireDefault(require("./millisecondsToSeconds/index.js"));
 
-var _index172 = _interopRequireDefault(require("./minutesToMilliseconds/index.js"));
+var _index172 = _interopRequireDefault(require("./min/index.js"));
 
-var _index173 = _interopRequireDefault(require("./minutesToSeconds/index.js"));
+var _index173 = _interopRequireDefault(require("./minutesToHours/index.js"));
 
-var _index174 = _interopRequireDefault(require("./monthsToQuarters/index.js"));
+var _index174 = _interopRequireDefault(require("./minutesToMilliseconds/index.js"));
 
-var _index175 = _interopRequireDefault(require("./monthsToYears/index.js"));
+var _index175 = _interopRequireDefault(require("./minutesToSeconds/index.js"));
 
-var _index176 = _interopRequireDefault(require("./nextDay/index.js"));
+var _index176 = _interopRequireDefault(require("./monthsToQuarters/index.js"));
 
-var _index177 = _interopRequireDefault(require("./nextFriday/index.js"));
+var _index177 = _interopRequireDefault(require("./monthsToYears/index.js"));
 
-var _index178 = _interopRequireDefault(require("./nextMonday/index.js"));
+var _index178 = _interopRequireDefault(require("./nextDay/index.js"));
 
-var _index179 = _interopRequireDefault(require("./nextSaturday/index.js"));
+var _index179 = _interopRequireDefault(require("./nextFriday/index.js"));
 
-var _index180 = _interopRequireDefault(require("./nextSunday/index.js"));
+var _index180 = _interopRequireDefault(require("./nextMonday/index.js"));
 
-var _index181 = _interopRequireDefault(require("./nextThursday/index.js"));
+var _index181 = _interopRequireDefault(require("./nextSaturday/index.js"));
 
-var _index182 = _interopRequireDefault(require("./nextTuesday/index.js"));
+var _index182 = _interopRequireDefault(require("./nextSunday/index.js"));
 
-var _index183 = _interopRequireDefault(require("./nextWednesday/index.js"));
+var _index183 = _interopRequireDefault(require("./nextThursday/index.js"));
 
-var _index184 = _interopRequireDefault(require("./parse/index.js"));
+var _index184 = _interopRequireDefault(require("./nextTuesday/index.js"));
 
-var _index185 = _interopRequireDefault(require("./parseISO/index.js"));
+var _index185 = _interopRequireDefault(require("./nextWednesday/index.js"));
 
-var _index186 = _interopRequireDefault(require("./parseISOWithOptions/index.js"));
+var _index186 = _interopRequireDefault(require("./parse/index.js"));
 
-var _index187 = _interopRequireDefault(require("./parseJSON/index.js"));
+var _index187 = _interopRequireDefault(require("./parseISO/index.js"));
 
-var _index188 = _interopRequireDefault(require("./parseWithOptions/index.js"));
+var _index188 = _interopRequireDefault(require("./parseISOWithOptions/index.js"));
 
-var _index189 = _interopRequireDefault(require("./previousDay/index.js"));
+var _index189 = _interopRequireDefault(require("./parseJSON/index.js"));
 
-var _index190 = _interopRequireDefault(require("./previousFriday/index.js"));
+var _index190 = _interopRequireDefault(require("./parseWithOptions/index.js"));
 
-var _index191 = _interopRequireDefault(require("./previousMonday/index.js"));
+var _index191 = _interopRequireDefault(require("./previousDay/index.js"));
 
-var _index192 = _interopRequireDefault(require("./previousSaturday/index.js"));
+var _index192 = _interopRequireDefault(require("./previousFriday/index.js"));
 
-var _index193 = _interopRequireDefault(require("./previousSunday/index.js"));
+var _index193 = _interopRequireDefault(require("./previousMonday/index.js"));
 
-var _index194 = _interopRequireDefault(require("./previousThursday/index.js"));
+var _index194 = _interopRequireDefault(require("./previousSaturday/index.js"));
 
-var _index195 = _interopRequireDefault(require("./previousTuesday/index.js"));
+var _index195 = _interopRequireDefault(require("./previousSunday/index.js"));
 
-var _index196 = _interopRequireDefault(require("./previousWednesday/index.js"));
+var _index196 = _interopRequireDefault(require("./previousThursday/index.js"));
 
-var _index197 = _interopRequireDefault(require("./quartersToMonths/index.js"));
+var _index197 = _interopRequireDefault(require("./previousTuesday/index.js"));
 
-var _index198 = _interopRequireDefault(require("./quartersToYears/index.js"));
+var _index198 = _interopRequireDefault(require("./previousWednesday/index.js"));
 
-var _index199 = _interopRequireDefault(require("./roundToNearestMinutes/index.js"));
+var _index199 = _interopRequireDefault(require("./quartersToMonths/index.js"));
 
-var _index200 = _interopRequireDefault(require("./roundToNearestMinutesWithOptions/index.js"));
+var _index200 = _interopRequireDefault(require("./quartersToYears/index.js"));
 
-var _index201 = _interopRequireDefault(require("./secondsToHours/index.js"));
+var _index201 = _interopRequireDefault(require("./roundToNearestMinutes/index.js"));
 
-var _index202 = _interopRequireDefault(require("./secondsToMilliseconds/index.js"));
+var _index202 = _interopRequireDefault(require("./roundToNearestMinutesWithOptions/index.js"));
 
-var _index203 = _interopRequireDefault(require("./secondsToMinutes/index.js"));
+var _index203 = _interopRequireDefault(require("./secondsToHours/index.js"));
 
-var _index204 = _interopRequireDefault(require("./set/index.js"));
+var _index204 = _interopRequireDefault(require("./secondsToMilliseconds/index.js"));
 
-var _index205 = _interopRequireDefault(require("./setDate/index.js"));
+var _index205 = _interopRequireDefault(require("./secondsToMinutes/index.js"));
 
-var _index206 = _interopRequireDefault(require("./setDay/index.js"));
+var _index206 = _interopRequireDefault(require("./set/index.js"));
 
-var _index207 = _interopRequireDefault(require("./setDayOfYear/index.js"));
+var _index207 = _interopRequireDefault(require("./setDate/index.js"));
 
-var _index208 = _interopRequireDefault(require("./setDayWithOptions/index.js"));
+var _index208 = _interopRequireDefault(require("./setDay/index.js"));
 
-var _index209 = _interopRequireDefault(require("./setHours/index.js"));
+var _index209 = _interopRequireDefault(require("./setDayOfYear/index.js"));
 
-var _index210 = _interopRequireDefault(require("./setISODay/index.js"));
+var _index210 = _interopRequireDefault(require("./setDayWithOptions/index.js"));
 
-var _index211 = _interopRequireDefault(require("./setISOWeek/index.js"));
+var _index211 = _interopRequireDefault(require("./setHours/index.js"));
 
-var _index212 = _interopRequireDefault(require("./setISOWeekYear/index.js"));
+var _index212 = _interopRequireDefault(require("./setISODay/index.js"));
 
-var _index213 = _interopRequireDefault(require("./setMilliseconds/index.js"));
+var _index213 = _interopRequireDefault(require("./setISOWeek/index.js"));
 
-var _index214 = _interopRequireDefault(require("./setMinutes/index.js"));
+var _index214 = _interopRequireDefault(require("./setISOWeekYear/index.js"));
 
-var _index215 = _interopRequireDefault(require("./setMonth/index.js"));
+var _index215 = _interopRequireDefault(require("./setMilliseconds/index.js"));
 
-var _index216 = _interopRequireDefault(require("./setQuarter/index.js"));
+var _index216 = _interopRequireDefault(require("./setMinutes/index.js"));
 
-var _index217 = _interopRequireDefault(require("./setSeconds/index.js"));
+var _index217 = _interopRequireDefault(require("./setMonth/index.js"));
 
-var _index218 = _interopRequireDefault(require("./setWeek/index.js"));
+var _index218 = _interopRequireDefault(require("./setQuarter/index.js"));
 
-var _index219 = _interopRequireDefault(require("./setWeekWithOptions/index.js"));
+var _index219 = _interopRequireDefault(require("./setSeconds/index.js"));
 
-var _index220 = _interopRequireDefault(require("./setWeekYear/index.js"));
+var _index220 = _interopRequireDefault(require("./setWeek/index.js"));
 
-var _index221 = _interopRequireDefault(require("./setWeekYearWithOptions/index.js"));
+var _index221 = _interopRequireDefault(require("./setWeekWithOptions/index.js"));
 
-var _index222 = _interopRequireDefault(require("./setYear/index.js"));
+var _index222 = _interopRequireDefault(require("./setWeekYear/index.js"));
 
-var _index223 = _interopRequireDefault(require("./startOfDay/index.js"));
+var _index223 = _interopRequireDefault(require("./setWeekYearWithOptions/index.js"));
 
-var _index224 = _interopRequireDefault(require("./startOfDecade/index.js"));
+var _index224 = _interopRequireDefault(require("./setYear/index.js"));
 
-var _index225 = _interopRequireDefault(require("./startOfHour/index.js"));
+var _index225 = _interopRequireDefault(require("./startOfDay/index.js"));
 
-var _index226 = _interopRequireDefault(require("./startOfISOWeek/index.js"));
+var _index226 = _interopRequireDefault(require("./startOfDecade/index.js"));
 
-var _index227 = _interopRequireDefault(require("./startOfISOWeekYear/index.js"));
+var _index227 = _interopRequireDefault(require("./startOfHour/index.js"));
 
-var _index228 = _interopRequireDefault(require("./startOfMinute/index.js"));
+var _index228 = _interopRequireDefault(require("./startOfISOWeek/index.js"));
 
-var _index229 = _interopRequireDefault(require("./startOfMonth/index.js"));
+var _index229 = _interopRequireDefault(require("./startOfISOWeekYear/index.js"));
 
-var _index230 = _interopRequireDefault(require("./startOfQuarter/index.js"));
+var _index230 = _interopRequireDefault(require("./startOfMinute/index.js"));
 
-var _index231 = _interopRequireDefault(require("./startOfSecond/index.js"));
+var _index231 = _interopRequireDefault(require("./startOfMonth/index.js"));
 
-var _index232 = _interopRequireDefault(require("./startOfWeek/index.js"));
+var _index232 = _interopRequireDefault(require("./startOfQuarter/index.js"));
 
-var _index233 = _interopRequireDefault(require("./startOfWeekWithOptions/index.js"));
+var _index233 = _interopRequireDefault(require("./startOfSecond/index.js"));
 
-var _index234 = _interopRequireDefault(require("./startOfWeekYear/index.js"));
+var _index234 = _interopRequireDefault(require("./startOfWeek/index.js"));
 
-var _index235 = _interopRequireDefault(require("./startOfWeekYearWithOptions/index.js"));
+var _index235 = _interopRequireDefault(require("./startOfWeekWithOptions/index.js"));
 
-var _index236 = _interopRequireDefault(require("./startOfYear/index.js"));
+var _index236 = _interopRequireDefault(require("./startOfWeekYear/index.js"));
 
-var _index237 = _interopRequireDefault(require("./sub/index.js"));
+var _index237 = _interopRequireDefault(require("./startOfWeekYearWithOptions/index.js"));
 
-var _index238 = _interopRequireDefault(require("./subBusinessDays/index.js"));
+var _index238 = _interopRequireDefault(require("./startOfYear/index.js"));
 
-var _index239 = _interopRequireDefault(require("./subDays/index.js"));
+var _index239 = _interopRequireDefault(require("./sub/index.js"));
 
-var _index240 = _interopRequireDefault(require("./subHours/index.js"));
+var _index240 = _interopRequireDefault(require("./subBusinessDays/index.js"));
 
-var _index241 = _interopRequireDefault(require("./subISOWeekYears/index.js"));
+var _index241 = _interopRequireDefault(require("./subDays/index.js"));
 
-var _index242 = _interopRequireDefault(require("./subMilliseconds/index.js"));
+var _index242 = _interopRequireDefault(require("./subHours/index.js"));
 
-var _index243 = _interopRequireDefault(require("./subMinutes/index.js"));
+var _index243 = _interopRequireDefault(require("./subISOWeekYears/index.js"));
 
-var _index244 = _interopRequireDefault(require("./subMonths/index.js"));
+var _index244 = _interopRequireDefault(require("./subMilliseconds/index.js"));
 
-var _index245 = _interopRequireDefault(require("./subQuarters/index.js"));
+var _index245 = _interopRequireDefault(require("./subMinutes/index.js"));
 
-var _index246 = _interopRequireDefault(require("./subSeconds/index.js"));
+var _index246 = _interopRequireDefault(require("./subMonths/index.js"));
 
-var _index247 = _interopRequireDefault(require("./subWeeks/index.js"));
+var _index247 = _interopRequireDefault(require("./subQuarters/index.js"));
 
-var _index248 = _interopRequireDefault(require("./subYears/index.js"));
+var _index248 = _interopRequireDefault(require("./subSeconds/index.js"));
 
-var _index249 = _interopRequireDefault(require("./toDate/index.js"));
+var _index249 = _interopRequireDefault(require("./subWeeks/index.js"));
 
-var _index250 = _interopRequireDefault(require("./weeksToDays/index.js"));
+var _index250 = _interopRequireDefault(require("./subYears/index.js"));
 
-var _index251 = _interopRequireDefault(require("./yearsToMonths/index.js"));
+var _index251 = _interopRequireDefault(require("./toDate/index.js"));
 
-var _index252 = _interopRequireDefault(require("./yearsToQuarters/index.js"));
+var _index252 = _interopRequireDefault(require("./weeksToDays/index.js"));
 
-var _index253 = require("../constants/index.js");
+var _index253 = _interopRequireDefault(require("./yearsToMonths/index.js"));
 
-Object.keys(_index253).forEach(function (key) {
+var _index254 = _interopRequireDefault(require("./yearsToQuarters/index.js"));
+
+var _index255 = require("../constants/index.js");
+
+Object.keys(_index255).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
   if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
   Object.defineProperty(exports, key, {
     enumerable: true,
     get: function () {
-      return _index253[key];
+      return _index255[key];
     }
   });
 });

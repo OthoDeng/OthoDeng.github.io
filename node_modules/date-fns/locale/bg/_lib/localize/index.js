@@ -55,10 +55,9 @@ function numberWithSuffix(number, unit, masculine, feminine, neuter) {
   return number + '-' + suffix;
 }
 
-var ordinalNumber = function (dirtyNumber) {
-  var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-  var unit = String(options.unit);
+var ordinalNumber = function (dirtyNumber, options) {
   var number = Number(dirtyNumber);
+  var unit = options === null || options === void 0 ? void 0 : options.unit;
 
   if (number === 0) {
     return numberWithSuffix(0, unit, 'ев', 'ева', 'ево');
@@ -97,7 +96,7 @@ var localize = {
     values: quarterValues,
     defaultWidth: 'wide',
     argumentCallback: function (quarter) {
-      return Number(quarter) - 1;
+      return quarter - 1;
     }
   }),
   month: (0, _index.default)({

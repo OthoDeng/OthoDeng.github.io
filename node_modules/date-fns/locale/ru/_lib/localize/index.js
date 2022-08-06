@@ -100,9 +100,9 @@ var formattingDayPeriodValues = {
   }
 };
 
-function ordinalNumber(dirtyNumber, dirtyOptions) {
-  var options = dirtyOptions || {};
-  var unit = String(options.unit);
+var ordinalNumber = function (dirtyNumber, options) {
+  var number = Number(dirtyNumber);
+  var unit = options === null || options === void 0 ? void 0 : options.unit;
   var suffix;
 
   if (unit === 'date') {
@@ -113,8 +113,8 @@ function ordinalNumber(dirtyNumber, dirtyOptions) {
     suffix = '-й';
   }
 
-  return dirtyNumber + suffix;
-}
+  return number + suffix;
+};
 
 var localize = {
   ordinalNumber: ordinalNumber,
@@ -126,7 +126,7 @@ var localize = {
     values: quarterValues,
     defaultWidth: 'wide',
     argumentCallback: function (quarter) {
-      return Number(quarter) - 1;
+      return quarter - 1;
     }
   }),
   month: (0, _index.default)({

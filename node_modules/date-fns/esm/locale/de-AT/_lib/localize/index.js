@@ -96,7 +96,7 @@ var formattingDayPeriodValues = {
   }
 };
 
-var ordinalNumber = function (dirtyNumber, _dirtyOptions) {
+var ordinalNumber = function (dirtyNumber) {
   var number = Number(dirtyNumber);
   return number + '.';
 };

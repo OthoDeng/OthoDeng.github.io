@@ -9,11 +9,6 @@ var _index = _interopRequireDefault(require("../../../_lib/buildLocalizeFn/index
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function ordinalNumber(dirtyNumber) {
-  var number = Number(dirtyNumber);
-  return String(number);
-}
-
 var eraValues = {
   narrow: ['p.n.e.', 'n.e.'],
   abbreviated: ['p.n.e.', 'n.e.'],
@@ -110,6 +105,11 @@ var dayPeriodFormattingValues = {
     night: 'w nocy'
   }
 };
+
+var ordinalNumber = function (dirtyNumber, _options) {
+  return String(dirtyNumber);
+};
+
 var localize = {
   ordinalNumber: ordinalNumber,
   era: (0, _index.default)({
@@ -120,7 +120,7 @@ var localize = {
     values: quarterValues,
     defaultWidth: 'wide',
     argumentCallback: function (quarter) {
-      return Number(quarter) - 1;
+      return quarter - 1;
     }
   }),
   month: (0, _index.default)({

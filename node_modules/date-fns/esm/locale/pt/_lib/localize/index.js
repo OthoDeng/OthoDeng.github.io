@@ -1,10 +1,4 @@
 import buildLocalizeFn from "../../../_lib/buildLocalizeFn/index.js";
-
-function ordinalNumber(dirtyNumber) {
-  var number = Number(dirtyNumber);
-  return number + 'º';
-}
-
 var eraValues = {
   narrow: ['aC', 'dC'],
   abbreviated: ['a.C.', 'd.C.'],
@@ -90,6 +84,12 @@ var formattingDayPeriodValues = {
     night: 'da madrugada'
   }
 };
+
+var ordinalNumber = function (dirtyNumber, _options) {
+  var number = Number(dirtyNumber);
+  return number + 'º';
+};
+
 var localize = {
   ordinalNumber: ordinalNumber,
   era: buildLocalizeFn({
@@ -100,7 +100,7 @@ var localize = {
     values: quarterValues,
     defaultWidth: 'wide',
     argumentCallback: function (quarter) {
-      return Number(quarter) - 1;
+      return quarter - 1;
     }
   }),
   month: buildLocalizeFn({

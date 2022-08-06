@@ -102,12 +102,13 @@ var suffixes = {
   100: '-ші'
 };
 
-function ordinalNumber(dirtyNumber) {
+var ordinalNumber = function (dirtyNumber, _options) {
   var number = Number(dirtyNumber);
-  var a = number % 10;
+  var mod10 = number % 10;
   var b = number >= 100 ? 100 : null;
-  return number + (suffixes[number] || suffixes[a] || suffixes[b]);
-}
+  var suffix = suffixes[number] || suffixes[mod10] || b && suffixes[b] || '';
+  return number + suffix;
+};
 
 var localize = {
   ordinalNumber: ordinalNumber,
@@ -119,7 +120,7 @@ var localize = {
     values: quarterValues,
     defaultWidth: 'wide',
     argumentCallback: function (quarter) {
-      return Number(quarter) - 1;
+      return quarter - 1;
     }
   }),
   month: (0, _index.default)({

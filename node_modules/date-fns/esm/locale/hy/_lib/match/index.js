@@ -1,5 +1,5 @@
-import buildMatchPatternFn from "../../../_lib/buildMatchPatternFn/index.js";
 import buildMatchFn from "../../../_lib/buildMatchFn/index.js";
+import buildMatchPatternFn from "../../../_lib/buildMatchPatternFn/index.js";
 var matchOrdinalNumberPattern = /^(\d+)((-|֊)?(ին|րդ))?/i;
 var parseOrdinalNumberPattern = /\d+/i;
 var matchEraPatterns = {
@@ -8,7 +8,7 @@ var matchEraPatterns = {
   wide: /^(քրիստոսից առաջ|մեր թվարկությունից առաջ|մեր թվարկության|քրիստոսից հետո)/i
 };
 var parseEraPatterns = {
-  any: [/^(ք|մ)/i]
+  any: [/^ք/i, /^մ/i]
 };
 var matchQuarterPatterns = {
   narrow: /^[1234]/i,
@@ -88,7 +88,7 @@ var match = {
     matchPatterns: matchDayPatterns,
     defaultMatchWidth: 'wide',
     parsePatterns: parseDayPatterns,
-    defaultParseWidth: 'any'
+    defaultParseWidth: 'wide'
   }),
   dayPeriod: buildMatchFn({
     matchPatterns: matchDayPeriodPatterns,

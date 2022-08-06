@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = formatRelative;
+exports.default = void 0;
 var formatRelativeLocale = {
   lastWeek: function (date) {
     switch (date.getUTCDay()) {
@@ -22,10 +22,12 @@ var formatRelativeLocale = {
   other: 'P'
 };
 
-function formatRelative(token, date, baseDate, options) {
+var formatRelative = function (token, date) {
   var format = formatRelativeLocale[token];
-  if (typeof format === 'function') return format(date, baseDate, options);
+  if (typeof format === 'function') return format(date);
   return format;
-}
+};
 
+var _default = formatRelative;
+exports.default = _default;
 module.exports = exports.default;

@@ -91,14 +91,10 @@ var formattingDayPeriodValues = {
   }
 };
 
-function ordinalNumber(dirtyNumber, _dirtyOptions) {
-  var number = Number(dirtyNumber); // Can't use "pertama", "kedua" because can't be parsed
-
-  switch (number) {
-    default:
-      return 'ke-' + number;
-  }
-}
+var ordinalNumber = function (dirtyNumber, _options) {
+  // Can't use "pertama", "kedua" because can't be parsed
+  return 'ke-' + Number(dirtyNumber);
+};
 
 var localize = {
   ordinalNumber: ordinalNumber,
@@ -110,7 +106,7 @@ var localize = {
     values: quarterValues,
     defaultWidth: 'wide',
     argumentCallback: function (quarter) {
-      return Number(quarter) - 1;
+      return quarter - 1;
     }
   }),
   month: buildLocalizeFn({

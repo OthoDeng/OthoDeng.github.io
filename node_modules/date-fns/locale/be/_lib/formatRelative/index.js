@@ -5,9 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _index = _interopRequireDefault(require("../../../../_lib/isSameUTCWeek/index.js"));
+var _index = require("../../../../index.js");
 
-var _index2 = require("../../../../index.js");
+var _index2 = _interopRequireDefault(require("../../../../_lib/isSameUTCWeek/index.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -53,10 +53,10 @@ function nextWeek(day) {
 }
 
 var lastWeekFormat = function (dirtyDate, baseDate, options) {
-  var date = (0, _index2.toDate)(dirtyDate);
+  var date = (0, _index.toDate)(dirtyDate);
   var day = date.getUTCDay();
 
-  if ((0, _index.default)(date, baseDate, options)) {
+  if ((0, _index2.default)(date, baseDate, options)) {
     return thisWeek(day);
   } else {
     return lastWeek(day);
@@ -64,10 +64,10 @@ var lastWeekFormat = function (dirtyDate, baseDate, options) {
 };
 
 var nextWeekFormat = function (dirtyDate, baseDate, options) {
-  var date = (0, _index2.toDate)(dirtyDate);
+  var date = (0, _index.toDate)(dirtyDate);
   var day = date.getUTCDay();
 
-  if ((0, _index.default)(date, baseDate, options)) {
+  if ((0, _index2.default)(date, baseDate, options)) {
     return thisWeek(day);
   } else {
     return nextWeek(day);

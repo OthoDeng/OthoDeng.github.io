@@ -1,5 +1,5 @@
-import isSameUTCWeek from "../../../../_lib/isSameUTCWeek/index.js";
 import { toDate } from "../../../../index.js";
+import isSameUTCWeek from "../../../../_lib/isSameUTCWeek/index.js";
 var accusativeWeekdays = ['нядзелю', 'панядзелак', 'аўторак', 'сераду', 'чацвер', 'пятніцу', 'суботу'];
 
 function lastWeek(day) {

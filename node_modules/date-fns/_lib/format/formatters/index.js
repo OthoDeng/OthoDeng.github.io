@@ -31,6 +31,7 @@ var dayPeriodEnum = {
   evening: 'evening',
   night: 'night'
 };
+
 /*
  * |     | Unit                           |     | Unit                           |
  * |-----|--------------------------------|-----|--------------------------------|
@@ -76,7 +77,6 @@ var dayPeriodEnum = {
  * - `P` is long localized date format
  * - `p` is long localized time format
  */
-
 var formatters = {
   // Era
   G: function (date, token, localize) {

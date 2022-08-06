@@ -1,5 +1,5 @@
-import buildMatchPatternFn from "../../../_lib/buildMatchPatternFn/index.js";
 import buildMatchFn from "../../../_lib/buildMatchFn/index.js";
+import buildMatchPatternFn from "../../../_lib/buildMatchPatternFn/index.js";
 var matchOrdinalNumberPattern = /^(\d+)(લ|જ|થ|ઠ્ઠ|મ)?/i;
 var parseOrdinalNumberPattern = /\d+/i;
 var matchEraPatterns = {
@@ -8,7 +8,7 @@ var matchEraPatterns = {
   wide: /^(ઈસવીસન\sપૂર્વે|ઈસવીસન)/i
 };
 var parseEraPatterns = {
-  any: [/^(ઈસપૂ|ઈસ)/i, /^(ઈ\.સ\.પૂર્વે|ઈ\.સ\.)/i, /^(ઈસવીસન\sપૂર્વે|ઈસવીસન)/i]
+  any: [/^ઈસપૂ/i, /^ઈસ/i]
 };
 var matchQuarterPatterns = {
   narrow: /^[1234]/i,

@@ -95,10 +95,9 @@ var formattingDayPeriodValues = {
   }
 };
 
-var ordinalNumber = function (dirtyNumber, dirtyOptions) {
+var ordinalNumber = function (dirtyNumber, options) {
   var number = Number(dirtyNumber);
-  var options = dirtyOptions || {};
-  var unit = String(options.unit);
+  var unit = String(options === null || options === void 0 ? void 0 : options.unit);
 
   switch (unit) {
     case 'minute':

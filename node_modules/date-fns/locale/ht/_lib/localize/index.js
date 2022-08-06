@@ -63,32 +63,12 @@ var dayPeriodValues = {
   }
 };
 
-function ordinalNumber(dirtyNumber, dirtyOptions) {
+var ordinalNumber = function (dirtyNumber, _options) {
   var number = Number(dirtyNumber);
-  var options = dirtyOptions || {};
-  var unit = String(options.unit);
-  var suffix;
-
-  if (number === 0) {
-    return number;
-  }
-
-  if (unit === 'year' || unit === 'hour' || unit === 'week') {
-    if (number === 1) {
-      suffix = 'ye';
-    } else {
-      suffix = 'yèm';
-    }
-  } else {
-    if (number === 1) {
-      suffix = 'ye';
-    } else {
-      suffix = 'yèm';
-    }
-  }
-
+  if (number === 0) return String(number);
+  var suffix = number === 1 ? 'ye' : 'yèm';
   return number + suffix;
-}
+};
 
 var localize = {
   ordinalNumber: ordinalNumber,
@@ -100,7 +80,7 @@ var localize = {
     values: quarterValues,
     defaultWidth: 'wide',
     argumentCallback: function (quarter) {
-      return Number(quarter) - 1;
+      return quarter - 1;
     }
   }),
   month: (0, _index.default)({

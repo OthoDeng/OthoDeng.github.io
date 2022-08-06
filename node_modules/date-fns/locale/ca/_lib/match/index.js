@@ -81,7 +81,7 @@ var match = {
     matchPatterns: matchEraPatterns,
     defaultMatchWidth: 'wide',
     parsePatterns: parseEraPatterns,
-    defaultParseWidth: 'any'
+    defaultParseWidth: 'wide'
   }),
   quarter: (0, _index.default)({
     matchPatterns: matchQuarterPatterns,
@@ -96,17 +96,17 @@ var match = {
     matchPatterns: matchMonthPatterns,
     defaultMatchWidth: 'wide',
     parsePatterns: parseMonthPatterns,
-    defaultParseWidth: 'any'
+    defaultParseWidth: 'wide'
   }),
   day: (0, _index.default)({
     matchPatterns: matchDayPatterns,
     defaultMatchWidth: 'wide',
     parsePatterns: parseDayPatterns,
-    defaultParseWidth: 'any'
+    defaultParseWidth: 'wide'
   }),
   dayPeriod: (0, _index.default)({
     matchPatterns: matchDayPeriodPatterns,
-    defaultMatchWidth: 'any',
+    defaultMatchWidth: 'wide',
     parsePatterns: parseDayPeriodPatterns,
     defaultParseWidth: 'any'
   })

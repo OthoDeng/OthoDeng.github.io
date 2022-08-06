@@ -1,5 +1,5 @@
-// Ref: https://www.unicode.org/cldr/charts/32/summary/ta.html
-import buildLocalizeFn from "../../../_lib/buildLocalizeFn/index.js";
+import buildLocalizeFn from "../../../_lib/buildLocalizeFn/index.js"; // Ref: https://www.unicode.org/cldr/charts/32/summary/ta.html
+
 var eraValues = {
   narrow: ['கி.மு.', 'கி.பி.'],
   abbreviated: ['கி.மு.', 'கி.பி.'],
@@ -119,31 +119,9 @@ var formattingDayPeriodValues = {
   }
 };
 
-function ordinalNumber(dirtyNumber, _dirtyOptions) {
-  var number = Number(dirtyNumber); // If ordinal numbers depend on context, for example,
-  // if they are different for different grammatical genders,
-  // use `options.unit`:
-  //
-  //   var options = dirtyOptions || {}
-  //   var unit = String(options.unit)
-  //
-  // where `unit` can be 'year', 'quarter', 'month', 'week', 'date', 'dayOfYear',
-  // 'day', 'hour', 'minute', 'second'
-  // var rem100 = number % 100
-  // if (rem100 > 20 || rem100 < 10) {
-  //   switch (rem100 % 10) {
-  //     case 1:
-  //       return number + 'st'
-  //     case 2:
-  //       return number + 'nd'
-  //     case 3:
-  //       return number + 'rd'
-  //   }
-  // }
-  // return number + 'th'
-
-  return number;
-}
+var ordinalNumber = function (dirtyNumber, _options) {
+  return String(dirtyNumber);
+};
 
 var localize = {
   ordinalNumber: ordinalNumber,
@@ -155,7 +133,7 @@ var localize = {
     values: quarterValues,
     defaultWidth: 'wide',
     argumentCallback: function (quarter) {
-      return Number(quarter) - 1;
+      return quarter - 1;
     }
   }),
   month: buildLocalizeFn({

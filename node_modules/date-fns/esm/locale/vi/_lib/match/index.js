@@ -1,5 +1,5 @@
-import buildMatchPatternFn from "../../../_lib/buildMatchPatternFn/index.js";
 import buildMatchFn from "../../../_lib/buildMatchFn/index.js";
+import buildMatchPatternFn from "../../../_lib/buildMatchPatternFn/index.js";
 var matchOrdinalNumberPattern = /^(\d+)/i;
 var parseOrdinalNumberPattern = /\d+/i;
 var matchEraPatterns = {
@@ -88,17 +88,17 @@ var match = {
     matchPatterns: matchMonthPatterns,
     defaultMatchWidth: 'wide',
     parsePatterns: parseMonthPatterns,
-    defaultParseWidth: 'any'
+    defaultParseWidth: 'wide'
   }),
   day: buildMatchFn({
     matchPatterns: matchDayPatterns,
     defaultMatchWidth: 'wide',
     parsePatterns: parseDayPatterns,
-    defaultParseWidth: 'any'
+    defaultParseWidth: 'wide'
   }),
   dayPeriod: buildMatchFn({
     matchPatterns: matchDayPeriodPatterns,
-    defaultMatchWidth: 'any',
+    defaultMatchWidth: 'wide',
     parsePatterns: parseDayPeriodPatterns,
     defaultParseWidth: 'any'
   })

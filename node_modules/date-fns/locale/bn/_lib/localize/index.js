@@ -143,10 +143,10 @@ function dateOrdinalNumber(number, localeNumber) {
   }
 }
 
-var ordinalNumber = function (dirtyNumber, dirtyOptions) {
+var ordinalNumber = function (dirtyNumber, options) {
   var number = Number(dirtyNumber);
   var localeNumber = numberToLocale(number);
-  var unit = dirtyOptions === null || dirtyOptions === void 0 ? void 0 : dirtyOptions.unit;
+  var unit = options === null || options === void 0 ? void 0 : options.unit;
 
   if (unit === 'date') {
     return dateOrdinalNumber(number, localeNumber);

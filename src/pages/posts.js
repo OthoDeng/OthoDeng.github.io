@@ -3,7 +3,7 @@ import * as React from "react";
 
 // styles
 const pageStyles = {
-  color: "#d895bc",
+  color: "#c868a9",
   padding: 96,
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 };
@@ -39,7 +39,7 @@ const listItemStyles = {
 };
 
 const linkStyle = {
-  color: "#d164cb",
+  color: "#F2ABBD",
   fontWeight: "bold",
   fontSize: 16,
   verticalAlign: "5%",
@@ -127,4 +127,3 @@ const Posts = () => {
 };
 
 export default Posts;
-

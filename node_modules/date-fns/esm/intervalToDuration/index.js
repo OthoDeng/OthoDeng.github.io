@@ -1,14 +1,12 @@
-import compareAsc from "../compareAsc/index.js";
-import differenceInYears from "../differenceInYears/index.js";
-import differenceInMonths from "../differenceInMonths/index.js";
+import add from "../add/index.js";
 import differenceInDays from "../differenceInDays/index.js";
 import differenceInHours from "../differenceInHours/index.js";
 import differenceInMinutes from "../differenceInMinutes/index.js";
+import differenceInMonths from "../differenceInMonths/index.js";
 import differenceInSeconds from "../differenceInSeconds/index.js";
-import isValid from "../isValid/index.js";
-import requiredArgs from "../_lib/requiredArgs/index.js";
+import differenceInYears from "../differenceInYears/index.js";
 import toDate from "../toDate/index.js";
-import sub from "../sub/index.js";
+import requiredArgs from "../_lib/requiredArgs/index.js";
 /**
  * @name intervalToDuration
  * @category Common Helpers
@@ -23,6 +21,7 @@ import sub from "../sub/index.js";
  * @throws {TypeError} Requires 2 arguments
  * @throws {RangeError} `start` must not be Invalid Date
  * @throws {RangeError} `end` must not be Invalid Date
+ * @throws {RangeError} The start of an interval cannot be after its end
  *
  * @example
  * // Get the duration between January 15, 1929 and April 4, 1968.
@@ -33,50 +32,39 @@ import sub from "../sub/index.js";
  * // => { years: 39, months: 2, days: 20, hours: 7, minutes: 5, seconds: 0 }
  */
 
-export default function intervalToDuration(_ref) {
-  var start = _ref.start,
-      end = _ref.end;
+export default function intervalToDuration(interval) {
   requiredArgs(1, arguments);
-  var dateLeft = toDate(start);
-  var dateRight = toDate(end);
+  var start = toDate(interval.start);
+  var end = toDate(interval.end);
+  if (isNaN(start.getTime())) throw new RangeError('Start Date is invalid');
+  if (isNaN(end.getTime())) throw new RangeError('End Date is invalid');
 
-  if (!isValid(dateLeft)) {
-    throw new RangeError('Start Date is invalid');
-  }
-
-  if (!isValid(dateRight)) {
-    throw new RangeError('End Date is invalid');
+  if (start > end) {
+    throw new RangeError('The start of an interval cannot be after its end');
   }
 
   var duration = {
-    years: 0,
-    months: 0,
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0
+    years: differenceInYears(end, start)
   };
-  var sign = compareAsc(dateLeft, dateRight);
-  duration.years = Math.abs(differenceInYears(dateLeft, dateRight));
-  var remainingMonths = sub(dateLeft, {
-    years: sign * duration.years
+  var remainingMonths = add(start, {
+    years: duration.years
   });
-  duration.months = Math.abs(differenceInMonths(remainingMonths, dateRight));
-  var remainingDays = sub(remainingMonths, {
-    months: sign * duration.months
+  duration.months = differenceInMonths(end, remainingMonths);
+  var remainingDays = add(remainingMonths, {
+    months: duration.months
   });
-  duration.days = Math.abs(differenceInDays(remainingDays, dateRight));
-  var remainingHours = sub(remainingDays, {
-    days: sign * duration.days
+  duration.days = differenceInDays(end, remainingDays);
+  var remainingHours = add(remainingDays, {
+    days: duration.days
   });
-  duration.hours = Math.abs(differenceInHours(remainingHours, dateRight));
-  var remainingMinutes = sub(remainingHours, {
-    hours: sign * duration.hours
+  duration.hours = differenceInHours(end, remainingHours);
+  var remainingMinutes = add(remainingHours, {
+    hours: duration.hours
   });
-  duration.minutes = Math.abs(differenceInMinutes(remainingMinutes, dateRight));
-  var remainingSeconds = sub(remainingMinutes, {
-    minutes: sign * duration.minutes
+  duration.minutes = differenceInMinutes(end, remainingMinutes);
+  var remainingSeconds = add(remainingMinutes, {
+    minutes: duration.minutes
   });
-  duration.seconds = Math.abs(differenceInSeconds(remainingSeconds, dateRight));
+  duration.seconds = differenceInSeconds(end, remainingSeconds);
   return duration;
 }

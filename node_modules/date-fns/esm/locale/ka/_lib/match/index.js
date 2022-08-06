@@ -1,5 +1,5 @@
-import buildMatchPatternFn from "../../../_lib/buildMatchPatternFn/index.js";
 import buildMatchFn from "../../../_lib/buildMatchFn/index.js";
+import buildMatchPatternFn from "../../../_lib/buildMatchPatternFn/index.js";
 var matchOrdinalNumberPattern = /^(\d+)(-ლი|-ე)?/i;
 var parseOrdinalNumberPattern = /\d+/i;
 var matchEraPatterns = {
@@ -27,7 +27,7 @@ var parseMonthPatterns = {
 var matchDayPatterns = {
   narrow: /^(კვ|ორ|სა|ოთ|ხუ|პა|შა)/i,
   short: /^(კვი|ორშ|სამ|ოთხ|ხუთ|პარ|შაბ)/i,
-  long: /^(კვირა|ორშაბათი|სამშაბათი|ოთხშაბათი|ხუთშაბათი|პარასკევი|შაბათი)/i
+  wide: /^(კვირა|ორშაბათი|სამშაბათი|ოთხშაბათი|ხუთშაბათი|პარასკევი|შაბათი)/i
 };
 var parseDayPatterns = {
   any: [/^კვ/i, /^ორ/i, /^სა/i, /^ოთ/i, /^ხუ/i, /^პა/i, /^შა/i]
@@ -72,7 +72,7 @@ var match = {
   }),
   month: buildMatchFn({
     matchPatterns: matchMonthPatterns,
-    defaultMatchWidth: 'wide',
+    defaultMatchWidth: 'any',
     parsePatterns: parseMonthPatterns,
     defaultParseWidth: 'any'
   }),

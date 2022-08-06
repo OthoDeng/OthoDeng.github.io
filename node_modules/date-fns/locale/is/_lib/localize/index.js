@@ -27,7 +27,7 @@ var monthValues = {
 var dayValues = {
   narrow: ['S', 'M', 'Þ', 'M', 'F', 'F', 'L'],
   short: ['Su', 'Má', 'Þr', 'Mi', 'Fi', 'Fö', 'La'],
-  abbreviated: ['sun.', 'mán.', 'þri.', 'mið.', 'fim.', 'fös.', 'lau'],
+  abbreviated: ['sun.', 'mán.', 'þri.', 'mið.', 'fim.', 'fös.', 'lau.'],
   wide: ['sunnudagur', 'mánudagur', 'þriðjudagur', 'miðvikudagur', 'fimmtudagur', 'föstudagur', 'laugardagur']
 };
 var dayPeriodValues = {
