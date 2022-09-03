@@ -52,10 +52,11 @@ const NotFoundPage = () => {
           </>
         ) : null}
         <br />
-        <Link style={pageStyles} to="/">
+      </p>
+      <p>
+      <Link style={pageStyles} to="/">
           Go home
         </Link>
-        .
       </p>
     </main>
   );

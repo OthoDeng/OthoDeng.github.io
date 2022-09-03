@@ -85,7 +85,7 @@ const links = [
   },
   {
     text: "关于诗歌鉴赏一些笔记",
-    url: "/blog/2022-7-17-of-poetry",
+    url: "/study/CHI/2022-7-17-of-poetry",
     date: "2022/7/17",
     brief: "柳暗花明又一村",
   },
@@ -110,6 +110,7 @@ const Posts = () => {
           </li>
         ))}
       </ul>
+
       <footer>
         <Link to="/">Go Home</Link>
         <p>

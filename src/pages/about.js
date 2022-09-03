@@ -87,7 +87,7 @@ const AboutPage = () => {
         目前是个高中生，使用
         <code style={codeStyles}>Gentoo Linux && Arch Linux</code>
       </p>
-      <p>运动，音乐喜欢摇滚乐与巴赫。</p>
+      <p>打网球，音乐喜欢摇滚乐与巴赫。</p>
       <p>对于一般事物都会去涉猎，但最终会专注于自己热爱的话题</p>
       <p>时常会感慨修短随化，因而希望莫使金樽空对月。</p>
       <p>也就是我的频道名称来源</p>
@@ -121,8 +121,8 @@ const AboutPage = () => {
       </div>
 
       <footer>
-        <Link to="/">Go home</Link>
         <p>
+        <p><Link to="/">Go home</Link></p>
           Content on this site is licensed under{" "}
           <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>{" "}
           unless specified.

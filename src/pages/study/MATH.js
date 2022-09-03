@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "gatsby";
 
 // styles
 const pageStyles = {
@@ -73,47 +74,14 @@ const badgeStyle = {
 
 // data
 const links = [
-  {
-    text: "About Me",
-    url: "about",
-    description: "Otto's profile page",
-  },
-
-  {
-    text: "Posts",
-    url: "posts",
-    description: "Non-daliy updates and articles written or digested by Otto.",
-  },
-  {
-    text: "Repository",
-    url: "https://github.com/ottoqwq",
-    description:
-      "Otto's personal GitHub repository. Contains all of Otto's work.",
-  },
-  {
-    text: "Channel",
-    url: "https://t.me/otttos_daily",
-    description: "Otto's Telegram channel",
-  },
-  {
-    text: "踵事增华",
-    url: "study",
-    description: "个人的学习笔记整理"
-  }
 ];
 
 // markup
 const IndexPage = () => {
   return (
     <main align="center" style={pageStyles}>
-      <title>Otto's Blog | OttoDeng</title>
-      <h1 style={headingStyles}>
-        Otto's Blog
-        <br />
-        <span style={headingAccentStyles}>
-          ——人生得意须尽欢，莫使金樽空对月{" "}
-        </span>
-      </h1>
+      <title>数学</title>
+      <h1>数学</h1>
       <ul style={listStyles}>
         {links.map((link) => (
           <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
@@ -129,8 +97,12 @@ const IndexPage = () => {
           </li>
         ))}
       </ul>
+
+
+
       <footer>
-        <p>
+            <Link to="../">Back</Link>
+            <p>
           Projects by{" "}
           <a href="https://github.com/ottoqwq">
             {" "}
