@@ -1,0 +1,316 @@
+export default function Layout({children}) {
+  return <main align="left" style={{color: '#c868a9'}}>{children}</main>;
+}
+
+# Gentoo-on-rpi4
+
+
+
+
+## 基础安装
+
+### SD卡的准备
+
+首先准备SD card 一张。在SD 卡上至少创建两个分区。
+SD的/ boot分区应该是FAT32。根（/分区可以是任何首选的 Linux文件系统，但是由于 SD 卡是基于闪存的介质，使用F2FS有很多好处。
+大致情况可以如下：
+
+```bash
+	Disk /dev/sdb: 16.6 GB, 16574840832 bytes
+	255 heads, 63 sectors/track, 2015 cylinders, total 32372736 sectors
+	Units = sectors of 1 * 512 = 512 bytes
+	Sector size (logical/physical): 512 bytes / 512 bytes
+	I/O size (minimum/optimal): 512 bytes / 512 bytes
+	Disk identifier: 0x1db42224
+	
+	Device Boot      Start         End      Blocks   Id  System
+	/dev/sdb1   *        2048      835379      416666    c  W95 FAT32 (LBA)
+	/dev/sdb2          835380    31889024    15526822+  83  Linux
+	/dev/sdb3        31889025    32372735      241855+   5  Extended
+	/dev/sdb5        31889088    32372735      241824   82  Linux swap / Solaris
+```
+
+### 发行版的选择
+
+树莓派使用的是ARM架构的linux系统。对于发行版，我们可以选择Debian系下的产品（如Ubuntu的server版本，也可以选择树莓派的官方镜像）
+而我这次选择的是Gentoo Linux，因为它支持arm架构，同时支持32位，同时Gentoo Linux 支持编译整个系统，把原来官方提供的stage3 tarball里的所有组件替换成自己编译的（包括GCC编译器和所有基本系统组件），这样一来整个系统的所有程序和组件都是针对树莓派CPU架构优化编译的了，争取性能最大化。
+
+### 启动分区
+
+正确的/boot分区的最低设置需要以下由 Raspberry Pi 基金会提供的[专有固件文件](https://github.com/raspberrypi/firmware)
+`bootcode.bin`
+`fixup.dat`
+	`start.elf`
+	`kernel image(s)`
+
+`DTB (Device Tree Blob) files`
+
+要使用config.txt 中的gpu_mem=16设置启动树莓派，需要以下文件：
+ge3-armv7a_hardfp-YYYYMMDD.tar.bz2 -C /mnt/raspberrypiroot/
+    fixup_cd.dat
+    start_cd.elf
+
+Pi 有两个视频驱动程序。较旧的使用固定的保留 GPU 内存空间。开源 VC4 驱动程序使用内核连续内存分配器。使用vc4驱动时设置gpu_mem=16，避免浪费RAM。
+我们可以merge一个sys-boot/raspberrypi-firmware来是它运行。
+
+    root #emerge --ask sys-boot/raspberrypi-firmware
+
+**固件文件安装在/boot 中。在出现sys-boot/raspberrypi-firmware包之前，应将 SD 卡的引导分区挂载在/boot上。**
+或者我们可以选择安装预编译好的树莓派内核以及模块：
+
+    root #emerge --ask sys-kernel/raspberrypi-image
+
+### 下载并解压stage3
+
+```shell
+	wget http://distfiles.gentoo.org/releases/arm/autobuilds/current-stage3-armv7a_hardfp/stage3-armv7a_hardfp-YYYYMMDD.tar.bz2
+	#国内的镜像源可能并未同步该镜像
+	tar xpjf stage3-armv7a_hardfp-YYYYMMDD.tar.bz2 -C /mnt/raspberrypiroot/
+```
+
+### 修改make.conf
+
+```shell
+	nano -w /mnt/raspberrypiroot/etc/portage/make.conf
+
+
+	# Raspberry Pi 2, or Raspberry Pi 3 running in 32 bit mode:
+	CFLAGS="-O2 -march=armv7-a -mfpu=neon-vfpv4 -mfloat-abi=hard"
+	CXXFLAGS="${CFLAGS}"
+```
+
+### 修改fstab
+
+我们使用lsblk以及blkid命令来查找分区。
+SD卡一般被识别为/dev/mmcblk0
+ge3-armv7a\_hardfp-YYYYMMDD.tar.bz2 -C /mnt/raspberrypiroot/
+
+### 生成root密码的hash，并添加至/etc/shadow
+
+    root #openssl passwd -1
+
+### （可选）stage4文件
+
+[每日NOOBS image会更新](https://github.com/raspberrypi/noobs)
+解压时解压在/os/Gentoo
+
+### Portage树
+
+下载最新的 Portage 树：
+
+    root #wget http://distfiles.gentoo.org/snapshots/portage-latest.tar.bz2
+
+确保根分区上有足够的空闲 inode 块。Portage 占用大约 181K 的 inode。
+
+    root #df -ih | grep -E 'Mounted|mmc'
+
+将 Portage 解压到 SD 卡：
+
+    root #tar xjvpf portage-latest.tar.bz2 -C /mnt/raspberrypiroot/usr
+
+### 交叉编译
+
+由于树莓派处理器相比现代处理器差了很多，为了加快Gentoo的安装过程，我们可以选择使用另一台机子进行编译作业。
+使用crossdev：
+
+    root #emerge --ask sys-devel/crossdev
+
+对于 64 位模式的 Raspberry ：
+
+    root #crossdev -S -t aarch64-unknown-linux-gnu --genv 'USE="cxx multilib fortran -mudflap nls openmp -sanitize"' #USE变量一定要配置！！！
+    root #cd /usr/aarch64-unknown-linux-gnu/etc/portage && rm make.profile && ln -s /usr/portage/profiles/default/linux/arm64/13.0/desktop make.profile
+
+在另一主机上：
+
+```shell
+gentoo_pc ~ # emerge --ask --verbose sys-devel/crossdev`
+```
+
+修改/etc/portage/repos.conf/crossdev.conf：
+
+    [crossdev]
+
+    location = /usr/local/portage-crossdev
+    priority = 10
+    masters = gentoo
+    auto-sync = no
+
+准备USE变量：
+
+    gentoo_pc ~ # mkdir -pv /usr/local/portage-crossdev
+    gentoo_pc ~ # crossdev --stable -t aarch64-unknown-linux-gnu -oO /usr/local/portage-crossdev
+
+跑完之后，我们的交叉编译工具链已经配置好了：
+我们进入到portage：
+
+```shell
+gentoo_pc ~ # cd /usr/aarch64-unknown-linux-gnu/etc/portage
+
+gentoo_pc portage # rm -f make.profile
+gentoo_pc portage # ln -s /usr/portage/profiles/default/linux/arm64/17.0/desktop make.profile
+```
+
+检查toolchain：
+
+    gentoo_pc ~ # aarch64-unknown-linux-gnu-gcc --version
+    gentoo_pc ~ # aarch64-unknown-linux-gnu-c++ --version
+    gentoo_pc ~ # aarch64-unknown-linux-gnu-g++ --version
+
+如果架构的选择没正确，我们就需要重新选择config，再source新的profile，示例如下：
+
+    gentoo_pc ~ # gcc-config -l
+     [1] aarch64-unknown-linux-gnu-5.4.0
+
+     [2] x86_64-pc-linux-gnu-4.9.4
+     [3] x86_64-pc-linux-gnu-5.4.0 * #选择了错误的架构
+
+    gentoo_pc ~ # gcc-config aarch64-unknown-linux-gnu-5.4.0
+    gentoo_pc ~ # source /etc/profile
+
+### 在chroot里编译
+
+可以使用通用的 x86_64 或 i386 PC 来 chroot 到带有 Raspberry Pi 系统的现有 SD 卡。这种方法比在 Raspberry Pi 上编译要快得多。
+为此，需要静态安装app-emulation/qemu：
+```shell
+    root #echo app-emulation/qemu static-user qemu_user_targets_aarch64 qemu_user_targets_arm >> /etc/portage/package.use/qemu #写入USE变量
+    root #emerge qemu	
+    root #quickpkg qemu
+```
+在创建带有 `static-user` USE 标志的 QEMU 之后，需要将qemu-arm可执行文件复制到 chrooting 系统中：
+
+    root #cd /mnt/rpi
+    root #ROOT=$PWD/ emerge --usepkgonly --oneshot --nodeps qemu
+
+完成后，需要在运行内核中用 ARM 可执行解释器：
+
+    root #echo ':arm:M::\x7fELF\x01\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x28\x00:\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff:/usr/bin/qemu-arm:' > /proc/sys/fs/binfmt_misc/register
+    root #echo ':aarch64:M::\x7fELF\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x03\x00\xb7\x00:\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff:/usr/bin/qemu-aarch64:' > /proc/sys/fs/binfmt_misc/register
+
+### 挂载文件系统
+
+    root #mount /dev/mmcblk0p1 /mnt/rpi/boot
+    root #mount -o bind /dev /mnt/rpi/dev
+    root #mount -o bind /proc /mnt/rpi/proc
+    root #mount -o bind /sys /mnt/rpi/sys
+    root #mount -o rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000 devpts /mnt/rpi/dev/pts -t devpts
+
+### 复制DNS信息
+
+    root #cp /etc/resolv.conf /mnt/rpi/etc/
+
+最后chroot进入树莓派系统：
+
+    root #chroot /mnt/rpi
+
+### 编译内核
+
+Linux内核是所有发行版的核心。它位于用户程序和系统硬件之间。
+
+    root #emerge --ask sys-kernel/raspberrypi-sources
+
+同样，我们可以选择手动配置内核或者使用genkernel来自动配置并编译内核：
+这里我们选择使用genkernel来自动配置：
+修改一下配置：
+```bash
+/etc/genkernel-rpi.conf
+        
+# install kernel manually
+INSTALL="no"
+        
+#  Set arch to arm
+ARCH_OVERRIDE="arm"
+        
+# No need to mount BOOTDIR and make symlink as the kernel is
+# installed manually
+MOUNTBOOT="no"
+SYMLINK="no"
+        
+# Adjust this as needed for the machine.
+MAKEOPTS="-j3"
+        
+# For  Raspberry Pi 3 B in 32/64-bit mode
+UTILS_CROSS_COMPILE="armv7a-unknown-linux-gnueabihf-"
+KERNEL_CROSS_COMPILE="armv7a-unknown-linux-gnueabihf-"
+KERNEL_CC="armv7a-unknown-linux-gnueabihf-gcc"
+KERNEL_AS="armv7a-unknown-linux-gnueabihf-as"
+KERNEL_LD="armv7a-unknown-linux-gnueabihf-ld"
+        
+# Change this to the path of raspberrypi linux kernel sources.
+# It is possible to make this a symlink pointing to the
+# /usr/src/linux-rpi like it's done with a normal kernel.
+# For example: ln -s /usr/src/linux-3.6.11-raspberrypi /usr/src/linux-rpi
+DEFAULT_KERNEL_SOURCE="/usr/src/linux-rpi"
+        
+# Point this variable to the directory where the SD card is mounted.
+# Note that the location needs to be mounted manually before running genkernel.
+INSTALL_MOD_PATH="/mnt/raspberrypiroot"
+        
+# Genkernel needs access so /usr/share/genkernel (This folder contains default
+# environment variables, scripts and source tarballs that enable genkernel to
+# work).
+GK_SHARE="${GK_SHARE:-/usr/share/genkernel}"
+DISTDIR="${GK_SHARE}/distfiles"
+        
+# Genkernel also needs to have a logfile to write to. Without this present,
+# you'll see "ambiguous redirect" printed out many times between legitimate
+# messages.
+LOGFILE="/var/log/genkernel.log"
+```
+保存配置文件。
+挂载树莓派SD卡（假设树莓派的根分区设备是/dev/sdd3）：
+
+    root #mount /dev/sdd3 /mnt/raspberrypiroot
+
+genkernel配置：
+
+    root #ARCH=arm genkernel --config=/etc/genkernel-rpi2.conf --kernel-config=/usr/src/linux-rpi/arch/arm/configs/bcm2709_defconfig kernel
+
+保存配置/usr/local/bin/genkernel-rpi.sh:
+
+```bash
+#!/bin/sh
+ARCH=arm genkernel --config=/etc/genkernel-rpi2.conf --kernel-config=/usr/src/linux-rpi/arch/arm/configs/bcm2709_defconfig kernel
+
+
+root #chmod +x /usr/local/bin/genkernel-rpi.sh
+```
+
+以上步骤是在完善genkernel的一些基本配置，现在我们就可以为我们的树莓派去跑genkernel命令了。
+
+    root #genkernel-rpi.sh
+
+### 安装kernel image
+
+这个步骤在实操过程中是比较棘手的，对于生成在/mnt/raspberrypiroot/boot/kernel.img可能无法正确引导kernel，这时候我们可能要使用到就一些版本的固件：
+
+    root #emerge --ask sys-boot/raspberrypi-mkimage
+    root #imagetool-uncompressed.py arch/arm/boot/Image /mnt/raspberrypiroot/boot/kernel.img
+
+### 安装WiFi 蓝牙固件
+
+    root #emerge sys-kernel/linux-firmware
+
+对于树莓派内置的 Wi-Fi 驱动程序brcmfmac会需要二进制固件 blob brcmfmac434\*-sdio.bin。因此我们可能要配置一下brcmfmac434\*-sdio.txt才能正常运行。
+
+对于蓝牙，我们需要BCM43430A1.hcd 这个文件来支持运行。我们可以在树莓派官网蓝牙固件处找到，最后只需要将其配置到/lib/firmware/brcm处
+
+```shell
+	root #mkdir -p /lib/firmware/brcm
+	root #wget -P /lib/firmware/brcm https://raw.githubusercontent.com/RPi-Distro/bluez-firmware/master/broadcom/BCM4345C0.hcd
+```
+
+### VideoCore4
+
+要在 RPi 设备上启用 VideoCore4 GPU 加速，请将以下内容添加到/boot/config.txt：
+
+    /boot/config.txt
+    dtoverlay = vc4-kms-v3d,cma-128
+
+最后还要在我们的make.conf添加:
+
+    VIDEO_CARDS = "vc4"
+
+------
+[Go Home](/)
+
+Created by [Otto Deng](https://ottoqwq.me). Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0)

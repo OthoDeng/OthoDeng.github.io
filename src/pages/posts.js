@@ -78,6 +78,12 @@ const badgeStyle = {
 // data
 const links = [
   {
+    text: "关于对表意工具的想法（上）",
+    url: "/blog/2022-8-27-关于对表意工具的想法（上）",
+    date: "2022/8/27",
+    brief: "工具论？",
+  },
+  {
     text: "Hello New World",
     url: "/blog/2022-7-18-hello-new-world",
     date: "2022/7/18",
@@ -88,6 +94,24 @@ const links = [
     url: "/study/CHI/2022-7-17-of-poetry",
     date: "2022/7/17",
     brief: "柳暗花明又一村",
+  },
+  {
+    text: "神圣时间——禁锢在没有节日的时代（转载）",
+    url: "/blog/2022-4-11-神圣时间/",
+    date: "2022/4/11",
+    brief: "且看到庆典时刻享欢庆之时",
+  },
+  {
+    text: "Gentoo on rpi4",
+    url: "/blog/2022-1-2-Gentoo-on-rpi4/",
+    date: "2022/1/2",
+    brief: "能装，都能装",
+  },
+  {
+    text: "媒介化生存（转载）",
+    url: "/blog/2021-8-21-媒介化生存",
+    date: "2021/8/21",
+    brief: "赛博真嗣会梦到电子橙汁吗",
   },
 ];
 
