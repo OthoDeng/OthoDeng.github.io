@@ -55,6 +55,14 @@ const descriptionStyle = {
   lineHeight: 1.25,
 };
 
+const footerStyle = {
+  color: "#ce94ae",
+  width: "100%",
+  textAlign: "center",
+  paddingBottom: "0.5rem",
+  paddingTop: "0.5rem",
+};
+
 const badgeStyle = {
   color: "#d868a9",
   backgroundColor: "#e4dcef",
@@ -98,8 +106,8 @@ const links = [
   {
     text: "踵事增华",
     url: "study",
-    description: "个人的学习笔记整理"
-  }
+    description: "个人的学习笔记整理",
+  },
 ];
 
 // markup
@@ -129,7 +137,8 @@ const IndexPage = () => {
           </li>
         ))}
       </ul>
-      <footer>
+      <footer style={footerStyle}>
+        <hr class="css-1avyp1d"></hr>
         <p>
           Projects by{" "}
           <a href="https://github.com/ottoqwq">

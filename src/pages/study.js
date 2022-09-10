@@ -17,14 +17,11 @@ const pageStyles = {
     color: "#d868a9",
     fontSize: "1rem",
   };
-  const paragraphStyles = {
-    marginBottom: 48,
-  };
   const codeStyles = {
     color: "#d868a9",
     padding: 4,
     backgroundColor: "#e4dcef",
-    fontSize: "1rem",
+    fontSize: "0.7rem",
     borderRadius: 4,
   };
   const listStyles = {
@@ -56,7 +53,13 @@ const pageStyles = {
     marginBottom: 0,
     lineHeight: 1.25,
   };
-  
+  const footerStyle = {
+    color: "#ce94ae",
+    width: "100%",
+    textAlign: "center",
+    paddingBottom: "0.5rem",
+    paddingTop: "0.5rem",
+  };
   const badgeStyle = {
     color: "#d868a9",
     backgroundColor: "#e4dcef",
@@ -90,7 +93,8 @@ const StudyPage = () => {
     return (
         <main align="center" style={pageStyles}>
             <h1>踵事增华</h1>
-            <div>踵事增华，旨在希望通过平时的积累来踔厉奋发</div>
+            <a style={codeStyles}>烟雨箬笠，朝闻行远自迩</a><p></p>
+            <a style={codeStyles}>山花烂漫，夕拾增华踵事</a>
             <ul style={listStyles}>
         {links.map((link) => (
           <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
@@ -104,12 +108,16 @@ const StudyPage = () => {
         ))}
       </ul>
 
-
-      <footer>
-        <Link to="/">Go Home</Link>
+      <footer style={footerStyle}>
+        <hr class="css-1avyp1d"></hr>
+        <a href="/">Go Home</a> 
         <p>
-          Projects by <a href="https://github.com/ottoqwq"> Otto Deng</a>.
-          Powered by <a href="https://www.gatsbyjs.com/">Gatsby</a>
+          Projects by{" "}
+          <a href="https://github.com/ottoqwq">
+            {" "}
+            <hi style={codeStyles}>Otto Deng</hi>
+          </a>
+          . Powered by <a href="https://www.gatsbyjs.com/">Gatsby</a>
         </p>
         <p>
           Content on this site is licensed under{" "}

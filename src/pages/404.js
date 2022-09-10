@@ -12,7 +12,13 @@ const headingStyles = {
   marginTop: 0,
   marginBottom: 64,
 };
-
+const footerStyle = {
+  color: "#ce94ae",
+  width: "100%",
+  textAlign: "center",
+  paddingBottom: "0.5rem",
+  paddingTop: "0.5rem",
+};
 const paragraphStyles = {
   marginBottom: 48,
 };
@@ -34,10 +40,7 @@ const NotFoundPage = () => {
         <h2>Sorry</h2>
         <p>
           <img src={NotFound} alt="404 not found" width={200} />
-        </p>
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{" "}
+        </p>{" "}
         Otto had no idea of what you're looking for
         <br />
         {process.env.NODE_ENV === "development" ? (
@@ -53,13 +56,26 @@ const NotFoundPage = () => {
         ) : null}
         <br />
       </p>
-      <p>
-      <Link style={pageStyles} to="/">
-          Go home
-        </Link>
-      </p>
+      <footer style={footerStyle}>
+        <hr class="css-1avyp1d"></hr>
+        <a href="/">Go Home</a> 
+        <p>
+          Projects by{" "}
+          <a href="https://github.com/ottoqwq">
+            {" "}
+            <hi style={codeStyles}>Otto Deng</hi>
+          </a>
+          . Powered by <a href="https://www.gatsbyjs.com/">Gatsby</a>
+        </p>
+        <p>
+          Content on this site is licensed under{" "}
+          <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>{" "}
+          unless specified.
+        </p>
+      </footer>
     </main>
   );
 };
 
 export default NotFoundPage;
+

@@ -55,7 +55,13 @@ const descriptionStyle = {
   marginBottom: 0,
   lineHeight: 1.25,
 };
-
+const footerStyle = {
+  color: "#ce94ae",
+  width: "100%",
+  textAlign: "center",
+  paddingBottom: "0.5rem",
+  paddingTop: "0.5rem",
+};
 const badgeStyle = {
   color: "#d868a9",
   backgroundColor: "#e4dcef",
@@ -74,6 +80,12 @@ const badgeStyle = {
 
 // data
 const links = [
+    {
+      text: "韶华集",
+      url: "/study/CHI/韶华集",
+      date: "持续更新",
+      breif: "作文中万用的韶华与骚话",
+    },
     {
         text: "关于诗歌鉴赏一些笔记",
         url: "/study/CHI/2022-7-17-of-poetry",
@@ -106,9 +118,11 @@ const IndexPage = () => {
 
 
 
-      <footer>
-            <Link to="../">Back</Link>
-            <p>
+
+      <footer style={footerStyle}>
+        <hr class="css-1avyp1d"></hr>
+        <a href="../">Go Back</a> 
+        <p>
           Projects by{" "}
           <a href="https://github.com/ottoqwq">
             {" "}

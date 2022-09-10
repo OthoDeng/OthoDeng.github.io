@@ -59,6 +59,13 @@ const descriptionStyle = {
   lineHeight: 1.25,
 };
 
+const footerStyle = {
+  color: "#F2ABBD",
+  textAlign: "center",
+  width: "100%",
+  paddingBottom: "0.5rem",
+  paddingTop: "0.5rem",
+};
 const badgeStyle = {
   color: "#d868a9",
   backgroundColor: "#e4dcef",
@@ -96,7 +103,7 @@ const links = [
     brief: "柳暗花明又一村",
   },
   {
-    text: "神圣时间——禁锢在没有节日的时代（转载）",
+    text: "神圣时间——禁锢在没有节日的时代",
     url: "/blog/2022-4-11-神圣时间/",
     date: "2022/4/11",
     brief: "且看到庆典时刻享欢庆之时",
@@ -108,7 +115,7 @@ const links = [
     brief: "能装，都能装",
   },
   {
-    text: "媒介化生存（转载）",
+    text: "媒介化生存",
     url: "/blog/2021-8-21-媒介化生存",
     date: "2021/8/21",
     brief: "赛博真嗣会梦到电子橙汁吗",
@@ -126,20 +133,25 @@ const Posts = () => {
             <span>
               <a style={linkStyle} href={`${link.url}`}>
                 {link.text}
-                <div style={descriptionStyle}>{link.brief}</div>
-                <div>{link.date}</div>
               </a>
+              <div style={descriptionStyle}>{link.brief}</div>
+              <div>{link.date}</div>
               <p style={descriptionStyle}>{link.description}</p>
             </span>
           </li>
         ))}
       </ul>
 
-      <footer>
-        <Link to="/">Go Home</Link>
+      <footer style={footerStyle}>
+        <hr class="css-1avyp1d"></hr>
+        <a href="/">Go Home</a> 
         <p>
-          Projects by <a href="https://github.com/ottoqwq"> Otto Deng</a>.
-          Powered by <a href="https://www.gatsbyjs.com/">Gatsby</a>
+          Projects by{" "}
+          <a style={codeStyles} href="https://github.com/ottoqwq">
+            {" "}
+            Otto Deng
+          </a>
+          . Powered by <a href="https://www.gatsbyjs.com/">Gatsby</a>
         </p>
         <p>
           Content on this site is licensed under{" "}

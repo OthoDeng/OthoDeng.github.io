@@ -55,7 +55,13 @@ const descriptionStyle = {
   marginBottom: 0,
   lineHeight: 1.25,
 };
-
+const footerStyle = {
+  color: "#ce94ae",
+  width: "100%",
+  textAlign: "center",
+  paddingBottom: "0.5rem",
+  paddingTop: "0.5rem",
+};
 const badgeStyle = {
   color: "#d868a9",
   backgroundColor: "#e4dcef",
@@ -82,6 +88,7 @@ const IndexPage = () => {
     <main align="center" style={pageStyles}>
       <title>数学</title>
       <h1>数学</h1>
+      <div>目前没啥活</div>
       <ul style={listStyles}>
         {links.map((link) => (
           <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
@@ -99,10 +106,12 @@ const IndexPage = () => {
       </ul>
 
 
+      <iframe src="https://cloud.mokeyjay.com/pixiv" width="240px" height="380px" border="0"></iframe>
 
-      <footer>
-            <Link to="../">Back</Link>
-            <p>
+      <footer style={footerStyle}>
+        <hr class="css-1avyp1d"></hr>
+        <a href="../">Go Back</a> 
+        <p>
           Projects by{" "}
           <a href="https://github.com/ottoqwq">
             {" "}

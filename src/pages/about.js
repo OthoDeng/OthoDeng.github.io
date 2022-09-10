@@ -58,6 +58,13 @@ const descriptionStyle = {
   marginBottom: 0,
   lineHeight: 1.25,
 };
+const footerStyle = {
+  color: "#ce94ae",
+  width: "100%",
+  textAlign: "center",
+  paddingBottom: "0.5rem",
+  paddingTop: "0.5rem",
+};
 
 const badgeStyle = {
   color: "#d868a9",
@@ -85,7 +92,7 @@ const AboutPage = () => {
       <h3>Otto 在正式的场合使用名字为 Otto Deng*</h3>
       <p>
         目前是个高中生，使用
-        <code style={codeStyles}>Gentoo Linux && Arch Linux</code>
+        </p><p><code style={codeStyles}>Gentoo Linux && Arch Linux</code>
       </p>
       <p>打网球，音乐喜欢摇滚乐与巴赫。</p>
       <p>对于一般事物都会去涉猎，但最终会专注于自己热爱的话题</p>
@@ -120,9 +127,18 @@ const AboutPage = () => {
         Otto 少以此名出现
       </div>
 
-      <footer>
+      <footer style={footerStyle}>
+        <hr class="css-1avyp1d"></hr>
+        <a href="/">Go Home</a> 
         <p>
-        <p><Link to="/">Go home</Link></p>
+          Projects by{" "}
+          <a href="https://github.com/ottoqwq">
+            {" "}
+            <hi style={codeStyles}>Otto Deng</hi>
+          </a>
+          . Powered by <a href="https://www.gatsbyjs.com/">Gatsby</a>
+        </p>
+        <p>
           Content on this site is licensed under{" "}
           <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>{" "}
           unless specified.
