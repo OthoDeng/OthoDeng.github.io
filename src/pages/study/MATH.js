@@ -1,23 +1,10 @@
 import * as React from "react";
-import { Link } from "gatsby";
 
 // styles
 const pageStyles = {
   color: "#F2ABBD",
   padding: 96,
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
-};
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  fontSize: "2rem",
-};
-const headingAccentStyles = {
-  color: "#DA697D",
-  fontSize: "1rem",
-};
-const paragraphStyles = {
-  marginBottom: 48,
 };
 const codeStyles = {
   color: "#d868a9",
@@ -42,12 +29,6 @@ const linkStyle = {
   verticalAlign: "5%",
 };
 
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  marginBottom: 24,
-};
-
 const descriptionStyle = {
   color: "#8b78a5",
   fontSize: 14,
@@ -62,22 +43,6 @@ const footerStyle = {
   paddingBottom: "0.5rem",
   paddingTop: "0.5rem",
 };
-const badgeStyle = {
-  color: "#d868a9",
-  backgroundColor: "#e4dcef",
-  border: "1px solid #8b78a5",
-  fontSize: 11,
-  fontWeight: "bold",
-  letterSpacing: 1,
-  borderRadius: 4,
-  padding: "4px 6px",
-  display: "inline-block",
-  position: "relative",
-  top: -2,
-  marginLeft: 10,
-  lineHeight: 1,
-};
-
 // data
 const links = [
 ];

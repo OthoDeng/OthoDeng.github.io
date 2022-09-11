@@ -17,46 +17,12 @@ const headingAccentStyles = {
   color: "#d868a9",
   fontSize: "1rem",
 };
-const paragraphStyles = {
-  marginBottom: 48,
-};
 const codeStyles = {
   color: "#d868a9",
   padding: 4,
   backgroundColor: "#e4dcef",
   fontSize: "1rem",
   borderRadius: 4,
-};
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-};
-const listItemStyles = {
-  fontWeight: 300,
-  fontSize: 24,
-  maxWidth: 560,
-  marginBottom: 30,
-};
-
-const linkStyle = {
-  color: "#d164cb",
-  fontWeight: "bold",
-  fontSize: 16,
-  verticalAlign: "5%",
-};
-
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  marginBottom: 24,
-};
-
-const descriptionStyle = {
-  color: "#8b78a5",
-  fontSize: 14,
-  marginTop: 10,
-  marginBottom: 0,
-  lineHeight: 1.25,
 };
 const footerStyle = {
   color: "#ce94ae",
@@ -66,21 +32,6 @@ const footerStyle = {
   paddingTop: "0.5rem",
 };
 
-const badgeStyle = {
-  color: "#d868a9",
-  backgroundColor: "#e4dcef",
-  border: "1px solid #8b78a5",
-  fontSize: 11,
-  fontWeight: "bold",
-  letterSpacing: 1,
-  borderRadius: 4,
-  padding: "4px 6px",
-  display: "inline-block",
-  position: "relative",
-  top: -2,
-  marginLeft: 10,
-  lineHeight: 1,
-};
 
 const AboutPage = () => {
   return (
@@ -92,7 +43,7 @@ const AboutPage = () => {
       <h3>Otto 在正式的场合使用名字为 Otto Deng*</h3>
       <p>
         目前是个高中生，使用
-        </p><p><code style={codeStyles}>Gentoo Linux && Arch Linux</code>
+        </p><p><code style={codeStyles} href="https://linux.org">Linux</code>
       </p>
       <p>打网球，音乐喜欢摇滚乐与巴赫。</p>
       <p>对于一般事物都会去涉猎，但最终会专注于自己热爱的话题</p>

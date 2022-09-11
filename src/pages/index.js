@@ -88,8 +88,8 @@ const links = [
   },
 
   {
-    text: "Posts",
-    url: "posts",
+    text: "Blog Posts",
+    url: "blog",
     description: "Non-daliy updates and articles written or digested by Otto.",
   },
   {
