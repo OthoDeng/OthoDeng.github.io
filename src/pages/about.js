@@ -35,7 +35,7 @@ const footerStyle = {
 
 const AboutPage = () => {
   return (
-    <main align="center" style={pageStyles}>
+    <main align="left" style={pageStyles}>
       <title>About Otto</title>
       <h1 style={headingStyles}>
         <a>About Me</a>
@@ -63,7 +63,7 @@ const AboutPage = () => {
           </mail>
         </p>
         <p>
-          一般情况下，Otto 会在 <Link to="https://t.me/OttoDeng">Telegram</Link>{" "}
+          一般情况下，Otto 会在 <Link to="https://OttoQwQ.t.me">Telegram</Link>{" "}
           上活跃，为防止垃圾消息过多，因而并未设置用户名。
         </p>
 
