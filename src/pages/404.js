@@ -58,7 +58,7 @@ const NotFoundPage = () => {
       </p>
       <footer style={footerStyle}>
         <hr class="css-1avyp1d"></hr>
-        <a href="/">Go Home</a> 
+        <a href="/">Go Home</a>
         <p>
           Projects by{" "}
           <a href="https://github.com/ottoqwq">
