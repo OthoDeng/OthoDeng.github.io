@@ -2,7 +2,6 @@
 
 exports.__esModule = true;
 exports.css = css;
-
 /**
  * Converts a string of CSS into object syntax
  * @param strings
@@ -19,3 +18,4 @@ function css(strings, ...keys) {
   const lastIndex = strings.length - 1;
   return strings.slice(0, lastIndex).reduce((p, s, i) => p + s + keys[i], ``) + strings[lastIndex];
 }
+//# sourceMappingURL=css-to-object.js.map

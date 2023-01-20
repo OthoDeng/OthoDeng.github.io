@@ -1,8 +1,8 @@
 {
-  "name": "blog",
+  "name": "ottoqwq.github.io",
   "version": "1.0.0",
   "private": true,
-  "description": "blog",
+  "description": "ottoqwq.github.io",
   "author": "ottoqwq",
   "keywords": [
     "gatsby"
@@ -15,24 +15,22 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.0",
-    "@emotion/styled": "^11.10.0",
-    "@mdx-js/mdx": "^1.6.22",
-    "@mdx-js/react": "^1.6.22",
-    "gatsby": "^4.20.0",
-    "gatsby-plugin-image": "^2.20.0",
-    "gatsby-plugin-manifest": "^4.20.0",
-    "gatsby-plugin-mdx": "^3.20.0",
-    "gatsby-plugin-react-helmet": "^5.20.0",
-    "gatsby-plugin-sharp": "^4.20.0",
-    "gatsby-plugin-sitemap": "^5.20.0",
-    "gatsby-plugin-theme-ui": "^0.14.7",
-    "gatsby-source-filesystem": "^4.20.0",
-    "gatsby-transformer-remark": "^5.20.0",
-    "gatsby-transformer-sharp": "^4.20.0",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-helmet": "^6.1.0",
-    "theme-ui": "^0.14.7"
+    "@mdx-js/react": "^2.2.1",
+    "babel-plugin-styled-components": "^2.0.7",
+    "gatsby": "^5.4.2",
+    "gatsby-plugin-google-gtag": "^5.4.0",
+    "gatsby-plugin-image": "^3.4.0",
+    "gatsby-plugin-manifest": "^5.4.0",
+    "gatsby-plugin-mdx": "^5.4.0",
+    "gatsby-plugin-sharp": "^5.4.0",
+    "gatsby-plugin-sitemap": "^6.4.0",
+    "gatsby-plugin-styled-components": "^6.4.0",
+    "gatsby-source-filesystem": "^5.4.0",
+    "gatsby-source-wordpress": "^7.4.1",
+    "gatsby-transformer-remark": "^6.4.0",
+    "gatsby-transformer-sharp": "^5.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.6"
   }
 }

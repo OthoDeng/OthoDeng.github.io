@@ -2,55 +2,45 @@
 
 exports.__esModule = true;
 exports.Indicator = Indicator;
-
 var React = _interopRequireWildcard(require("react"));
-
 var _shadowPortal = require("../shadow-portal");
-
 var _style = require("./style");
-
 var _loadingIndicator = require("$virtual/loading-indicator");
-
 var _debugLog = require("../debug-log");
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 if (typeof window === `undefined`) {
   throw new Error(`Loading indicator should never be imported in code that doesn't target only browsers`);
 }
-
 if (module.hot) {
-  module.hot.accept(`$virtual/loading-indicator`, () => {// isLoadingIndicatorEnabled is imported with ES import so no need
+  module.hot.accept(`$virtual/loading-indicator`, () => {
+    // isLoadingIndicatorEnabled is imported with ES import so no need
     // for dedicated handling as HMR just replace it in that case
   });
-} // HMR can rerun this, so check if it was set before
+}
+
+// HMR can rerun this, so check if it was set before
 // we also set it on window and not just in module scope because of HMR resetting
 // module scope
-
-
 if (typeof window.___gatsbyDidShowLoadingIndicatorBefore === `undefined`) {
   window.___gatsbyDidShowLoadingIndicatorBefore = false;
 }
-
 function Indicator({
   visible = true
 }) {
   if (!(0, _loadingIndicator.isLoadingIndicatorEnabled)()) {
     return null;
   }
-
   if (!window.___gatsbyDidShowLoadingIndicatorBefore) {
     // not ideal to this in render function, but that's just console info
     (0, _debugLog.debugLog)(`A loading indicator is displayed in-browser whenever content is being requested upon navigation (Query On Demand).\n\nYou can disable the loading indicator for your current session by visiting ${window.location.origin}/___loading-indicator/disable`);
     window.___gatsbyDidShowLoadingIndicatorBefore = true;
   }
-
   return /*#__PURE__*/React.createElement(_shadowPortal.ShadowPortal, {
     identifier: "gatsby-qod"
   }, /*#__PURE__*/React.createElement(_style.Style, null), /*#__PURE__*/React.createElement("div", {
-    "data-gatsby-loading-indicator": "root" // preact doesn't render data attributes with a literal bool false value to dom
+    "data-gatsby-loading-indicator": "root"
+    // preact doesn't render data attributes with a literal bool false value to dom
     ,
     "data-gatsby-loading-indicator-visible": visible.toString(),
     "aria-live": "assertive"
@@ -70,3 +60,4 @@ function Indicator({
     "data-gatsby-loading-indicator": "text"
   }, visible ? `Preparing requested page` : ``)));
 }
+//# sourceMappingURL=indicator.js.map

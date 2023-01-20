@@ -2,9 +2,7 @@
 
 exports.__esModule = true;
 exports.WritableAsPromise = void 0;
-
 var _stream = require("stream");
-
 class WritableAsPromise extends _stream.Writable {
   constructor() {
     super();
@@ -19,23 +17,26 @@ class WritableAsPromise extends _stream.Writable {
       this._deferred.reject = reject;
     });
   }
-
-  _write(chunk, enc, cb) {
+  _write(chunk, _, next) {
     this._output += chunk.toString();
-    cb();
+    next();
   }
-
+  _destroy(error, next) {
+    if (error instanceof Error) {
+      this._deferred.reject(error);
+    } else {
+      next();
+    }
+  }
   end() {
     this._deferred.resolve(this._output);
-
     this.destroy();
-  } // disguise us as a promise
+  }
 
-
+  // disguise us as a promise
   then(resolve, reject) {
     return this._deferred.promise.then(resolve, reject);
   }
-
 }
-
 exports.WritableAsPromise = WritableAsPromise;
+//# sourceMappingURL=writable-as-promise.js.map

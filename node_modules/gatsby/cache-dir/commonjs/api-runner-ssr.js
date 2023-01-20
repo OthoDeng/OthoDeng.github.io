@@ -3,7 +3,6 @@
 exports.__esModule = true;
 exports.apiRunner = apiRunner;
 exports.apiRunnerAsync = apiRunnerAsync;
-
 /* global plugins */
 // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [
@@ -16,43 +15,37 @@ exports.apiRunnerAsync = apiRunnerAsync;
 //     options: { ... },
 //   },
 // ]
-const apis = require(`./api-ssr-docs`);
 
+const apis = require(`./api-ssr-docs`);
 function augmentErrorWithPlugin(plugin, err) {
   if (plugin.name !== `default-site-plugin`) {
     // default-site-plugin is user code and will print proper stack trace,
     // so no point in annotating error message pointing out which plugin is root of the problem
     err.message += ` (from plugin: ${plugin.name})`;
   }
-
   throw err;
 }
-
 function apiRunner(api, args, defaultReturn, argTransform) {
   if (!apis[api]) {
     console.log(`This API doesn't exist`, api);
   }
-
   const results = [];
   plugins.forEach(plugin => {
     const apiFn = plugin.plugin[api];
-
     if (!apiFn) {
       return;
     }
-
     try {
       const result = apiFn(args, plugin.options);
-
       if (result && argTransform) {
         args = argTransform({
           args,
           result
         });
-      } // This if case keeps behaviour as before, we should allow undefined here as the api is defined
+      }
+
+      // This if case keeps behaviour as before, we should allow undefined here as the api is defined
       // TODO V4
-
-
       if (typeof result !== `undefined`) {
         results.push(result);
       }
@@ -62,33 +55,27 @@ function apiRunner(api, args, defaultReturn, argTransform) {
   });
   return results.length ? results : [defaultReturn];
 }
-
 async function apiRunnerAsync(api, args, defaultReturn, argTransform) {
   if (!apis[api]) {
     console.log(`This API doesn't exist`, api);
   }
-
   const results = [];
-
   for (const plugin of plugins) {
     const apiFn = plugin.plugin[api];
-
     if (!apiFn) {
       continue;
     }
-
     try {
       const result = await apiFn(args, plugin.options);
-
       if (result && argTransform) {
         args = argTransform({
           args,
           result
         });
-      } // This if case keeps behaviour as before, we should allow undefined here as the api is defined
+      }
+
+      // This if case keeps behaviour as before, we should allow undefined here as the api is defined
       // TODO V4
-
-
       if (typeof result !== `undefined`) {
         results.push(result);
       }
@@ -96,6 +83,6 @@ async function apiRunnerAsync(api, args, defaultReturn, argTransform) {
       augmentErrorWithPlugin(plugin, e);
     }
   }
-
   return results.length ? results : [defaultReturn];
 }
+//# sourceMappingURL=api-runner-ssr.js.map

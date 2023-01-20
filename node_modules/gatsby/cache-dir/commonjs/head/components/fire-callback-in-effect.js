@@ -2,9 +2,7 @@
 
 exports.__esModule = true;
 exports.FireCallbackInEffect = FireCallbackInEffect;
-
 var _react = require("react");
-
 /*
  * Calls callback in an effect and renders children
  */
@@ -17,3 +15,4 @@ function FireCallbackInEffect({
   });
   return children;
 }
+//# sourceMappingURL=fire-callback-in-effect.js.map

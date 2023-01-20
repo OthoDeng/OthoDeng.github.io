@@ -1,34 +1,22 @@
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 exports.__esModule = true;
 exports.default = void 0;
 exports.getPageChunk = getPageChunk;
-
 var _merge2 = _interopRequireDefault(require("lodash/merge"));
-
 var _react = _interopRequireDefault(require("react"));
-
 var _server = require("react-dom/server");
-
 var _apiRunnerSsr = require("./api-runner-ssr");
-
 var _asyncRequires = _interopRequireDefault(require("$virtual/async-requires"));
-
 /* global BROWSER_ESM_ONLY */
-// import testRequireError from "./test-require-error"
-// For some extremely mysterious reason, webpack adds the above module *after*
-// this module so that when this code runs, testRequireError is undefined.
-// So in the meantime, we'll just inline it.
+
 const testRequireError = (moduleName, err) => {
   const regex = new RegExp(`Error: Cannot find module\\s.${moduleName}`);
   const firstLine = err.toString().split(`\n`)[0];
   return regex.test(firstLine);
 };
-
 let Html;
-
 try {
   Html = require(`../src/html`);
 } catch (err) {
@@ -39,9 +27,7 @@ try {
     process.exit();
   }
 }
-
 Html = Html && Html.__esModule ? Html.default : Html;
-
 var _default = ({
   pagePath
 }) => {
@@ -56,49 +42,36 @@ var _default = ({
   let postBodyComponents = [];
   let bodyProps = {};
   let htmlStr;
-
   const setHeadComponents = components => {
     headComponents = headComponents.concat(components);
   };
-
   const setHtmlAttributes = attributes => {
     htmlAttributes = (0, _merge2.default)(htmlAttributes, attributes);
   };
-
   const setBodyAttributes = attributes => {
     bodyAttributes = (0, _merge2.default)(bodyAttributes, attributes);
   };
-
   const setPreBodyComponents = components => {
     preBodyComponents = preBodyComponents.concat(components);
   };
-
   const setPostBodyComponents = components => {
     postBodyComponents = postBodyComponents.concat(components);
   };
-
   const setBodyProps = props => {
     bodyProps = (0, _merge2.default)({}, bodyProps, props);
   };
-
   const getHeadComponents = () => headComponents;
-
   const replaceHeadComponents = components => {
     headComponents = components;
   };
-
   const getPreBodyComponents = () => preBodyComponents;
-
   const replacePreBodyComponents = components => {
     preBodyComponents = components;
   };
-
   const getPostBodyComponents = () => postBodyComponents;
-
   const replacePostBodyComponents = components => {
     postBodyComponents = components;
   };
-
   (0, _apiRunnerSsr.apiRunner)(`onRenderBody`, {
     setHeadComponents,
     setHtmlAttributes,
@@ -117,8 +90,8 @@ var _default = ({
     replacePostBodyComponents,
     pathname: pagePath
   });
-
-  const htmlElement = /*#__PURE__*/_react.default.createElement(Html, { ...bodyProps,
+  const htmlElement = /*#__PURE__*/_react.default.createElement(Html, {
+    ...bodyProps,
     body: ``,
     headComponents: headComponents.concat([/*#__PURE__*/_react.default.createElement("script", {
       key: `io`,
@@ -143,16 +116,14 @@ var _default = ({
       src: "/commons.js"
     })].filter(Boolean))
   });
-
   htmlStr = (0, _server.renderToStaticMarkup)(htmlElement);
   htmlStr = `<!DOCTYPE html>${htmlStr}`;
   return htmlStr;
 };
-
 exports.default = _default;
-
 function getPageChunk({
   componentChunkName
 }) {
   return _asyncRequires.default.components[componentChunkName]();
 }
+//# sourceMappingURL=develop-static-entry.js.map

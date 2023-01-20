@@ -21,3 +21,4 @@ const RouteAnnouncerProps = {
   "aria-atomic": `true`
 };
 exports.RouteAnnouncerProps = RouteAnnouncerProps;
+//# sourceMappingURL=route-announcer-props.js.map

@@ -1,14 +1,10 @@
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 exports.__esModule = true;
 exports.Style = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _cssToObject = require("../css-to-object");
-
 const Style = () => /*#__PURE__*/_react.default.createElement("style", {
   dangerouslySetInnerHTML: {
     __html: (0, _cssToObject.css)`
@@ -103,5 +99,5 @@ const Style = () => /*#__PURE__*/_react.default.createElement("style", {
       `
   }
 });
-
 exports.Style = Style;
+//# sourceMappingURL=style.js.map

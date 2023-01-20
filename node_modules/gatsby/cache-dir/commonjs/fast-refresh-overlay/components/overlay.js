@@ -1,7 +1,6 @@
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 exports.__esModule = true;
 exports.Body = Body;
 exports.CloseButton = CloseButton;
@@ -10,25 +9,17 @@ exports.Header = Header;
 exports.HeaderOpenClose = HeaderOpenClose;
 exports.Overlay = Overlay;
 exports.VisuallyHidden = VisuallyHidden;
-
 var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-
 var React = _interopRequireWildcard(require("react"));
-
 var _lockBody = require("../helpers/lock-body");
-
 var _focusTrap = _interopRequireDefault(require("../helpers/focus-trap"));
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 function Backdrop() {
   return /*#__PURE__*/React.createElement("div", {
     "data-gatsby-overlay": "backdrop"
   });
 }
-
 function VisuallyHidden({
   children
 }) {
@@ -47,7 +38,6 @@ function VisuallyHidden({
     }
   }, children);
 }
-
 function Overlay({
   children
 }) {
@@ -65,11 +55,11 @@ function Overlay({
     if (overlay === null) {
       return;
     }
-
     const handle = (0, _focusTrap.default)({
       context: overlay
-    }); // eslint-disable-next-line consistent-return
+    });
 
+    // eslint-disable-next-line consistent-return
     return () => {
       handle.disengage();
     };
@@ -86,7 +76,6 @@ function Overlay({
     dir: "ltr"
   }, children));
 }
-
 function CloseButton({
   dismiss
 }) {
@@ -114,7 +103,6 @@ function CloseButton({
     strokeLinejoin: "round"
   })));
 }
-
 function HeaderOpenClose({
   open,
   dismiss,
@@ -132,7 +120,6 @@ function HeaderOpenClose({
     dismiss: dismiss
   })));
 }
-
 function Header({
   children,
   ...rest
@@ -141,7 +128,6 @@ function Header({
     "data-gatsby-overlay": "header"
   }, rest), children);
 }
-
 function Body({
   children,
   ...rest
@@ -150,7 +136,6 @@ function Body({
     "data-gatsby-overlay": "body"
   }, rest), children);
 }
-
 function Footer({
   children,
   ...rest
@@ -159,3 +144,4 @@ function Footer({
     "data-gatsby-overlay": "footer"
   }, rest), children);
 }
+//# sourceMappingURL=overlay.js.map
