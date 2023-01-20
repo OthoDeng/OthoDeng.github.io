@@ -84,13 +84,12 @@ const badgeStyle = {
 
 // data
 const links = [
-  {
-    text: "韶华集",
-    url: "/study/CHI/韶华集",
-    date: "持续更新……",
-    brief: "作文中万用的韶华与骚话",
+    {
+    text: "18岁写下的话",
+    url: "/blog/2023-1-20-在18岁写下的话",
+    date: "2023/1/20",
+    brief: "感谢各位的陪伴！",
   },
-  
   {
     text: "2022-12-31-2022总结",
     url: "/blog/2022-12-31-2022总结",
@@ -132,6 +131,12 @@ const links = [
     url: "/blog/2021-8-21-媒介化生存",
     date: "2021/8/21",
     brief: "赛博真嗣会梦到电子橙汁吗",
+  },
+    {
+    text: "韶华集",
+    url: "/study/CHI/韶华集",
+    date: "持续更新……",
+    brief: "作文中万用的韶华与骚话",
   },
 ];
 
