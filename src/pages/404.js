@@ -37,7 +37,7 @@ const NotFoundPage = () => {
       <title>Not found</title>
       <h1 style={headingStyles}>Page not found</h1>
       <p style={paragraphStyles}>
-        <h2>Sorry</h2>
+        <h2>Sorry(°ー°〃)</h2>
         <p>
           <img src={NotFound} alt="404 not found" width={200} />
         </p>{" "}

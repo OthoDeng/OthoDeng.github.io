@@ -104,9 +104,9 @@ const links = [
     description: "Otto's Telegram channel",
   },
   {
-    text: "踵事增华",
-    url: "study",
-    description: "个人的学习笔记整理",
+    text: "Music Box",
+    url: "music",
+    description: "Otto喜欢的一些音乐",
   },
 ];
 
@@ -117,9 +117,9 @@ const IndexPage = () => {
       <title>Otto's Blog | OttoDeng</title>
       <h1 style={headingStyles}>
         Otto's Blog
-        <br />
+        <br/>
         <span style={headingAccentStyles}>
-          ——人生得意须尽欢，莫使金樽空对月{" "}
+          ——谈论很多自己的事，可能也是隐藏自己的手段。{" "}
         </span>
       </h1>
       <ul style={listStyles}>
@@ -152,6 +152,8 @@ const IndexPage = () => {
           <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>{" "}
           unless specified.
         </p>
+        <a href="https://OttoQwQ.me">OttoQwQ.me</a>
+
       </footer>
     </main>
   );

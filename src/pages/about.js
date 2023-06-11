@@ -36,20 +36,23 @@ const footerStyle = {
 const AboutPage = () => {
   return (
     <main align="left" style={pageStyles}>
-      <title>About Otto</title>
+      <title>About Otto Deng</title>
       <h1 style={headingStyles}>
         <a>About Me</a>
       </h1>
-      <h3>Otto 在正式的场合使用名字为 Otto Deng*</h3>
+      <h2>Otto 在正式的场合使用名字为 Otto Deng*</h2>
       <p>
-        目前是个高中生，使用
-        </p><p><code style={codeStyles} href="https://linux.org">Linux</code>
-      </p>
-      <p>打网球，音乐喜欢摇滚乐与巴赫。</p>
+        目前是个毕业高中生，有自学CS、
+        <a href="https://linux.org">Linux</a>的经历,在resume上自吹有扎实的理科基础</p>
+      <p>喜欢打网球,高中时期曾为此晒黑几度</p>
+      <h2 style={headingAccentStyles}>音乐</h2>
+      <p>喜欢摇滚乐与巴赫（22年）</p>
+      <p>现在听一些术曲、BOF、Hardcore（23年上半）</p>
+      <h2 style={headingAccentStyles}>思考</h2>
+      <p>认同柏拉图的学说（22年），现在信奉尼采与萨特的学说。</p>
       <p>对于一般事物都会去涉猎，但最终会专注于自己热爱的话题</p>
       <p>时常会感慨修短随化，因而希望莫使金樽空对月。</p>
-      <p>也就是我的频道名称来源</p>
-      <p>认同柏拉图的学说，现在信奉尼采与萨特的学说。</p>
+      <p>也就是我的频道名称来源（修改于2023年6月10日）</p>
       <div>
         <h2>
           <span style={headingAccentStyles}>联系方式</span>
@@ -59,23 +62,23 @@ const AboutPage = () => {
           <mail>
             <Link style={codeStyles} to="mailto:ottodeng9@gmail.com">
               ottodeng9[at]gmail[dot]com
+            </Link>{" "}
+            以及
+            <Link style={codeStyles} to="mailto:ottodeng9@gmail.com">
+              otto[at]duck[dot]com
             </Link>
           </mail>
         </p>
         <p>
           一般情况下，Otto 会在 <Link to="https://OttoQwQ.t.me">Telegram</Link>{" "}
-          上活跃，为防止垃圾消息过多，因而并未设置用户名。
+          上活跃。
         </p>
 
         <p>
           你也会在其他地方找到 Otto ，一般以{" "}
           <bold style={codeStyles}>Otto the-{"<Related Suffix>"}</bold>{" "}
-          的方式呈现(如 Otto the-e 最为常见)。
+          或者是<bold style={codeStyles}>奥托小奥托</bold>{" "}的方式呈现(如 <a style={headingAccentStyles}>Otto the-e</a> 最为常见)。
         </p>
-      </div>
-      <div>
-        *由于 "OttoDeng" 可能与另他人相混淆，因而除邮箱（以及谷歌相关帐户）外，
-        Otto 少以此名出现
       </div>
 
       <footer style={footerStyle}>

@@ -132,12 +132,6 @@ const links = [
     date: "2021/8/21",
     brief: "赛博真嗣会梦到电子橙汁吗",
   },
-    {
-    text: "韶华集",
-    url: "/study/CHI/韶华集",
-    date: "持续更新……",
-    brief: "作文中万用的韶华与骚话",
-  },
 ];
 
 // components
