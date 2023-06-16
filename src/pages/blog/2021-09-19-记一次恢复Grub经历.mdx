@@ -1,0 +1,132 @@
+export default function Layout({children}) {
+  return <main align="left" style={{color: '#c868a9'}}>{children}</main>;
+}
+
+
+<title>记一次恢复Grub经历</title>
+
+# 记一次恢复Grub经历|Grub command启动原理浅析(新手向
+
+*[grub](https://www.gnu.org/software/grub/)可以理解为一个系统引导的启动器，当你安装完成一个Linux发行版时， GRUB可以实现多个（系统的）启动，它允许用户可以在 计算机 内同时拥有多个 操作系统 ，并在计算机启动时选择希望运行的操作系统。*
+-----
+
+进入正题，文章将以以下两个问题来展开：
+
+“我安装完Linux,发现没有启动条目怎么办？”
+
+“我安装完了Linux后，又不小心启动了BIOS的secure boot,现在进不去系统怎么办？”
+-----
+
+## 壹.我安装完Linux,发现没有启动条目怎么办？ （如急需时）
+方法：使用grub 的`command line`
+### 1,首先用ls命令，找到系统安装在哪个磁盘分区
+返回结果（举例）：
+```bash
+(hd0),(hd1),(hd1,gpt3),(hd1,gpt2),(hd1,gpt1)
+```
+
+### 2,查找包含grub.cfg文件的分区
+假定我们 `ls (hd1,gpt2)/boot/grub` 发现了`grub.cfg`文件，说明明Linux安装在这个分区
+gpt2,我们在后面识别为sda2（可以理解为不同的表达）
+做完以上两步，我们就可以开始启动了
+### 1,先指定Linux内核以及根目录（/）所在分区
+```bash
+grub> linux /boot/vmlinuz-1.1.4-514-generic ro text root=/dev/sda2
+```
+
+### linux指定内核
+`vmlinuz-{版本号}-generic`,就是内核,`vmlinuz`作为后面进程管理、内存管理、文件管理、驱动管理、网络管理等使用。
+
+### 2,initrd命令指定initrd文件
+
+grub> initrd /boot/initrd.img-1.1.4-514-generic
+
+initrd,指定initrd文件（.img)
+initrd.img,是一个小的映象， 放的是和启动相关的驱动模块。
+### 3,做完这些，如果都没奇奇怪怪的报错的话，那么你就可以顺利boot进入系统啦！
+```bash
+grub> boot
+```
+
+**注：一般vmlinuz和initrd都放在`/boot`下**
+-----
+
+
+**划重点！系统启动流程：**
+    1.首先根据启动入口，确定需要加载的启动器（.efi文件）
+    2.对于Linux系统，或者是使用grub引导的系统，会加载到grubx64.efi文件
+    3.grub加载/boot/grub下的模块及配置文件
+    4.加载系统启动内核
+
+
+当然,以上的方法只适用于临时进入系统，后面的话还需重新grub-install。
+-----
+
+## 贰，我安装完了Linux后，又不小心启动了BIOS的secure boot,现在进不去系统怎么办？
+首先这时，先关闭secure boot（雾）
+已知：系统无法进入，而你又不想格式化文件重新安装系统。
+方法：刻录u盘，对，就跟安装新的系统一样，重新`grub-install`。
+我们以Arch Linux为例：
+### 0,如果grub-install无法使用，先联网
+重复讲述一下联网过程（毕竟挺容易忘的）
+```bash
+iwctl       #进入交互式命令行
+device list       #列出设备名，比如无线网卡看到叫 wlan0
+station wlan0 scan      #扫描网络
+station wlan0 get-networks      #列出网络 比如想连接CMCC-114514这个无线
+station wlan0 connect 114514        #进行连接 （输入密码)
+exit
+```
+
+### 1,挂载分区
+mount /dev/sda2  /mnt           #sda2是根分区
+mkdir /mnt/home mkdir /mnt/efi
+mount /dev/sda1 /mnt/efi        #sda1是efi分区 交换分区等进入系统后挂也来得及
+
+注：如果不太熟的话，建议挂载完后lsblk一下检查是否正确
+
+
+### 2,change root
+arch-chroot /mnt
+
+### 3,安装引导程序
+pacman -S grub efibootmgr
+grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
+
+### 4,生成 GRUB 所需的配置文件
+grub-mkconfig -o /boot/grub/grub.cfg
+
+### *5,你发现没有启动条目的原因很可能是这个：
+在某些主板安装完成后，你会发现没有启动条目。这是因为某些主板的 UEFI 固件在显示 UEFI NVRAM 引导条目之前，需要在特定的位置存放可引导文件，不支持自定义存放 efi 文件(如微星 Z170-A Gaming PRO)。解决方案是在默认启动路径下安装 GRUB。重新插入安装优盘，挂载目录，chroot 到/mnt，然后你可以直接把已经生成好的 efi 文件移动到默认目录下。只有安装完成后你的主板不出现启动条目才需要尝试如下命令，正常安装无需执行。详情可见[ArchLinux文档](https://wiki.archlinux.org/index.php/GRUB#Default/fallback_boot_path)
+```bash
+mkdir -p /efi/EFI/BOOT
+mv /efi/EFI/GRUB/grubx64.efi /efi/EFI/BOOT/BOOTX64.EFI
+```
+
+### 6,搞完收工
+```bash
+exit                # 退回安装环境
+umount -R  /mnt     # 卸载新分区
+reboot              # 重启，别忘了你的u盘哟～
+```
+-----
+
+Note：
+Grub 2.06 更新 os-prober 用户需要手动干预
+grub 2.06 更新已经进入官方源，本次更新有以下两个需要注意的变化：
+1. 如果您正在使用 os-prober 生成其他系统的引导项，grub 2.06 不再自动启用 os-prober，您需要添加 GRUB_DISABLE_OS_PROBER=false 至 /etc/default/grub 配置文件中并且重新运行 grub-mkconfig
+2. grub 2.06 现在会自动添加 固件设置菜单 引导项目，无需手动创建
+
+
+
+
+
+
+-----
+[Go Back](../)
+
+Projects by [Ottodeng](https://ottoqwq.me).
+
+Powered by [Gatsby](https://www.gatsbyjs.com).
+
+Content on this site is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)  unless specified.
