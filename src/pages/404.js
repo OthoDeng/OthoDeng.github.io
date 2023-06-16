@@ -4,8 +4,8 @@ import NotFound from "../images/404.jpeg";
 
 // styles
 const pageStyles = {
-  color: "#d895bc",
-  padding: "96px",
+  color: "#F2ABBD",
+  padding: 96,
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 };
 const headingStyles = {

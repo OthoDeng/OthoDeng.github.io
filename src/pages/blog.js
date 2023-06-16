@@ -1,24 +1,10 @@
-import { Link } from "gatsby";
 import * as React from "react";
 
 // styles
 const pageStyles = {
-  color: "#c868a9",
+  color: "#F2ABBD",
   padding: 96,
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
-};
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-  fontSize: "2rem",
-};
-const headingAccentStyles = {
-  color: "#d868a9",
-  fontSize: "1rem",
-};
-const paragraphStyles = {
-  marginBottom: 48,
 };
 const codeStyles = {
   color: "#d868a9",
@@ -45,12 +31,6 @@ const linkStyle = {
   verticalAlign: "5%",
 };
 
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  marginBottom: 24,
-};
-
 const descriptionStyle = {
   color: "#8b78a5",
   fontSize: 14,
@@ -66,32 +46,29 @@ const footerStyle = {
   paddingBottom: "0.5rem",
   paddingTop: "0.5rem",
 };
-const badgeStyle = {
-  color: "#d868a9",
-  backgroundColor: "#e4dcef",
-  border: "1px solid #8b78a5",
-  fontSize: 11,
-  fontWeight: "bold",
-  letterSpacing: 1,
-  borderRadius: 4,
-  padding: "4px 6px",
-  display: "inline-block",
-  position: "relative",
-  top: -2,
-  marginLeft: 10,
-  lineHeight: 1,
-};
 
 // data
 const links = [
     {
+    text: "青葱岁月",
+    url: "/blog/2022-8-27-青葱岁月",
+    date: "2023/06/12",
+    brief: "",
+  },
+    {
+    text: "难以忘却的大家",
+    url: "/blog/2023-06-12-难以忘却的大家",
+    date: "2023/06/12",
+    brief: "",
+  },
+  {
     text: "18岁写下的话",
     url: "/blog/2023-1-20-在18岁写下的话",
     date: "2023/1/20",
     brief: "感谢各位的陪伴！",
   },
   {
-    text: "2022-12-31-2022总结",
+    text: "2022总结",
     url: "/blog/2022-12-31-2022总结",
     date: "2022/12/31",
     brief: "结束的梦，谢谢陪伴",
@@ -125,6 +102,18 @@ const links = [
     url: "/blog/2022-1-2-Gentoo-on-rpi4/",
     date: "2022/1/2",
     brief: "能装，都能装",
+  },
+      {
+    text: "Gentoo on WSL2",
+    url: "/blog/2021-10-24-Gentoo_on_WSL2/",
+    date: "2021/10/24",
+    brief: "万物归于Gentoo,来自于一次无眠的夜晚",
+  },
+    {
+    text: "记一次恢复Grub经历",
+    url: "/blog/2021-09-19-记一次恢复Grub经历/",
+    date: "2021/09/19",
+    brief: "希望不要再在Fallback中摸爬滚打了",
   },
   {
     text: "媒介化生存",

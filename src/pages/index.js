@@ -114,6 +114,7 @@ const links = [
 const IndexPage = () => {
   return (
     <main align="center" style={pageStyles}>
+
       <title>Otto's Blog | OttoDeng</title>
       <h1 style={headingStyles}>
         Otto's Blog
@@ -122,6 +123,7 @@ const IndexPage = () => {
           ——谈论很多自己的事，可能也是隐藏自己的手段。{" "}
         </span>
       </h1>
+
       <ul style={listStyles}>
         {links.map((link) => (
           <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
@@ -137,6 +139,7 @@ const IndexPage = () => {
           </li>
         ))}
       </ul>
+      <p>现在升起来吧!升起来吧，你伟大的正午！</p>
       <footer style={footerStyle}>
         <hr class="css-1avyp1d"></hr>
         <p>

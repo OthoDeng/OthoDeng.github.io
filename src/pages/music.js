@@ -3,10 +3,9 @@ import * as React from "react";
 
 // styles
 const pageStyles = {
-  color: "#a868a9",
+  color: "#F2ABBD",
   padding: 96,
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
-  backgroundColor: "#f5fffa",
 };
 const headingStyles = {
   marginTop: 0,

@@ -3,10 +3,9 @@ import * as React from "react";
 
 // styles
 const pageStyles = {
-  color: "#a868a9",
+  color: "#F2ABBD",
   padding: 96,
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
-  backgroundColor: "#f5fffa",
 };
 const headingStyles = {
   marginTop: 0,
@@ -43,11 +42,13 @@ const AboutPage = () => {
       <h2>Otto 在正式的场合使用名字为 Otto Deng*</h2>
       <p>
         目前是个毕业高中生，有自学CS、
-        <a href="https://linux.org">Linux</a>的经历,在resume上自吹有扎实的理科基础</p>
+        <a href="https://linux.org">Linux</a>的经历,在résumé自吹有扎实的理科基础</p>
       <p>喜欢打网球,高中时期曾为此晒黑几度</p>
       <h2 style={headingAccentStyles}>音乐</h2>
       <p>喜欢摇滚乐与巴赫（22年）</p>
-      <p>现在听一些术曲、BOF、Hardcore（23年上半）</p>
+      <p>现在听一些钢琴曲、lofi、术曲、BOF、Hardcore、东方同人作品（23年上半）（Teto真的很好听你一定要试一下）</p>
+      <p>玩音乐游戏，对世嘉系作品都有所涉猎，弹指多指多少会一些。</p>
+      <p><num style={headingAccentStyles}>790557664530871</num> 这是我的<Link to="https://maimai.sega.com/">maimai</Link>好友号码</p>
       <h2 style={headingAccentStyles}>思考</h2>
       <p>认同柏拉图的学说（22年），现在信奉尼采与萨特的学说。</p>
       <p>对于一般事物都会去涉猎，但最终会专注于自己热爱的话题</p>
@@ -61,16 +62,18 @@ const AboutPage = () => {
           个人邮箱是
           <mail>
             <Link style={codeStyles} to="mailto:ottodeng9@gmail.com">
-              ottodeng9[at]gmail[dot]com
+              ottodeng9@gmail.com
             </Link>{" "}
-            以及
+            以及匿名邮箱{" "}
             <Link style={codeStyles} to="mailto:ottodeng9@gmail.com">
-              otto[at]duck[dot]com
+              otto@duck.com
             </Link>
           </mail>
         </p>
         <p>
           一般情况下，Otto 会在 <Link to="https://OttoQwQ.t.me">Telegram</Link>{" "}
+          以及
+          <Link to="https://space.bilibili.com/360701497">BiliBili</Link>{" "}
           上活跃。
         </p>
 
