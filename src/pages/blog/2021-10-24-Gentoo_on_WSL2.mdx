@@ -1,0 +1,94 @@
+import Gentoo_wsl from "/src/images/Gentoo_wsl.png";
+export default function Layout({children}) {
+  return <main align="left" style={{color: '#8C9EFF'}}>{children}</main>;
+}
+
+
+<title>Gentoo on WSL2</title>
+
+# Gentoo on WSL2
+
+*朋友，如果您正在考虑使用Gentoo Linux，但又担心自己会搞错，不妨在wsl上试试～*
+*窃以为，wsl的配置比虚拟机简单，占用小，只需下载stage3就可以跑得动，况且最近Windows对wsl2大更新，使得他更加人性了*
+
+
+翻译自[Gentoo Forum](https://forums.gentoo.org/viewtopic-t-1116432-start-0.html)
+
+## 1Make sure hardware virtualization is enabled in BIOS.
+确保在BIOS开启了虚拟化
+
+## 2.Log into Windows and open an administrator PowerShell prompt.
+以管理员身份打开Powershell
+
+##3.Make sure WSL is installed:
+安装wsl，详细可见[Microsoft文档](https://docs.microsoft.com/en-us/windows/wsl/install)
+
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+
+ Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform
+
+## 4.Grab a Gentoo stage3 AMD64 tarball (nomultilib recommended) from your mirror. Uncompress it, but leave it in tar format.
+
+下载stage3
+
+解压
+
+再压缩成(.tar.gz)格式，重命名为rootfs (#建议)
+```bash
+wsl --import gentoo C:\Users\otto-the-win\gentoo\  C:\Users\otto-the-win\Downloads\rootfs.tar.gz --version 2  #在Powershell执行
+```
+
+## 5.Download Launch.exe from [wsldl](https://github.com/yuk7/wsldl), rename Launch.exe to gentoo.exe
+
+上面这个解决方案是个人觉得非常完美的一个
+
+## 6.put rootfs.tar.gz and gentoo.exe in to same directory
+
+## 7. under a windows terminal, change to the above folder, run gentoo (will install gentoo linux)
+
+## 8. start the installed Gentoo linux by just run the gentoo.exe in a terminal
+
+## 9. run "wsl --set-default-version gentoo 2 "to convert gentoo from wsl 1 to wsl 2.
+
+-----
+
+做好以上步骤之后我们就可以在wsl上捣鼓了
+**运行 Linux GUI 应用**
+
+注：Windows 11 版本22000或更高版本支持无脑直接用图形界面。
+
+如果您在使用Windows10,也不用着急，MS Store上也有相应的软件来支持。
+
+## 若要运行 Linux GUI 应用，你应该首先安装与你的系统匹配的预览[驱动程序](https://www.intel.com/content/www/us/en/download/19344/intel-graphics-windows-10-windows-11-dch-drivers.html)。
+这使你能够使用虚拟 GPU (vGPU) 以便你可以用上 OpenGL 。
+
+AMD WSL 的 GPU [驱动程序](https://www.amd.com/en/support/kb/release-notes/rn-rad-win-wsl-support)
+
+NVIDIA WSL 的 GPU [驱动程序](https://developer.nvidia.com/cuda/wsl)
+
+
+剩下安装的过程可以直接参考wiki,这里不多赘述，但值得提醒的一点是：在merge的过程中，如果没有提前修改 “无人参与系统睡眠超时”，你编译的过程很可能被你亲爱的Windows打断
+
+​<img src="/src/images/Windows_stop_sleep.png" alt="Windows_stop_sleep"/>
+
+最后，你就可以快乐地使用Gentoo了
+(初如坑gentoo的你，是否感到快乐取决于您的机子性能以及您反复查文档问社区的耐心还有您的发量）
+​
+
+*ps:关于kenel的配置,配置好后，你可能用neofetch检查会发现kernel还是wsl2的，这时你需要在.wslconfig文件里指定好vmlinux。*
+
+[Falco on WSL2 with a custom kernel](https://​falco.org/blog/falco-wsl2-custom-kernel/)
+
+像是上面的步骤。
+
+<img src="/src/images/Gentoo_wsl.png" alt="2021-10-24" />
+
+------
+
+[Go Back](../)
+
+Projects by [Ottodeng](https://ottoqwq.me).
+
+Powered by [Gatsby](https://www.gatsbyjs.com).
+
+Content on this site is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)  unless specified.
