@@ -50,6 +50,11 @@ const footerStyle = {
 // data
 const links = [
     {
+      text: "高考英语词汇考纲3500",
+      url: "/study/ENG/高考英语词汇考纲3500",
+      brief: "",
+    },
+    {
     text: "青葱岁月",
     url: "/blog/2022-8-27-青葱岁月",
     date: "2023/06/12",
