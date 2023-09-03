@@ -2,7 +2,7 @@ import * as React from "react";
 
 // styles
 const pageStyles = {
-  color: "#F2ABBD",
+  color: "#99AADD",
   padding: 96,
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 };
@@ -12,18 +12,15 @@ const headingStyles = {
   fontSize: "2rem",
 };
 const headingAccentStyles = {
-  color: "#DA697D",
+  color: "#99AADD",
   fontSize: "1rem",
-};
-const paragraphStyles = {
-  marginBottom: 48,
 };
 const codeStyles = {
-  color: "#d868a9",
+  color: "#99AADD",
   padding: 4,
-  backgroundColor: "#e4dcef",
+  backgroundColor: "#E0FFFF",
   fontSize: "1rem",
-  borderRadius: 4,
+  borderRadius: 5,
 };
 const listStyles = {
   marginBottom: 96,
@@ -35,20 +32,14 @@ const listItemStyles = {
 };
 
 const linkStyle = {
-  color: "#ce94ae",
+  color: "#88AADD",
   fontWeight: "bold",
   fontSize: 16,
   verticalAlign: "5%",
 };
 
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  marginBottom: 24,
-};
-
 const descriptionStyle = {
-  color: "#8b78a5",
+  color: "#99AADD",
   fontSize: 14,
   marginTop: 10,
   marginBottom: 0,
@@ -56,29 +47,12 @@ const descriptionStyle = {
 };
 
 const footerStyle = {
-  color: "#ce94ae",
+  color: "#99AADD",
   width: "100%",
   textAlign: "center",
   paddingBottom: "0.5rem",
   paddingTop: "0.5rem",
 };
-
-const badgeStyle = {
-  color: "#d868a9",
-  backgroundColor: "#e4dcef",
-  border: "1px solid #8b78a5",
-  fontSize: 11,
-  fontWeight: "bold",
-  letterSpacing: 1,
-  borderRadius: 4,
-  padding: "4px 6px",
-  display: "inline-block",
-  position: "relative",
-  top: -2,
-  marginLeft: 10,
-  lineHeight: 1,
-};
-
 // data
 const links = [
   {
@@ -106,7 +80,7 @@ const links = [
   {
     text: "Music Box",
     url: "music",
-    description: "Otto喜欢的一些音乐",
+    description: "Digested musics from Otto",
   },
 ];
 

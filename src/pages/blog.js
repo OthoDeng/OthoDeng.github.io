@@ -2,16 +2,15 @@ import * as React from "react";
 
 // styles
 const pageStyles = {
-  color: "#F2ABBD",
+  color: "#99AADD",
   padding: 96,
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 };
 const codeStyles = {
-  color: "#d868a9",
+  color: "#99AADD",
   padding: 4,
-  backgroundColor: "#e4dcef",
-  fontSize: "1rem",
-  borderRadius: 4,
+  backgroundColor: "#E0FFFF",
+  borderRadius: 5,
 };
 const listStyles = {
   marginBottom: 96,
@@ -25,22 +24,13 @@ const listItemStyles = {
 };
 
 const linkStyle = {
-  color: "#F2ABBD",
+  color: "#88AADD",
   fontWeight: "bold",
-  fontSize: 16,
   verticalAlign: "5%",
 };
 
-const descriptionStyle = {
-  color: "#8b78a5",
-  fontSize: 14,
-  marginTop: 10,
-  marginBottom: 0,
-  lineHeight: 1.25,
-};
-
 const footerStyle = {
-  color: "#F2ABBD",
+  color: "#99AADD",
   textAlign: "center",
   width: "100%",
   paddingBottom: "0.5rem",
@@ -49,82 +39,87 @@ const footerStyle = {
 
 // data
 const links = [
+      {
+      text: "译汉时第一人称的使用",
+      url: "/study/CHI/2023-8-29-translation/",
+      brief: "学习、翻译、英译中、语言、语言习惯",
+    },
     {
       text: "高考英语词汇考纲3500",
       url: "/study/ENG/高考英语词汇考纲3500",
-      brief: "",
+      brief: "高考、英语、词汇",
     },
     {
     text: "青葱岁月",
     url: "/blog/2022-8-27-青葱岁月",
     date: "2023/06/12",
-    brief: "",
+    brief: "高中、回忆",
   },
     {
     text: "难以忘却的大家",
     url: "/blog/2023-06-12-难以忘却的大家",
     date: "2023/06/12",
-    brief: "",
+    brief: "高中、回忆",
   },
   {
     text: "18岁写下的话",
     url: "/blog/2023-1-20-在18岁写下的话",
     date: "2023/1/20",
-    brief: "感谢各位的陪伴！",
+    brief: "总结、成年、成长",
   },
   {
-    text: "2022总结",
+    text: "2022年总结",
     url: "/blog/2022-12-31-2022总结",
     date: "2022/12/31",
-    brief: "结束的梦，谢谢陪伴",
+    brief: "总结、诗歌、2022",
   },
   {
     text: "关于对表意工具的想法（上）",
     url: "/blog/2022-8-27-关于对表意工具的想法（上）",
     date: "2022/8/27",
-    brief: "工具论？",
+    brief: "表意工具、工具、语言",
   },
   {
     text: "Hello New World",
     url: "/blog/2022-7-18-hello-new-world",
     date: "2022/7/18",
-    brief: "Of rebuilding my site",
+    brief: "网站、构建、JavaScrpt",
   },
   {
     text: "关于诗歌鉴赏一些笔记",
     url: "/study/CHI/2022-7-17-of-poetry",
     date: "2022/7/17",
-    brief: "柳暗花明又一村",
+    brief: "诗歌、语文、诗人",
   },
   {
     text: "神圣时间——禁锢在没有节日的时代",
     url: "/blog/2022-4-11-神圣时间/",
     date: "2022/4/11",
-    brief: "且看到庆典时刻享欢庆之时",
+    brief: "时间、节日、生命、意义",
   },
   {
     text: "Gentoo on rpi4",
     url: "/blog/2022-1-2-Gentoo-on-rpi4/",
     date: "2022/1/2",
-    brief: "能装，都能装",
+    brief: "树莓派4、Gentoo Linux、交叉编译",
   },
       {
     text: "Gentoo on WSL2",
     url: "/blog/2021-10-24-Gentoo_on_WSL2/",
     date: "2021/10/24",
-    brief: "万物归于Gentoo,来自于一次无眠的夜晚",
+    brief: "WSL2、Gentoo Linux",
   },
     {
     text: "记一次恢复Grub经历",
     url: "/blog/2021-09-19-记一次恢复Grub经历/",
     date: "2021/09/19",
-    brief: "希望不要再在Fallback中摸爬滚打了",
+    brief: "修复、Grub、思路、fallback",
   },
   {
     text: "媒介化生存",
     url: "/blog/2021-8-21-媒介化生存",
     date: "2021/8/21",
-    brief: "赛博真嗣会梦到电子橙汁吗",
+    brief: "媒介、传播、人、危机",
   },
 ];
 
@@ -140,9 +135,9 @@ const Posts = () => {
               <a style={linkStyle} href={`${link.url}`}>
                 {link.text}
               </a>
-              <div style={descriptionStyle}>{link.brief}</div>
+              <div>关键词：<a style={codeStyles}>{link.brief}</a></div>
               <div>{link.date}</div>
-              <p style={descriptionStyle}>{link.description}</p>
+              <p style={linkStyle}>{link.description}</p>
             </span>
           </li>
         ))}
