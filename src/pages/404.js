@@ -4,7 +4,7 @@ import NotFound from "../images/404.jpeg";
 
 // styles
 const pageStyles = {
-  color: "#F2ABBD",
+  color: "#99AADD",
   padding: 96,
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 };
@@ -19,15 +19,11 @@ const footerStyle = {
   paddingBottom: "0.5rem",
   paddingTop: "0.5rem",
 };
-const paragraphStyles = {
-  marginBottom: 48,
-};
 const codeStyles = {
-  color: "#d868a9",
+  color: "#99AADD",
   padding: 4,
-  backgroundColor: "#e4dcef",
-  fontSize: "0.8rem",
-  borderRadius: 4,
+  backgroundColor: "#E0FFFF",
+  borderRadius: 5,
 };
 
 // markup
@@ -36,7 +32,7 @@ const NotFoundPage = () => {
     <main align="center" style={pageStyles}>
       <title>Not found</title>
       <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
+      <p>
         <h2>Sorry(°ー°〃)</h2>
         <p>
           <img src={NotFound} alt="404 not found" width={200} />

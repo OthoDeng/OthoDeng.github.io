@@ -39,7 +39,7 @@ const footerStyle = {
 const links = [
         {
       text: "余光中：怎样改进英式中文？- 论中文的常态与变态",
-      url: "/study/CHI/2023-8-13-improve-chinese.mdx",
+      url: "/study/CHI/2023-8-13-improve-chinese",
       brief: "学习、中文、英文、语言习惯",
     },
       {
@@ -54,7 +54,7 @@ const links = [
     },
     {
     text: "青葱岁月",
-    url: "/blog/2022-8-27-青葱岁月",
+    url: "/blog/2023-6-12-青葱岁月",
     date: "2023/06/12",
     brief: "高中、回忆",
   },
@@ -120,9 +120,27 @@ const links = [
   },
   {
     text: "媒介化生存",
-    url: "/blog/2021-8-21-媒介化生存",
+    url: "/blog/2021-8-21-媒介化生存/",
     date: "2021/8/21",
     brief: "媒介、传播、人、危机",
+  },
+    {
+    text: "SAMPLE页面",
+    url: "/blog/0-0-0-0-sample/",
+    date: "0/0/0/0",
+    brief: "O.o?",
+  },
+        {
+    text: "404页面",
+    url: "/404",
+    date: "Not Found",
+    brief: "404",
+  },
+      {
+    text: "",
+    url: "",
+    date: "",
+    brief: "",
   },
 ];
 
