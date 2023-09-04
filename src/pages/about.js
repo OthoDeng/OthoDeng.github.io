@@ -39,7 +39,7 @@ const AboutPage = () => {
       <h1 style={headingStyles}>
         <a>About Me</a>
       </h1>
-      <h2>Otto 在正式的场合使用名字为 Otto Deng*</h2>
+      <h2>Otto 在正式的场合使用名字为 Otto Deng※</h2>
       <p>
         位于江苏南京的一名本科生，有自学CS、Linux的经历,在résumé自吹有扎实的理科基础。</p>
 

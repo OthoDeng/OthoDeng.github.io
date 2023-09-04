@@ -17,8 +17,6 @@ const listStyles = {
   paddingLeft: 0,
 };
 const listItemStyles = {
-  fontWeight: 300,
-  fontSize: 24,
   maxWidth: 560,
   marginBottom: 30,
 };
@@ -39,6 +37,11 @@ const footerStyle = {
 
 // data
 const links = [
+        {
+      text: "余光中：怎样改进英式中文？- 论中文的常态与变态",
+      url: "/study/CHI/2023-8-13-improve-chinese.mdx",
+      brief: "学习、中文、英文、语言习惯",
+    },
       {
       text: "译汉时第一人称的使用",
       url: "/study/CHI/2023-8-29-translation/",
