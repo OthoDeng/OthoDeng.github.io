@@ -214,8 +214,6 @@ const IndexPage = () => {
               <a style={linkStyle} href={`${data.url}`}>
                 {data.text}</a></div>
             关键词：<a style={codeStyles}>{data.brief}</a>
-            &emsp;&emsp;
-            Date：<a style={codeStyles}>{data.date}</a>
           </li>
         ))}
       </ul>
