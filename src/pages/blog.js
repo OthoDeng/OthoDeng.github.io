@@ -2,14 +2,14 @@ import * as React from "react";
 
 // styles
 const pageStyles = {
-  color: "#99AADD",
+  color: "#1A237E",
   padding: 96,
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 };
 const codeStyles = {
-  color: "#99AADD",
+  color: "#1A237E",
   padding: 4,
-  backgroundColor: "#E0FFFF",
+  backgroundColor: "#E8EAF6",
   borderRadius: 5,
 };
 const listStyles = {
@@ -22,13 +22,13 @@ const listItemStyles = {
 };
 
 const linkStyle = {
-  color: "#88AADD",
+  color: "#5A237E",
   fontWeight: "bold",
   verticalAlign: "5%",
 };
 
 const footerStyle = {
-  color: "#99AADD",
+  color: "#1A237E",
   textAlign: "center",
   width: "100%",
   paddingBottom: "0.5rem",
@@ -37,19 +37,22 @@ const footerStyle = {
 
 // data
 const links = [
-        {
-      text: "余光中：怎样改进英式中文？- 论中文的常态与变态",
-      url: "/study/CHI/2023-8-13-improve-chinese",
-      brief: "学习、中文、英文、语言习惯",
-    },
       {
       text: "译汉时第一人称的使用",
       url: "/study/CHI/2023-8-29-translation/",
+      date: "2023/08/29",
       brief: "学习、翻译、英译中、语言、语言习惯",
+    },
+      {
+      text: "余光中：怎样改进英式中文？- 论中文的常态与变态",
+      url: "/study/CHI/2023-8-13-improve-chinese",
+      date: "2023/08/13",
+      brief: "学习、中文、英文、语言习惯",
     },
     {
       text: "高考英语词汇考纲3500",
-      url: "/study/ENG/高考英语词汇考纲3500",
+      url: "/study/ENG/高考英语词汇考纲3500/",
+      date: "YYYY/06/08",
       brief: "高考、英语、词汇",
     },
     {
@@ -67,7 +70,7 @@ const links = [
   {
     text: "18岁写下的话",
     url: "/blog/2023-1-20-在18岁写下的话",
-    date: "2023/1/20",
+    date: "2023/01/20",
     brief: "总结、成年、成长",
   },
   {
@@ -79,31 +82,31 @@ const links = [
   {
     text: "关于对表意工具的想法（上）",
     url: "/blog/2022-8-27-关于对表意工具的想法（上）",
-    date: "2022/8/27",
+    date: "2022/08/27",
     brief: "表意工具、工具、语言",
   },
   {
     text: "Hello New World",
     url: "/blog/2022-7-18-hello-new-world",
-    date: "2022/7/18",
+    date: "2022/07/18",
     brief: "网站、构建、JavaScrpt",
   },
   {
     text: "关于诗歌鉴赏一些笔记",
     url: "/study/CHI/2022-7-17-of-poetry",
-    date: "2022/7/17",
+    date: "2022/07/17",
     brief: "诗歌、语文、诗人",
   },
   {
     text: "神圣时间——禁锢在没有节日的时代",
     url: "/blog/2022-4-11-神圣时间/",
-    date: "2022/4/11",
+    date: "2022/04/11",
     brief: "时间、节日、生命、意义",
   },
   {
     text: "Gentoo on rpi4",
     url: "/blog/2022-1-2-Gentoo-on-rpi4/",
-    date: "2022/1/2",
+    date: "2022/01/2",
     brief: "树莓派4、Gentoo Linux、交叉编译",
   },
       {
@@ -121,7 +124,7 @@ const links = [
   {
     text: "媒介化生存",
     url: "/blog/2021-8-21-媒介化生存/",
-    date: "2021/8/21",
+    date: "2021/08/21",
     brief: "媒介、传播、人、危机",
   },
     {
@@ -148,7 +151,7 @@ const links = [
 const Posts = () => {
   return (
     <main style={pageStyles}>
-      <title>Otto's Posts</title>
+      <title>Otto's Blog Posts</title>
       <ul style={listStyles}>
         {links.map((link) => (
           <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
@@ -156,8 +159,9 @@ const Posts = () => {
               <a style={linkStyle} href={`${link.url}`}>
                 {link.text}
               </a>
-              <div>关键词：<a style={codeStyles}>{link.brief}</a></div>
-              <div>{link.date}</div>
+              <p></p>
+              <div>Keywords: <a style={codeStyles}>{link.brief}</a></div>
+              <div>Date: {link.date}</div>
               <p style={linkStyle}>{link.description}</p>
             </span>
           </li>

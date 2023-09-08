@@ -3,30 +3,39 @@ import * as React from "react";
 
 // styles
 const pageStyles = {
-  color: "#F2ABBD",
+  color: "#1A237E",
   padding: 96,
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 };
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  fontSize: "2rem",
-};
 const headingAccentStyles = {
-  color: "#d868a9",
+  color: "#1A237E",
   fontSize: "1rem",
 };
 const codeStyles = {
-  color: "#d868a9",
+  color: "#1A237E",
   padding: 4,
-  backgroundColor: "#e4dcef",
-  fontSize: "1rem",
-  borderRadius: 4,
+  backgroundColor: "#E8EAF6",
+  borderRadius: 5,
 };
+const listStyles = {
+  marginBottom: 96,
+  paddingLeft: 0,
+};
+const listItemStyles = {
+  maxWidth: 560,
+  marginBottom: 30,
+};
+
+const linkStyle = {
+  color: "#5A237E",
+  fontWeight: "bold",
+  verticalAlign: "5%",
+};
+
 const footerStyle = {
-  color: "#ce94ae",
-  width: "100%",
+  color: "#1A237E",
   textAlign: "center",
+  width: "100%",
   paddingBottom: "0.5rem",
   paddingTop: "0.5rem",
 };
@@ -36,13 +45,15 @@ const MusicPage = () => {
   return (
     <main align="left" style={pageStyles}>
       <title>摸鱼电台</title>
-      <h1 style={headingStyles}>
+      <h1 align="center">
         <a>Otto's Music Box</a>
-      </h1>
-      <h2>Otto 在正式的场合使用名字为 Otto Deng*</h2>
-      <p>
+      </h1>      <p>
        这里是一些Otto喜欢的音乐，目前使用<Link to="https://music.163.com/">网易云音乐</Link>的iframe框架，有时会附加上一些奇怪的点评，收听时请注意音量。
        </p>
+      <hr class="css-1avyp1d"></hr>
+
+      <h1 align="center">他还没搞好！</h1>
+
        <ul>
        <h2 style={headingAccentStyles}>钢琴、小提琴与巴赫</h2>
 

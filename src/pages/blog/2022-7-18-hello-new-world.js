@@ -7,7 +7,6 @@ const pageStyles = {
   color: "#a868a9",
   padding: 96,
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
-  backgroundColor: "#EEEEEE",
 };
 const headingStyles = {
   marginTop: 0,
@@ -27,7 +26,7 @@ const codeStyles = {
   padding: 4,
   backgroundColor: "#e4dcef",
   fontSize: "1rem",
-  borderRadius: 4,
+  borderRadius: 5,
 };
 const listStyles = {
   marginBottom: 96,
@@ -106,8 +105,8 @@ const NewWorld = () => {
             <li>充分满足现代化特性的插件：从 RSS, sitemap, SEO 到 PWA, 静态搜索，自动图片压缩，均有插件提供便利的支持。</li>
             </ol>
             <p>
-              另外，在构建的过程中，推荐参考 <Link style={linkStyle} to="https://gatsbyjs.com/docs">Gatsby文档</Link> 和 <Link style={linkStyle} to="https://developer.mozilla.org">MDN</Link> 文档，给 Otto 带来了很多启发。
-              本网站目前使用的主题色为樱花粉 (#d895bc) ，仅仅出于个人某一时刻的想法，以后会根据 Otto 的风格以及个人喜好来调整，只能看有没有时间了。（悲） 
+另外，在构建的过程中，推荐参考 <Link style={linkStyle} to="https://gatsbyjs.com/docs">Gatsby文档</Link> 和 <Link style={linkStyle} to="https://developer.mozilla.org">MDN</Link> 文档，给 Otto 带来了很多启发。
+本网站曾经使用的主题色为樱花粉 (#d895bc) ，仅仅出于个人某一时刻的想法，以后会根据 Otto 的风格以及个人喜好来调整，只能看有没有时间了。（悲）
             </p>
             <p>
               最后算是一些感悟吧：这几天 Otto 每晚写完作业便开始了苦逼的构建生活。几日之后该网站也算是可以有个像样的页面了。

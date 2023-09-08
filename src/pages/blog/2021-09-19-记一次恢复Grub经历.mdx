@@ -5,7 +5,7 @@ export default function Layout({children}) {
 
 <title>记一次恢复Grub经历</title>
 
-# 记一次恢复Grub经历|Grub command启动原理浅析(新手向
+# <div align="center">记一次恢复Grub经历|Grub command启动原理浅析(新手向）</div>
 
 *[grub](https://www.gnu.org/software/grub/)可以理解为一个系统引导的启动器，当你安装完成一个Linux发行版时， GRUB可以实现多个（系统的）启动，它允许用户可以在 计算机 内同时拥有多个 操作系统 ，并在计算机启动时选择希望运行的操作系统。*
 -----
@@ -38,9 +38,9 @@ grub> linux /boot/vmlinuz-1.1.4-514-generic ro text root=/dev/sda2
 `vmlinuz-{版本号}-generic`,就是内核,`vmlinuz`作为后面进程管理、内存管理、文件管理、驱动管理、网络管理等使用。
 
 ### 2,initrd命令指定initrd文件
-
+```
 grub> initrd /boot/initrd.img-1.1.4-514-generic
-
+```
 initrd,指定initrd文件（.img)
 initrd.img,是一个小的映象， 放的是和启动相关的驱动模块。
 ### 3,做完这些，如果都没奇奇怪怪的报错的话，那么你就可以顺利boot进入系统啦！
@@ -79,23 +79,27 @@ exit
 ```
 
 ### 1,挂载分区
+```
 mount /dev/sda2  /mnt           #sda2是根分区
 mkdir /mnt/home mkdir /mnt/efi
 mount /dev/sda1 /mnt/efi        #sda1是efi分区 交换分区等进入系统后挂也来得及
-
+```
 注：如果不太熟的话，建议挂载完后lsblk一下检查是否正确
 
 
 ### 2,change root
+```
 arch-chroot /mnt
-
+```
 ### 3,安装引导程序
+```
 pacman -S grub efibootmgr
 grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
-
+```
 ### 4,生成 GRUB 所需的配置文件
+```
 grub-mkconfig -o /boot/grub/grub.cfg
-
+```
 ### *5,你发现没有启动条目的原因很可能是这个：
 在某些主板安装完成后，你会发现没有启动条目。这是因为某些主板的 UEFI 固件在显示 UEFI NVRAM 引导条目之前，需要在特定的位置存放可引导文件，不支持自定义存放 efi 文件(如微星 Z170-A Gaming PRO)。解决方案是在默认启动路径下安装 GRUB。重新插入安装优盘，挂载目录，chroot 到/mnt，然后你可以直接把已经生成好的 efi 文件移动到默认目录下。只有安装完成后你的主板不出现启动条目才需要尝试如下命令，正常安装无需执行。详情可见[ArchLinux文档](https://wiki.archlinux.org/index.php/GRUB#Default/fallback_boot_path)
 ```bash

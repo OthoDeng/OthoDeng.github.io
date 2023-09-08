@@ -3,7 +3,7 @@ import * as React from "react";
 
 // styles
 const pageStyles = {
-  color: "#99AADD",
+  color: "#1A237E",
   padding: 96,
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 };
@@ -13,18 +13,18 @@ const headingStyles = {
   fontSize: "2rem",
 };
 const headingAccentStyles = {
-  color: "#99AADD",
+  color: "#1A237E",
   fontSize: "1rem",
 };
 const codeStyles = {
-  color: "#99AADD",
+  color: "#1A237E",
   padding: 4,
-  backgroundColor: "#E0FFFF",
+  backgroundColor: "#E8EAF6",
   fontSize: "1rem",
   borderRadius: 5,
 };
 const footerStyle = {
-  color: "#99AADD",
+  color: "#1A237E",
   width: "100%",
   textAlign: "center",
   paddingBottom: "0.5rem",
@@ -49,7 +49,7 @@ const AboutPage = () => {
       <h2>音乐</h2>
       <p>喜欢摇滚乐与巴赫（22年）</p>
       <p>现在听一些钢琴曲、lofi、术曲、BOF、Hardcore、东方同人作品（23年上半）（Teto真的很好听你一定要试一下）</p>
-      <p>玩音乐游戏，对世嘉系作品都有所涉猎，弹指多指多少会一些。</p>
+      <p>玩音乐游戏，对世嘉系作品都有所涉猎，单指多指多少会一些。</p>
       <p><num style={headingAccentStyles}>790557664530871</num> 这是我的<Link to="https://maimai.sega.com/">maimai</Link>好友号码</p>
 
       <h2>思考</h2>
