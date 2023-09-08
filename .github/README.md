@@ -10,10 +10,12 @@
 
 一般情况下，Otto 会在 [Telegram](https://ottoqwq.t.me/) 以及Bilibili 上活跃。
 你也会在其他地方找到 Otto ，一般以
-```Otto the-<Related Suffix>
+
+```
+Otto the-<Related Suffix>
 ```
 或者是**奥托小奥托** 的方式呈现(如 **Otto the-e** 最为常见)。
 
-**PageStyles: #99AADD**
+**PageStyles使用的是 #3F51B5**
 
 ## 使用 CC BY 4.0 协议发布
