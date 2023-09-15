@@ -48,7 +48,7 @@ const MusicPage = () => {
       <h1 align="center">
         <a>Otto's Music Box</a>
       </h1>      <p>
-       这里是一些Otto喜欢的音乐，目前使用<Link to="https://music.163.com/">网易云音乐</Link>的iframe框架，有时会附加上一些奇怪的点评，收听时请注意音量。
+       这里是一些Otto喜欢的音乐，目前使用iframe框架以网络流媒体形式播放，有时会附加上一些奇怪的点评，收听时请注意音量。
        </p>
       <hr class="css-1avyp1d"></hr>
 

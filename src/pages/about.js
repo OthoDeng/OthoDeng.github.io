@@ -5,6 +5,9 @@ import * as React from "react";
 const pageStyles = {
   color: "#1A237E",
   padding: 96,
+   maxWidth: "800px",
+  marginLeft: "auto",
+  marginRight: "auto",
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 };
 const headingStyles = {
@@ -40,16 +43,23 @@ const AboutPage = () => {
         <a>About Me</a>
       </h1>
       <h2>Otto 在正式的场合使用名字为 Otto Deng※</h2>
-      <p>
-        位于江苏南京的一名本科生，有自学CS、Linux的经历,在résumé自吹有扎实的理科基础。</p>
+      <p>位于江苏南京的一名本科生，有自学CS、Linux的经历，对语言学有一定了解。</p>
+<img src="https://img.shields.io/badge/Arch%20Linux-1793d0?style=flat-square&logo=arch-linux&logoColor=ffffff" />&nbsp;
+<img src="https://www.gentoo.org/assets/img/logo/gentoo-horizontal.png" width="87px" height="20px" />&nbsp;
+<img src="https://img.shields.io/badge/KDE-%2300ADD8.svg?style=flat-square&logo=kde&logoColor=fff" />
 
+      <p>参与社团有但不限于:</p>
+        <li><Link to="https://tuna.moe">TUNA</Link></li>THU TUNA Association.
+        <li><Link to="https://archlinux.org">Arch Linux</Link></li>a simple, lightweight distribution.
+        <li><Link to="https://gentoo.org">Gentoo Linux</Link></li>a highly flexible, source-based Linux distribution.
+        <li><Link to="https://github.com/microcai/gentoo-zh">Gentoo-zh</Link></li>Overlay for Gentoo Users.
       <h2>运动</h2>
       <p>比较擅长游泳，获得过几个校级的奖项；喜欢打网球,高中时期曾为此晒黑几度；平日（一般，有且仅在校期间）也会去跑跑步；暑假高强度出勤也让我瘦了不少。</p>
 
       <h2>音乐</h2>
       <p>喜欢摇滚乐与巴赫（22年）</p>
       <p>现在听一些钢琴曲、lofi、术曲、BOF、Hardcore、东方同人作品（23年上半）（Teto真的很好听你一定要试一下）</p>
-      <p>玩音乐游戏，对世嘉系作品都有所涉猎，单指多指多少会一些。</p>
+      <p>玩音乐游戏，对世嘉系作品都有所涉猎</p>
       <p><num style={headingAccentStyles}>790557664530871</num> 这是我的<Link to="https://maimai.sega.com/">maimai</Link>好友号码</p>
 
       <h2>思考</h2>

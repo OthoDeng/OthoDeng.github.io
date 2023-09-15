@@ -2,15 +2,13 @@ import * as React from "react";
 
 // styles
 const pageStyles = {
-  color: "#3F51B5",
-  fontFamily: "var(--font-display)",
-  fontSize: "var(--fontsize)",
-  fontWeight: "var(--fontweight-brand)",
-  maxWidth: "800px",
+  color: "#1A237E",
+  padding: 96,
+   maxWidth: "800px",
   marginLeft: "auto",
   marginRight: "auto",
-};
-
+  fontFamily: "-apple-system, Roboto, sans-serif, serif",
+}
 const headingAccentStyles = {
   color: "#3F51B5",
   fontSize: "var(--fontsize-h4)",

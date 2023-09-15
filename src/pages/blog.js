@@ -4,6 +4,9 @@ import * as React from "react";
 const pageStyles = {
   color: "#1A237E",
   padding: 96,
+   maxWidth: "800px",
+  marginLeft: "auto",
+  marginRight: "auto",
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 };
 const codeStyles = {
