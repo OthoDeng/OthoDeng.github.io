@@ -1,5 +1,6 @@
 # About this site
 [Otto's Blog](https://ottoqwq.me)
+
 This site is now hosting via WordPress. (Previously via Gatsby, using the code in this repository)
 
 My blog will serve as a record of my thoughts and opinions, including but not limited to my life experiences and academic pursuits.
